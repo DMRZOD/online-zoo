@@ -1,0 +1,97 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.header {
+  background-color: $color-orange;
+  padding: 30px 0;
+
+  &__container {
+    @include container;
+    @include flex-between;
+  }
+
+  &__logo {
+    @include flex-center;
+
+    img {
+      height: 50px;
+      width: auto;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    column-gap: 65px;
+
+    @include laptop {
+      column-gap: 80px;
+    }
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    align-items: center;
+    column-gap: 48.25px;
+
+    @include laptop {
+      column-gap: 30px;
+    }
+  }
+
+  &__nav-link {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.5;
+    color: $color-black;
+
+    &:hover,
+    &.active {
+      color: $color-turquoise;
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    @media (max-width: 940px) {
+      display: none;
+    }
+  }
+
+  &__social-link {
+    @include flex-center;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__burger {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      background: transparent;
+      border: none;
+      padding: 0;
+      margin-right: 27px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+
+    span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: $color-black;
+    }
+  }
+}
