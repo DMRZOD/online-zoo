@@ -54,7 +54,7 @@
     }
   }
 
-  &__subtitle {
+  &__text {
     max-width: 430px;
     margin-bottom: 50px;
 
@@ -70,6 +70,61 @@
     @include mobile {
       display: block;
       width: 100%;
+    }
+  }
+}
+
+.welcome {
+  padding: 150px 0 75px 0;
+  
+  @include laptop {
+    padding: 100px 0 35px 0;
+  }
+
+  @include tablet {
+    padding: 100px 0 25px 0;
+  }
+
+  &__container {
+    @include container;
+    display: grid;
+    grid-template-columns: minmax(0, 560px) minmax(0, 800px);
+    align-items: center;
+    gap: 30px 20px;
+
+    @include laptop {
+      grid-template-columns: minmax(0, 660px);
+    }
+  }
+
+  &__content {
+    @include laptop {
+      order: 2;
+    }
+  }
+
+  &__title {
+    margin-bottom: 50px;
+
+    @include laptop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    @include laptop {
+      max-width: 560px;
+    }
+
+    @include tablet {
+      max-width: 100%;
+    }
+  }
+
+  &__photo {
+    border-radius: 5px;
+    @include laptop {
+      order: 1;
     }
   }
 }
