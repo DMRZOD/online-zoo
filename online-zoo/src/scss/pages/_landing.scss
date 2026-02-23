@@ -76,7 +76,7 @@
 
 .welcome {
   padding: 150px 0 75px 0;
-  
+
   @include laptop {
     padding: 100px 0 35px 0;
   }
@@ -126,5 +126,52 @@
     @include laptop {
       order: 1;
     }
+  }
+}
+
+.how-we-work {
+  padding: 75px 0 150px 0;
+
+  @include laptop {
+    padding: 35px 0 100px 0;
+  }
+
+  @include tablet {
+    padding: 25px 0 100px 0;
+  }
+
+  &__container {
+    @include container;
+    display: grid;
+    grid-template-columns: minmax(0, 800px) minmax(0, 560px);
+    align-items: center;
+    gap: 30px 40px;
+
+    @include laptop {
+      grid-template-columns: minmax(0, 660px);
+      justify-content: end;
+    }
+  }
+
+  &__title {
+    margin-bottom: 50px;
+
+    @include laptop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    @include laptop {
+      max-width: 560px;
+    }
+
+    @include tablet {
+      max-width: 100%;
+    }
+  }
+
+  &__photo {
+    border-radius: 5px;
   }
 }
