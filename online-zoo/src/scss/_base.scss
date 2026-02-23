@@ -89,11 +89,23 @@ h2 {
   letter-spacing: 0.01em;
   text-transform: uppercase;
   color: $color-turquoise;
+
+  @include tablet {
+    font-size: 72px;
+  }
+
+  @media (max-width: 430px) {
+    font-size: 55px;
+  }
+
+  @include mobile {
+    font-size: 40px;
+  }
 }
 
-h3 {
-  font-weight: 600;
-  font-size: 54px;
-  text-transform: uppercase;
-  color: $color-turquoise;
+p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: $color-black;
 }

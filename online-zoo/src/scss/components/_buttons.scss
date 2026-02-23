@@ -1,0 +1,26 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.button {
+  @include flex-center;
+  gap: 10px;
+  border-radius: 5px;
+  padding: 26px 30px;
+  background-color: $color-orange;
+
+  @include tablet {
+    padding: 26px 52.36px;
+  }
+
+  @include mobile {
+    padding: 11.5px 0;
+    width: 100%;
+  }
+
+  a {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $color-white;
+  }
+}

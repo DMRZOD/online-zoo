@@ -1,12 +1,6 @@
 @use "variables" as *;
 
 // Responsive breakpoint mixins
-@mixin desktop {
-  @media (max-width: $breakpoint-desktop) {
-    @content;
-  }
-}
-
 @mixin laptop {
   @media (max-width: $breakpoint-laptop) {
     @content;
@@ -38,11 +32,12 @@
 
   @include tablet {
     max-width: $container-tablet;
-    padding: 0 10px;
+    padding: 0 20px;
   }
 
   @include mobile {
     max-width: $container-mobile;
+    padding: 0 10px;
   }
 }
 
