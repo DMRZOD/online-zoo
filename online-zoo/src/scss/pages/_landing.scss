@@ -2,14 +2,14 @@
 @use "../mixins" as *;
 
 .hero {
-  background-image: url("/images/hero-bg.jpg");
+  background-image: url("/images/hero/hero-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 130px 0;
 
   @include laptop {
-    background-image: url("/images/hero-bg-laptop.jpg");
+    background-image: url("/images/hero/hero-bg-laptop.jpg");
     padding: 100px 0;
   }
 
@@ -19,7 +19,7 @@
   }
 
   @include tablet {
-    background-image: url("/images/hero-bg-tablet.jpg");
+    background-image: url("/images/hero/hero-bg-tablet.jpg");
     padding: 50px 0;
   }
 
@@ -359,7 +359,7 @@
     }
   }
 
-  &__wrapper {
+  &__slider {
     margin: 50px 0 100px 0;
     overflow-x: scroll;
 
@@ -542,6 +542,192 @@
     @include mobile {
       padding: 11.5px 0;
       width: 100%;
+    }
+  }
+}
+
+.review {
+  padding: 100px 0 150px 0;
+  background-image: url("/images/review/review-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include laptop {
+    background-image: url("/images/review/review-bg-laptop.jpg");
+  }
+
+  @include tablet {
+    padding: 80px 0;
+    background-image: url("/images/review/review-bg-tablet.jpg");
+  }
+
+  @include mobile {
+    padding: 40px 0;
+    background-image: url("/images/review/review-bg-mobile.jpg");
+  }
+
+  &__container {
+    padding-left: 15.5%;
+
+    @media (max-width: 1900px) {
+      padding-left: 13%;
+    }
+
+    @media (max-width: 1700px) {
+      padding-left: 9%;
+    }
+
+    @media (max-width: 1480px) {
+      padding-left: 40px;
+    }
+
+    @include tablet {
+      padding-left: 20px;
+    }
+
+    @include tablet {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    column-gap: 40px;
+
+    @include laptop {
+      flex-direction: column;
+      row-gap: 50px;
+    }
+  }
+
+  &__header {
+    max-width: 560px;
+
+    @include laptop {
+      max-width: 577px;
+    }
+  }
+
+  &__title {
+    color: $color-white;
+    max-width: 440px;
+    margin-bottom: 50px;
+
+    @include laptop {
+      margin-bottom: 30px;
+    }
+
+    @include mobile {
+      text-align: center;
+    }
+  }
+
+  &__subtitle {
+    @include mobile {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.5;
+      text-align: center;
+    }
+  }
+
+  &__grid {
+    overflow-x: hidden;
+  }
+
+  &__slider {
+    overflow-x: scroll;
+    margin-bottom: 55px;
+
+    @include laptop {
+      margin-left: 100px;
+    }
+
+    @include tablet {
+      margin: 0;
+    }
+
+    @include mobile {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 515px);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 5px;
+
+    @include tablet {
+      grid-template-columns: repeat(6, 515px);
+      grid-template-rows: 1fr;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(6, 300px);
+    }
+  }
+
+  &__nav {
+    display: flex;
+    column-gap: 60px;
+
+    @include laptop {
+      justify-content: end;
+      padding-right: 40px;
+    }
+
+    @include tablet {
+      display: none;
+    }
+
+    &-btn {
+      border: 1px solid $color-white;
+      border-radius: 5px;
+      width: 60px;
+      height: 60px;
+      display: grid;
+      place-items: center;
+    }
+  }
+
+  &__pag {
+    display: none;
+
+    @include mobile {
+      display: flex;
+      column-gap: 20px;
+      justify-content: center;
+    }
+
+    &-item {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 1px solid $color-white;
+      &_active {
+        background-color: $color-white;
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: 376px;
+
+    @include laptop {
+      margin-top: 100px;
+      margin-left: 100px;
+    }
+
+    @include tablet {
+      margin: 50px 20px 750px 0;
+    }
+
+    @include mobile {
+      margin: 50px 0 450px 0;
     }
   }
 }

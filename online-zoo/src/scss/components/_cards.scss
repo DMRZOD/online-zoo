@@ -1,7 +1,7 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-.card {
+.pets-card {
   background-color: $color-navy;
   color: $color-white;
   overflow: hidden;
@@ -57,6 +57,81 @@
 
     @include tablet {
       bottom: 11px;
+    }
+  }
+}
+
+.review-card {
+  position: relative;
+  border-radius: 5px;
+  background-color: $color-white;
+  padding: 50px;
+
+  @include tablet {
+    text-align: center;
+    padding: 30px;
+  }
+
+  @include mobile {
+    padding: 20px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+
+    @include tablet {
+      top: 30px;
+      left: 30px;
+    }
+  }
+
+  &__title {
+    margin-top: 86px;
+    color: $color-black;
+
+    @include tablet {
+      display: block;
+      margin: 20px auto 0 auto;
+      max-width: 225px;
+    }
+
+    @include mobile {
+      margin-top: 96px;
+    }
+  }
+
+  &__text {
+    margin-top: 20px;
+    margin-bottom: 90px;
+
+    @include tablet {
+      margin-top: 30px;
+      margin-bottom: 85px;
+    }
+
+    @include mobile {
+      margin-top: 20px;
+      margin-bottom: 110px;
+    }
+  }
+
+  &__author {
+    position: absolute;
+    left: 50px;
+    bottom: 70px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    @include tablet {
+      bottom: 50px;
+      left: 50%;
+      translate: -50% 0;
+    }
+
+    @include mobile {
+      min-width: 175px;
     }
   }
 }

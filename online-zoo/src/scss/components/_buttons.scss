@@ -49,6 +49,25 @@
       color: $color-navy;
     }
   }
+
+  &_white {
+    border: 1px solid $color-white;
+    background-color: transparent;
+    padding: 26px 77.36px;
+
+    @include tablet {
+      padding: 26px 81.86px;
+    }
+
+    @include mobile {
+      padding: 11.5px 0;
+      max-width: 100%;
+    }
+
+    a {
+      color: $color-white;
+    }
+  }
 }
 
 .button-donation {
