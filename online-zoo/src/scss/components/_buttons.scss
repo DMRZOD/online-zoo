@@ -23,6 +23,32 @@
     text-transform: uppercase;
     color: $color-white;
   }
+
+  &_transparent {
+    padding: 24px 18.19px;
+    background-color: transparent;
+
+    a {
+      color: $color-orange;
+      font-size: 20px;
+    }
+  }
+
+  &_navy {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid $color-navy;
+    background-color: transparent;
+    padding: 26px 35.86px;
+
+    @include tablet {
+      padding: 26px 28.86px;
+    }
+
+    a {
+      color: $color-navy;
+    }
+  }
 }
 
 .button-donation {
