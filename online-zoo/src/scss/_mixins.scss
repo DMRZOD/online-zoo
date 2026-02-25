@@ -21,10 +21,9 @@
 
 // Container mixin
 @mixin container {
-  width: 100%;
   margin: 0 auto;
+  width: 100%;
   max-width: $container-desktop;
-  padding: 0 20px;
 
   @include laptop {
     max-width: $container-laptop;
@@ -32,12 +31,10 @@
 
   @include tablet {
     max-width: $container-tablet;
-    padding: 0 20px;
   }
 
   @include mobile {
     max-width: $container-mobile;
-    padding: 0 10px;
   }
 }
 
