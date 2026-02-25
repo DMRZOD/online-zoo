@@ -110,9 +110,9 @@ h3 {
   text-transform: uppercase;
   color: $color-turquoise;
 
-  @media (max-width: 340px) {
+  @media (max-width: 400px) {
     font-weight: 500;
-    font-size: 24px;
+    font-size: 26px;
   }
 }
 
@@ -120,7 +120,7 @@ h4 {
   font-weight: 500;
   font-size: 42px;
   text-transform: uppercase;
-  @include mobile {
+  @media (max-width: 400px) {
     font-size: 26px;
   }
 }
