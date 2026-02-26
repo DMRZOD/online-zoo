@@ -5,8 +5,11 @@
 
 // Components
 @use "components/header";
+@use "components/footer";
 @use "components/buttons";
 @use "components/cards";
+@use "components/pagination";
+@use "components/donation";
 
 // Pages
 @use "pages/landing";
