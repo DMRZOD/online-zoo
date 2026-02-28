@@ -137,3 +137,7 @@ p {
   line-height: 1.5;
   color: $color-black;
 }
+
+.no-scroll {
+  overflow: hidden;
+}
