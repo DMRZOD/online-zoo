@@ -33,7 +33,7 @@
 
   &__dialog {
     position: relative;
-    width: min(1120px, 100%);
+    width: min(1160px, 100%);
     max-height: calc(100vh - 40px);
     overflow-y: auto;
     background-color: #f4f4f4;
@@ -60,7 +60,7 @@
   }
 
   &__image {
-    height: 355px;
+    height: 387px;
 
     img {
       width: 100%;
@@ -73,38 +73,39 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
-    padding: 30px 80px 40px;
+    gap: 30px;
+    padding: 20px 80px 40px;
   }
 
   &__title {
-    max-width: 770px;
+    max-width: 678px;
     text-align: center;
-    font-weight: 500;
-    font-size: 60px;
-    line-height: 1.03;
+    font-weight: 600;
+    font-size: 54px;
     color: $color-orange;
     text-transform: uppercase;
   }
 
   &__text {
-    max-width: 780px;
+    max-width: 570px;
     text-align: center;
+    font-weight: 400;
     font-size: 18px;
-    line-height: 1.45;
-    color: #222;
+    line-height: 1.5;
+    color: $color-black;
   }
 
   &__amounts {
+    margin-top: 20px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 20px;
+    gap: 40px;
   }
 
   &__amount {
-    min-height: 74px;
-    padding: 10px;
+    min-height: 65px;
+    padding: 21.5px 10px;
     border-radius: 5px;
     background-color: $color-turquoise;
     font-weight: 600;
