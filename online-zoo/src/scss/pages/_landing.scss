@@ -340,7 +340,6 @@
   }
 
   &__btn {
-    display: block;
     margin: 0 auto;
 
     @include mobile {
@@ -405,6 +404,14 @@
     background-color: $color-white;
   }
 
+  &__step {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.3;
+    text-transform: none;
+    color: $color-white;
+  }
+
   &__body {
     margin-top: 82px;
     display: grid;
@@ -462,6 +469,11 @@
 
   &__subtitle {
     margin-top: 30px;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.3;
+    text-transform: none;
+    color: $color-white;
   }
 
   &__description {
@@ -571,6 +583,11 @@
   }
 
   &__subtitle {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.3;
+    color: $color-white;
+
     @include mobile {
       font-weight: 400;
       font-size: 18px;
@@ -699,6 +716,9 @@
   &__subtitle {
     max-width: 537px;
     margin-top: 50px;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.3;
     color: $color-black;
 
     @include laptop {
@@ -779,7 +799,6 @@
   }
 
   &__btn {
-    display: block;
     margin: 0 auto;
 
     @include tablet {

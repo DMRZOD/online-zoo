@@ -20,17 +20,19 @@
     background: #d26004;
   }
 
+  &,
   a {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    span {
-      font-weight: 600;
-      font-size: 18px;
-      text-transform: uppercase;
-      color: $color-white;
-    }
+  }
+
+  span {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $color-white;
   }
 }
 
@@ -84,17 +86,19 @@
     background: #05786e;
   }
 
+  &,
   a {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    span {
-      font-weight: 600;
-      font-size: 18px;
-      text-transform: uppercase;
-      color: $color-white;
-    }
+  }
+
+  span {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $color-white;
   }
 }
 
@@ -163,27 +167,27 @@
   &:active {
     background: $color-navy;
     border-color: $color-white;
-    a {
-      span {
-        color: $color-white;
-      }
-      svg path {
-        fill: $color-white;
-      }
+    span {
+      color: $color-white;
+    }
+    svg path {
+      fill: $color-white;
     }
   }
 
+  &,
   a {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    span {
-      font-weight: 600;
-      font-size: 18px;
-      text-transform: uppercase;
-      color: $color-navy;
-    }
+  }
+
+  span {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $color-navy;
   }
 }
 
@@ -202,6 +206,7 @@
     padding: 9px;
   }
 
+  &,
   a {
     @include flex-center;
     gap: 10px;
@@ -211,12 +216,8 @@
   &:active {
     background: $color-turquoise;
     border-color: $color-white;
-    a {
-      @include flex-center;
-      gap: 10px;
-      span {
-        color: $color-white;
-      }
+    span {
+      color: $color-white;
     }
   }
 
@@ -244,27 +245,27 @@
   &:hover,
   &:active {
     background: $color-orange;
-    a {
-      span {
-        color: $color-white;
-      }
-      svg path {
-        fill: $color-white;
-      }
+    span {
+      color: $color-white;
+    }
+    svg path {
+      fill: $color-white;
     }
   }
 
+  &,
   a {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    span {
-      font-weight: 600;
-      font-size: 18px;
-      text-transform: uppercase;
-      color: $color-orange;
-    }
+  }
+
+  span {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $color-orange;
   }
 }
 
