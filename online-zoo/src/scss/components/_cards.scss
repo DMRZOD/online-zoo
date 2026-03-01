@@ -52,6 +52,7 @@
     width: 240px;
     position: absolute;
     bottom: 50px;
+    z-index: 2;
 
     @include laptop {
       bottom: 35px;
@@ -60,6 +61,12 @@
     @include tablet {
       bottom: 11px;
     }
+  }
+
+  &__link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
   }
 }
 
@@ -146,6 +153,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 30px;
+  position: relative;
 
   @include tablet {
     display: grid;
@@ -197,6 +205,7 @@
     margin: 0 auto;
     width: 142px;
     margin-bottom: 50px;
+    z-index: 2;
 
     @include laptop {
       margin-bottom: 40px;
@@ -213,5 +222,11 @@
     a {
       font-size: 18px;
     }
+  }
+
+  &__link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
   }
 }

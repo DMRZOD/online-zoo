@@ -9,7 +9,6 @@
   transition: $transition;
   @include flex-center;
   gap: 10px;
-
   @include mobile {
     width: 100%;
     padding: 11.5px;
@@ -32,6 +31,32 @@
       text-transform: uppercase;
       color: $color-white;
     }
+  }
+}
+
+.button-primary-2 {
+  width: 240px;
+  padding: 26px;
+  background-color: $color-orange;
+  border-radius: 5px;
+  transition: $transition;
+  @include flex-center;
+  gap: 10px;
+  @include mobile {
+    width: 100%;
+    padding: 11.5px;
+  }
+
+  &:hover,
+  &:active {
+    box-shadow: 0 4px 30px 0 rgba(245, 128, 33, 0.3);
+    background: #d26004;
+  }
+  span {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $color-white;
   }
 }
 
@@ -188,17 +213,11 @@
     }
   }
 
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    span {
-      font-weight: 600;
-      font-size: 18px;
-      text-transform: uppercase;
-      color: $color-white;
-    }
+  span {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $color-white;
   }
 }
 
@@ -257,6 +276,7 @@
   justify-content: center;
   background: rgba($color-black, 0.5);
   transition: $transition;
+  z-index: 2;
 
   &:hover,
   &:active {

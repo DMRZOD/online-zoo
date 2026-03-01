@@ -119,6 +119,12 @@
     margin: 50px 0 100px;
     position: relative;
 
+    &-link {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
     @include laptop {
       margin: 35px 0 10px;
     }
