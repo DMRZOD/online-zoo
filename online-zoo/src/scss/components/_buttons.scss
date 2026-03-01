@@ -202,11 +202,18 @@
     padding: 9px;
   }
 
+  a {
+    @include flex-center;
+    gap: 10px;
+  }
+
   &:hover,
   &:active {
     background: $color-turquoise;
     border-color: $color-white;
     a {
+      @include flex-center;
+      gap: 10px;
       span {
         color: $color-white;
       }
