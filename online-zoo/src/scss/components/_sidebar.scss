@@ -156,6 +156,10 @@
   }
 
   &__down {
+    img {
+      transform: rotate(180deg);
+    }
+
     @include flex-center;
     height: 74px;
     width: 74px;
@@ -293,7 +297,7 @@
 
   .sidebar__down {
     img {
-      transform: rotate(180deg);
+      transform: rotate(0deg);
     }
   }
 }
