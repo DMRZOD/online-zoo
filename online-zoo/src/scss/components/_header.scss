@@ -57,6 +57,7 @@
     text-transform: uppercase;
     line-height: 1.5;
     color: $color-black;
+    transition: $transition;
 
     &:hover,
     &_active {
@@ -77,6 +78,11 @@
     @include flex-center;
     width: 40px;
     height: 40px;
+    transition: $transition;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__burger {

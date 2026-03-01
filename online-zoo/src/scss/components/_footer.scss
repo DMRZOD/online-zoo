@@ -22,8 +22,11 @@
     padding-bottom: 80px;
 
     @include laptop {
-      flex-wrap: wrap;
       row-gap: 50px;
+    }
+
+    @media (max-width: 1080px) {
+      flex-wrap: wrap;
     }
 
     @media (max-width: 812px) {
@@ -93,19 +96,6 @@
 
     &:last-child {
       min-width: 120px;
-    }
-  }
-
-  &__btn {
-    padding: 26px 33.86px !important;
-
-    @include mobile {
-      padding: 9px 5px !important;
-      max-width: 100%;
-
-      a {
-        font-size: 16px;
-      }
     }
   }
 

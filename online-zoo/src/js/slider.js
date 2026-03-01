@@ -1,6 +1,3 @@
-import "normalize.css";
-import "../scss/main.scss";
-
 export const initPetsSlider = () => {
   const cardSlider = document.querySelector(".pets__slider");
   const cardList = document.querySelector(".pets__list");

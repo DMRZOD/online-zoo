@@ -1,0 +1,156 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.sidebar {
+  position: absolute;
+  top: 110px;
+  left: 0;
+  z-index: 2000;
+  background-color: $color-navy;
+  height: 855px;
+  width: 300px;
+  transition:
+    width 0.3s ease,
+    transform 0.3s ease;
+
+  &__top {
+    border-bottom: 1px solid $color-white;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__live {
+    width: 120px;
+    height: 38px;
+    padding: 8px 0;
+    border-radius: 0 0 5px 0;
+    @include flex-center;
+    gap: 10px;
+    background-color: $color-orange;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  &__toggle {
+    width: 74px;
+    height: 74px;
+    @include flex-center;
+
+    img {
+      transform: rotate(180deg);
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    border-bottom: 1px solid $color-white;
+
+    &-link {
+      height: 172px;
+      @include flex-center;
+      gap: 20px;
+      padding: 17px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    &-icon {
+      @include flex-center;
+      height: 50px;
+      width: 66.67px;
+      transition:
+        width 0.3s ease,
+        height 0.3s ease,
+        background-color 0.3s ease,
+        border-radius 0.3s ease;
+      svg {
+        transition:
+          width 0.3s ease,
+          height 0.3s ease;
+        path {
+          transition: fill 0.3s ease;
+        }
+      }
+    }
+
+    &-text {
+      max-width: 170px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    &_active {
+      .sidebar__item-icon {
+        svg path {
+          fill: $color-white;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    @include flex-center;
+    height: 86px;
+  }
+
+  &__down {
+    @include flex-center;
+    height: 74px;
+    width: 74px;
+  }
+}
+
+.sidebar_collapsed {
+  width: 220px;
+
+  .sidebar__toggle {
+    img {
+      transform: rotate(0deg);
+    }
+  }
+
+  .sidebar__item-icon {
+    background: $color-orange;
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    svg {
+      width: 80px;
+      height: 60px;
+      path {
+        fill: $color-navy;
+      }
+    }
+  }
+
+  .sidebar__item-text {
+    display: none;
+  }
+
+  .sidebar__item_active {
+    .sidebar__item-icon {
+      background: $color-white;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: -8px;
+        border: 3px solid $color-white;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.sidebar_fixed {
+  position: fixed;
+  top: 0;
+}
