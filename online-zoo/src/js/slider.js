@@ -59,3 +59,32 @@ export const initReviewSlider = () => {
   prevBtn.addEventListener("click", prev);
   nextBtn.addEventListener("click", next);
 };
+
+export const initLiveViewsSlider = () => {
+  const carousels = document.querySelectorAll(".live__carousel");
+  if (!carousels.length) return;
+
+  carousels.forEach((carousel) => {
+    const camsList = carousel.querySelector(".live__cams");
+    const navButtons = carousel.querySelectorAll(".live__nav");
+
+    if (!camsList || navButtons.length < 2) return;
+
+    const [prevButton, nextButton] = navButtons;
+
+    prevButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      const items = camsList.querySelectorAll(".live__cams-item");
+      const lastItem = items[items.length - 1];
+      if (!lastItem) return;
+      camsList.prepend(lastItem);
+    });
+
+    nextButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      const firstItem = camsList.querySelector(".live__cams-item");
+      if (!firstItem) return;
+      camsList.append(firstItem);
+    });
+  });
+};
