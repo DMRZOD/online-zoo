@@ -41,7 +41,7 @@
   &__title {
     margin-bottom: 20px;
 
-    @include tablet {
+    @media (max-width: 820px) {
       text-align: center;
       margin-bottom: 30px;
     }
@@ -50,7 +50,7 @@
   &__text {
     color: $color-white;
 
-    @include tablet {
+    @media (max-width: 820px) {
       text-align: center;
     }
   }

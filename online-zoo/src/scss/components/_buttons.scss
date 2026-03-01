@@ -273,3 +273,7 @@
     transform: translateX(2px);
   }
 }
+
+.button__wrapper {
+  @include container;
+}
