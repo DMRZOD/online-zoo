@@ -540,6 +540,52 @@
       </div>
     </footer>
 
+    <div class="donation-popup" aria-hidden="true">
+      <div class="donation-popup__overlay"></div>
+      <div
+        class="donation-popup__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="donation-popup-title"
+      >
+        <button
+          class="donation-popup__close"
+          type="button"
+          aria-label="Close donation popup"
+        >
+          &times;
+        </button>
+
+        <div class="donation-popup__image">
+          <img
+            src="/images/care/touch-the-animal.jpg"
+            alt="Human hand and lion paw"
+          />
+        </div>
+
+        <div class="donation-popup__content">
+          <h4 class="donation-popup__title" id="donation-popup-title">
+            TOGETHER WE CARE, SAVE AND PROTECT!
+          </h4>
+          <p class="donation-popup__text">
+            Your most generous gift not only cares for countless animals, but it
+            also offers hope and a vital lifeline to the world's most endangered
+            wildlife relying on us to survive.
+          </p>
+          <div class="donation-popup__amounts">
+            <button class="donation-popup__amount" type="button">$20</button>
+            <button class="donation-popup__amount" type="button">$30</button>
+            <button class="donation-popup__amount" type="button">$50</button>
+            <button class="donation-popup__amount" type="button">$80</button>
+            <button class="donation-popup__amount" type="button">$100</button>
+            <button class="donation-popup__amount" type="button">
+              OTHER AMOUNT
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>
