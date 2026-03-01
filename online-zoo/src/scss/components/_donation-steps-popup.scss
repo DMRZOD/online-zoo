@@ -45,15 +45,16 @@
 
   &__header {
     background-color: $color-orange;
-    padding: 30px 20px;
+    padding: 42px 40px;
   }
 
   &__title {
     text-align: center;
     color: $color-white;
     font-weight: 500;
-    font-size: 64px;
     text-transform: uppercase;
+    font-weight: 500;
+    font-size: 42px;
   }
 
   &__step {
@@ -66,11 +67,12 @@
 
   &__section-title {
     border-bottom: 1px solid #c5c7cf;
-    text-align: center;
     color: #1c1c1c;
     font-weight: 600;
-    font-size: 26px;
-    padding: 28px 20px 24px;
+    padding: 50px 80px 10px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #000;
   }
 
   &__section-body {
@@ -112,8 +114,8 @@
 
   &__other-row {
     display: grid;
-    grid-template-columns: minmax(240px, 1fr) minmax(240px, 1fr);
-    gap: 20px;
+    grid-template-columns: minmax(120px, 200px) minmax(120px, 200px);
+    gap: 40px;
     margin-bottom: 30px;
   }
 
@@ -151,8 +153,8 @@
 
   &__pet-row {
     display: grid;
-    grid-template-columns: minmax(240px, 1fr) minmax(280px, 2fr);
-    gap: 20px;
+    grid-template-columns: minmax(120px, 200px) minmax(280px, 2fr);
+    gap: 40px;
     align-items: start;
     margin-bottom: 24px;
   }
@@ -378,6 +380,7 @@
   &__button {
     min-width: 260px;
     min-height: 74px;
+    padding: 0 35px;
     border-radius: 5px;
     background-color: $color-turquoise;
     color: $color-white;
@@ -531,8 +534,9 @@
     }
 
     &__nav {
+      margin-top: 20px;
       grid-template-columns: 1fr;
-      gap: 12px;
+      gap: 20px;
       justify-items: center;
     }
 
