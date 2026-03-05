@@ -1,0 +1,307 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.button-primary {
+  width: 240px;
+  padding: 26px;
+  background-color: $color-orange;
+  border-radius: 5px;
+  transition: $transition;
+  @include flex-center;
+  gap: 10px;
+  @include mobile {
+    width: 100%;
+    padding: 11.5px;
+  }
+
+  &:hover,
+  &:active {
+    box-shadow: 0 4px 30px 0 rgba(245, 128, 33, 0.3);
+    background: #d26004;
+  }
+
+  &,
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  span {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $color-white;
+  }
+}
+
+.button-primary-2 {
+  width: 240px;
+  padding: 26px;
+  background-color: $color-orange;
+  border-radius: 5px;
+  transition: $transition;
+  @include flex-center;
+  gap: 10px;
+  @include mobile {
+    width: 100%;
+    padding: 11.5px;
+  }
+
+  &:hover,
+  &:active {
+    box-shadow: 0 4px 30px 0 rgba(245, 128, 33, 0.3);
+    background: #d26004;
+  }
+  span {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $color-white;
+  }
+}
+
+.button-secondary {
+  width: 360px;
+  padding: 26px;
+  background-color: $color-turquoise;
+  border-radius: 5px;
+  transition: $transition;
+  @include flex-center;
+  gap: 10px;
+
+  @include tablet {
+    width: 290px;
+  }
+
+  @include mobile {
+    width: 100%;
+    padding: 14px;
+  }
+
+  &:hover,
+  &:active {
+    box-shadow: 0 4px 30px 0 rgba(0, 160, 146, 0.3);
+    background: #05786e;
+  }
+
+  &,
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  span {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $color-white;
+  }
+}
+
+.button-donation {
+  border-radius: 5px;
+  border: 1px solid $color-white;
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) minmax(76px, 80px);
+  align-items: center;
+  overflow: hidden;
+
+  @include mobile {
+    grid-template-columns: minmax(0, 240px) minmax(0, 58px);
+  }
+
+  &:hover,
+  &:active {
+    .button-donation__icon {
+      background: #d26004;
+    }
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $color-white;
+    padding: 26px 14px;
+
+    @include tablet {
+      padding: 26px 39px;
+    }
+
+    @include mobile {
+      padding: 12px 26px;
+      font-size: 16px;
+    }
+  }
+
+  &__icon {
+    @include flex-center;
+    border-radius: 5px;
+    background: $color-orange;
+    color: $color-white;
+    height: 100%;
+    transition: $transition;
+  }
+}
+
+.button-transparent-navy {
+  width: 360px;
+  padding: 26px;
+  background-color: transparent;
+  border: 1px solid $color-navy;
+  border-radius: 5px;
+  transition: $transition;
+  @include flex-center;
+  gap: 10px;
+
+  @include mobile {
+    width: 100%;
+    padding: 9px;
+  }
+
+  &:hover,
+  &:active {
+    background: $color-navy;
+    border-color: $color-white;
+    span {
+      color: $color-white;
+    }
+    svg path {
+      fill: $color-white;
+    }
+  }
+
+  &,
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  span {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $color-navy;
+  }
+}
+
+.button-transparent-turquoise {
+  width: 360px;
+  padding: 26px;
+  background-color: transparent;
+  border: 1px solid $color-white;
+  border-radius: 5px;
+  transition: $transition;
+  @include flex-center;
+  gap: 10px;
+
+  @include mobile {
+    width: 100%;
+    padding: 9px;
+  }
+
+  &,
+  a {
+    @include flex-center;
+    gap: 10px;
+  }
+
+  &:hover,
+  &:active {
+    background: $color-turquoise;
+    border-color: $color-white;
+    span {
+      color: $color-white;
+    }
+  }
+
+  span {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $color-white;
+  }
+}
+
+.button-transparent-orange {
+  padding: 24px;
+  background-color: transparent;
+  border-radius: 5px;
+  transition: $transition;
+  @include flex-center;
+  gap: 10px;
+
+  @include mobile {
+    width: 100%;
+    padding: 11.5px;
+  }
+
+  &:hover,
+  &:active {
+    background: $color-orange;
+    span {
+      color: $color-white;
+    }
+    svg path {
+      fill: $color-white;
+    }
+  }
+
+  &,
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  span {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $color-orange;
+  }
+}
+
+.button-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 68px;
+  height: 48px;
+  border: none;
+  border-radius: 25%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba($color-black, 0.5);
+  transition: $transition;
+  z-index: 2;
+
+  &:hover,
+  &:active {
+    background: $color-orange;
+  }
+
+  &::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 20px solid $color-white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    transform: translateX(2px);
+  }
+}
+
+.button__wrapper {
+  @include container;
+}

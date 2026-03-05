@@ -1,0 +1,574 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.donation-steps-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 2100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+
+  &_open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    .donation-steps-popup__dialog {
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba($color-black, 0.65);
+  }
+
+  &__dialog {
+    position: relative;
+    width: min(1120px, 100%);
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 24px 60px rgba($color-black, 0.55);
+    transform: translateY(24px) scale(0.98);
+    transition: transform 0.3s ease;
+  }
+
+  &__header {
+    background-color: $color-orange;
+    padding: 42px 40px;
+  }
+
+  &__title {
+    text-align: center;
+    color: $color-white;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 42px;
+  }
+
+  &__step {
+    display: none;
+
+    &_active {
+      display: block;
+    }
+  }
+
+  &__section-title {
+    border-bottom: 1px solid #c5c7cf;
+    color: #1c1c1c;
+    font-weight: 600;
+    padding: 50px 80px 10px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #000;
+  }
+
+  &__section-body {
+    padding: 46px 80px 52px;
+  }
+
+  &__field-label {
+    color: #222;
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+
+  &__required {
+    color: $color-turquoise;
+  }
+
+  &__amounts {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  &__amount {
+    min-height: 64px;
+    border-radius: 5px;
+    background-color: #80cfc9;
+    color: $color-white;
+    font-weight: 600;
+    font-size: 18px;
+    transition: background-color 0.25s ease;
+
+    &:hover,
+    &:focus-visible,
+    &_active {
+      background-color: #05786e;
+    }
+  }
+
+  &__other-row {
+    display: grid;
+    grid-template-columns: minmax(120px, 200px) minmax(120px, 200px);
+    gap: 40px;
+    margin-bottom: 30px;
+  }
+
+  &__other-button {
+    min-height: 64px;
+    border-radius: 5px;
+    background-color: $color-turquoise;
+    color: $color-white;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: background-color 0.25s ease;
+
+    &:hover,
+    &:focus-visible,
+    &_active {
+      background-color: #05786e;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    min-height: 64px;
+    border: 1px solid #2f2f2f;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #1f1f1f;
+    font-size: 18px;
+    padding: 0 20px;
+
+    &::placeholder {
+      color: #a4acb5;
+    }
+  }
+
+  &__pet-row {
+    display: grid;
+    grid-template-columns: minmax(120px, 200px) minmax(280px, 2fr);
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 24px;
+  }
+
+  &__pet-label {
+    min-height: 64px;
+    border-radius: 5px;
+    background-color: #80cfc9;
+    color: $color-white;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: background-color 0.25s ease;
+
+    &:hover,
+    &:focus-visible {
+      background-color: #68b9b2;
+    }
+  }
+
+  &__dropdown {
+    position: relative;
+  }
+
+  &__dropdown-toggle {
+    width: 100%;
+    min-height: 64px;
+    border: 1px solid #2f2f2f;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    display: grid;
+    grid-template-columns: 1fr 62px;
+    align-items: stretch;
+    overflow: hidden;
+  }
+
+  &__dropdown-text {
+    align-self: center;
+    text-align: center;
+    color: #a4acb5;
+    font-size: 18px;
+    padding: 0 10px;
+  }
+
+  &__dropdown-icon {
+    @include flex-center;
+    background-color: #80cfc9;
+    transition: transform 0.25s ease;
+  }
+
+  &__dropdown-list {
+    position: absolute;
+    top: calc(100% + 3px);
+    left: 0;
+    right: 0;
+    max-height: 360px;
+    overflow-y: auto;
+    border: 1px solid #2f2f2f;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    display: none;
+    z-index: 4;
+  }
+
+  &__dropdown-item {
+    width: 100%;
+    text-align: left;
+    color: #202020;
+    font-size: 18px;
+    padding: 14px 18px;
+    transition: background-color 0.2s ease;
+
+    &:hover,
+    &:focus-visible,
+    &_selected {
+      background-color: #80cfc9;
+    }
+  }
+
+  &__dropdown_open {
+    .donation-steps-popup__dropdown-list {
+      display: block;
+    }
+
+    .donation-steps-popup__dropdown-icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__check-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 42px;
+    cursor: pointer;
+  }
+
+  &__check-input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+  }
+
+  &__check-box {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #2f2f2f;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease;
+  }
+
+  &__check-input:checked + .donation-steps-popup__check-box {
+    background-color: $color-turquoise;
+  }
+
+  &__check-text {
+    color: #222;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  &__field {
+    margin-bottom: 30px;
+  }
+
+  &__hint {
+    color: #535353;
+    font-size: 18px;
+    line-height: 1.4;
+    max-width: 680px;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: minmax(300px, 2fr) minmax(180px, 1fr);
+    gap: 20px 40px;
+  }
+
+  &__row-full {
+    grid-column: 1 / -1;
+  }
+
+  &__select-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 240px));
+    gap: 20px;
+  }
+
+  &__select-wrap {
+    position: relative;
+  }
+
+  &__select {
+    width: 100%;
+    min-height: 64px;
+    border: 1px solid #2f2f2f;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #a4acb5;
+    font-size: 18px;
+    padding: 0 70px 0 20px;
+    appearance: none;
+  }
+
+  &__select-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 62px;
+    height: 64px;
+    @include flex-center;
+    background-color: #80cfc9;
+    border-left: 1px solid #2f2f2f;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    pointer-events: none;
+  }
+
+  &__nav {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 24px;
+    align-items: center;
+  }
+
+  &__dots {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__dot {
+    width: 14px;
+    height: 14px;
+    border: 1px solid $color-turquoise;
+    border-radius: 50%;
+
+    &_active {
+      background-color: $color-turquoise;
+    }
+  }
+
+  &__back {
+    color: $color-turquoise;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: underline;
+    justify-self: center;
+    transition: opacity 0.25s ease;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 0.7;
+    }
+  }
+
+  &__empty {
+    display: block;
+    min-width: 10px;
+  }
+
+  &__button {
+    min-width: 260px;
+    min-height: 74px;
+    padding: 0 35px;
+    border-radius: 5px;
+    background-color: $color-turquoise;
+    color: $color-white;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    justify-self: end;
+    transition: background-color 0.25s ease;
+
+    &:hover,
+    &:focus-visible {
+      background-color: #05786e;
+    }
+  }
+
+  &__button-icon {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__complete {
+    background-color: $color-orange;
+
+    &:hover,
+    &:focus-visible {
+      background-color: #d26004;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    &__title {
+      font-size: 52px;
+    }
+
+    &__section-title {
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 980px) {
+    &__section-body {
+      padding: 36px 30px 40px;
+    }
+
+    &__amounts {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    &__row {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    &__select-row {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    padding: 10px;
+
+    &__dialog {
+      max-height: calc(100vh - 20px);
+    }
+
+    &__header {
+      padding: 24px 14px;
+    }
+
+    &__title {
+      font-size: 48px;
+      line-height: 1.05;
+    }
+
+    &__section-title {
+      font-size: 22px;
+      padding: 20px 14px;
+    }
+
+    &__section-body {
+      padding: 22px 14px 26px;
+    }
+
+    &__amounts {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    &__amount,
+    &__other-button,
+    &__input,
+    &__pet-label,
+    &__dropdown-toggle,
+    &__select,
+    &__button {
+      min-height: 50px;
+    }
+
+    &__other-row {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    &__pet-row {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    &__dropdown-toggle {
+      grid-template-columns: 1fr 52px;
+    }
+
+    &__dropdown-icon {
+      width: 52px;
+    }
+
+    &__check-row {
+      margin-bottom: 26px;
+      gap: 14px;
+    }
+
+    &__check-box {
+      width: 22px;
+      height: 22px;
+    }
+
+    &__check-text,
+    &__field-label,
+    &__hint {
+      font-size: 16px;
+    }
+
+    &__field {
+      margin-bottom: 20px;
+    }
+
+    &__select-row {
+      grid-template-columns: 1fr;
+    }
+
+    &__select-icon {
+      width: 52px;
+      height: 50px;
+    }
+
+    &__nav {
+      margin-top: 20px;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      justify-items: center;
+    }
+
+    &__button {
+      width: 100%;
+      min-width: 0;
+      justify-self: center;
+    }
+  }
+
+  @media (max-width: 430px) {
+    &__title {
+      font-size: 24px;
+    }
+
+    &__section-title {
+      font-size: 16px;
+    }
+
+    &__amount,
+    &__other-button,
+    &__pet-label,
+    &__button,
+    &__input,
+    &__select,
+    &__dropdown-text {
+      font-size: 14px;
+    }
+
+    &__dropdown-item {
+      font-size: 16px;
+      padding: 10px 12px;
+    }
+  }
+}

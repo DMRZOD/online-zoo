@@ -1,0 +1,62 @@
+@use "variables" as *;
+
+// Responsive breakpoint mixins
+@mixin laptop {
+  @media (max-width: $breakpoint-laptop) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+// Container mixin
+@mixin container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1480px;
+  padding: 0 40px;
+
+  @include laptop {
+    max-width: $breakpoint-laptop;
+  }
+
+  @include tablet {
+    max-width: $breakpoint-tablet;
+    padding: 0 20px;
+  }
+
+  @include mobile {
+    max-width: $breakpoint-mobile;
+    padding: 0 10px;
+  }
+}
+
+// Flexbox mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+
