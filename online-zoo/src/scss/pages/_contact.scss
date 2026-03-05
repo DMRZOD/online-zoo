@@ -51,6 +51,18 @@
     }
   }
 
+  &__title {
+    font-weight: 600;
+    font-size: 54px;
+    text-transform: uppercase;
+    color: $color-turquoise;
+
+    @include mobile {
+      font-weight: 500;
+      font-size: 26px;
+    }
+  }
+
   &__text {
     margin-top: 50px;
 

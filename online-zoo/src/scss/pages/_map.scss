@@ -21,13 +21,16 @@
     color: $color-navy;
     max-width: 600px;
     text-align: center;
-
+    font-weight: 600;
+    font-size: 54px;
+    text-transform: uppercase;
     @include tablet {
       font-weight: 500;
       font-size: 42px;
     }
-
+    
     @include mobile {
+      font-weight: 500;
       font-size: 26px;
       line-height: 1.3;
     }

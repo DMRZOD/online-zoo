@@ -63,6 +63,10 @@
 
   &__title {
     grid-column: 2;
+    font-weight: 600;
+    font-size: 54px;
+    text-transform: uppercase;
+    color: $color-turquoise;
 
     @media (max-width: 900px) {
       font-weight: 500;
@@ -139,6 +143,9 @@
   }
 
   &__subtitle {
+    font-weight: 500;
+    font-size: 42px;
+    text-transform: uppercase;
     color: $color-black;
     text-align: center;
     margin-bottom: 30px;
