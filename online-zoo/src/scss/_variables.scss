@@ -6,10 +6,16 @@ $color-orange: #f58021;
 $color-turquoise: #00a092;
 
 // Breakpoints
-$breakpoint-desktop: 1920px;
-$breakpoint-laptop: 1200px;
-$breakpoint-tablet: 640px;
-$breakpoint-mobile: 430px;
+$breakpoint-2xl: 1480px;
+$breakpoint-xl: 1200px;
+$breakpoint-lg: 920px;
+$breakpoint-md: 640px;
+$breakpoint-sm: 480px;
+$breakpoint-xs: 320px;
 
 // Transition
 $transition: all 0.3s ease;
+
+// Border Radius
+$border-radius: 5px;
+$border-full: 50%;

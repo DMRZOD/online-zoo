@@ -2,91 +2,106 @@
 @use "../mixins" as *;
 
 .pets-card {
-  background-color: $color-navy;
-  color: $color-white;
-  overflow: hidden;
-  border-radius: 5px;
-  width: 100%;
-  height: 100%;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: $color-navy;
+  border-radius: $border-radius;
+  overflow: hidden;
+  width: 440px;
+  height: 747px;
+  @include flex-column;
+  transition: $transition;
 
-  &__image {
-    position: relative;
-    margin-bottom: 30px;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+  @include media-md {
+    width: 300px;
+    height: 600px;
+  }
+
+  &:hover {
+    box-shadow: 0 4px 30px 0 rgba($color-navy, 0.5);
+    transform: scale(1.01);
   }
 
   &__label {
-    @include flex-center;
     position: absolute;
-    top: 0;
-    left: 0;
-    padding: 12px 20px;
     background-color: $color-navy;
-    font-weight: 500;
-    font-size: 26px;
-    line-height: 1.3;
-  }
-
-  &__content {
-    text-align: center;
-    padding: 0 30px;
-  }
-
-  &__name {
-    margin-bottom: 20px;
-    font-weight: 500;
-    font-size: 26px;
-    line-height: 1.3;
-    text-transform: none;
-  }
-
-  &__description {
+    padding: 12px 20px;
+    border-bottom-right-radius: $border-radius;
+    @include text-1;
     color: $color-white;
   }
 
-  &__btn {
-    width: 240px;
-    position: absolute;
-    bottom: 50px;
-    z-index: 2;
+  &__image {
+    width: 100%;
 
-    @include laptop {
-      bottom: 35px;
-    }
-
-    @include tablet {
-      bottom: 11px;
+    img {
+      @include media-md {
+        height: 333px;
+        object-fit: cover;
+      }
     }
   }
 
-  &__link {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
+  &__content {
+    height: 311px;
+    @include flex-column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 30px 50px;
+
+    @include media-md {
+      padding: 15px 15px 10px;
+    }
+  }
+
+  &__top {
+    @include flex-column;
+    row-gap: 20px;
+
+    @include media-md {
+      row-gap: 15px;
+    }
+  }
+
+  &__name {
+    @include text-1;
+    color: $color-white;
+    text-align: center;
+  }
+
+  &__text {
+    @include text-2;
+    color: $color-white;
+    text-align: center;
+  }
+
+  &__btn {
+    padding: 24px 0;
+    width: 240px;
   }
 }
 
 .review-card {
   position: relative;
-  border-radius: 5px;
+  width: 515px;
+  height: 463px;
+  padding: 136px 50px 70px;
+  @include flex-column;
+  justify-content: space-between;
+  border-radius: $border-radius;
   background-color: $color-white;
-  padding: 50px;
+  box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.5);
 
-  @include tablet {
+  @include media-lg {
+    padding: 50px 30px;
+    width: 523px;
+    height: 371px;
     text-align: center;
-    padding: 30px;
   }
 
-  @include mobile {
-    padding: 20px;
+  @include media-sm {
+    width: 300px;
+    height: 549px;
+    padding: 115px 20px 50px;
   }
 
   &__icon {
@@ -94,147 +109,94 @@
     top: 50px;
     left: 50px;
 
-    @include tablet {
-      top: 30px;
-      left: 30px;
+    @include media-lg {
+      top: 40px;
+      left: 40px;
     }
   }
 
   &__title {
-    margin-top: 86px;
-    font-weight: 500;
-    font-size: 26px;
-    line-height: 1.3;
-    text-transform: none;
-    color: $color-black;
+    @include text-1;
 
-    @include tablet {
-      display: block;
-      margin: 20px auto 0 auto;
-      max-width: 225px;
-    }
-
-    @include mobile {
-      margin-top: 96px;
+    @include media-lg {
+      max-width: 290px;
+      margin: 0 auto;
     }
   }
 
   &__text {
+    @include text-2;
     margin-top: 20px;
-    margin-bottom: 90px;
-
-    @include tablet {
-      margin-top: 30px;
-      margin-bottom: 85px;
-    }
-
-    @include mobile {
-      margin-top: 20px;
-      margin-bottom: 110px;
-    }
   }
 
   &__author {
-    position: absolute;
-    left: 50px;
-    bottom: 70px;
     font-weight: 600;
+    font-size: 18px;
     text-transform: uppercase;
-
-    @include tablet {
-      bottom: 50px;
-      left: 50%;
-      translate: -50% 0;
-    }
-
-    @include mobile {
-      min-width: 175px;
-    }
   }
 }
 
 .care-card {
+  @include flex-column;
   background-color: $color-navy;
-  color: $color-white;
+  border-radius: $border-radius;
+  transition: $transition;
   overflow: hidden;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 30px;
-  position: relative;
 
-  @include tablet {
+  &:hover {
+    box-shadow: 0 4px 30px 0 rgba($color-navy, 0.5);
+    transform: scale(1.01);
+  }
+
+  @include media-lg {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @include mobile {
+  @include media-sm {
     grid-template-columns: 1fr;
     grid-template-rows: 350px 1fr;
-    row-gap: 15px;
-  }
-
-  &__image {
-    width: 100%;
-    height: 100%;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
   }
 
   &__content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    min-height: 285px;
+    @include flex-column;
     justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 25px 50px;
+
+    @include media-lg {
+      padding: 66px 20px 34px;
+    }
+
+    @include media-sm {
+      min-height: 220px;
+      padding: 15px 25px 20px;
+      gap: 5px;
+    }
+  }
+
+  &__image {
+    img {
+      width: 100%;
+      max-height: 373px;
+      object-fit: cover;
+
+      @include media-lg {
+        height: 100%;
+      }
+    }
   }
 
   &__text {
-    text-align: center;
-    padding: 0 25px;
+    @include text-2;
     color: $color-white;
-
-    @include tablet {
-      padding: 0 20px;
-      margin-top: 65px;
-    }
-
-    @include mobile {
-      padding: 0 15px;
-      margin-top: 0;
-    }
+    text-align: center;
   }
 
   &__btn {
-    margin: 0 auto;
+    padding: 26px;
     width: 142px;
-    margin-bottom: 50px;
-    z-index: 2;
-
-    @include laptop {
-      margin-bottom: 40px;
-    }
-
-    @include tablet {
-      margin-bottom: 35px;
-    }
-
-    @include mobile {
-      margin-bottom: 20px;
-    }
-
-    &,
-    a {
-      font-size: 18px;
-    }
-  }
-
-  &__link {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
   }
 }

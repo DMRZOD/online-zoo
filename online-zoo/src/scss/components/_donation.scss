@@ -3,10 +3,9 @@
 
 .donation {
   background-color: $color-navy;
-  color: $color-white;
   padding: 50px 0;
 
-  @include mobile {
+  @include media-sm {
     padding: 30px 0;
   }
 
@@ -14,60 +13,39 @@
     @include container;
     @include flex-between;
     align-items: start;
-    gap: 30px;
+    column-gap: 40px;
 
-    @include laptop {
-      padding: 0 100px;
-    }
-
-    @media (max-width: 820px) {
+    @include media-lg {
       flex-direction: column;
-      justify-content: center;
+      row-gap: 30px;
       align-items: center;
-      padding: 0 20px;
-    }
-
-    @include mobile {
-      padding: 0 10px;
-    }
-  }
-
-  &__content {
-    @include laptop {
-      max-width: 576px;
+      text-align: center;
     }
   }
 
   &__title {
-    margin-bottom: 20px;
-
-    @media (max-width: 820px) {
-      text-align: center;
-      margin-bottom: 30px;
-    }
+    @include heading-3;
+    color: $color-white;
   }
 
   &__text {
+    @include text-2;
     color: $color-white;
+    margin-top: 20px;
+    max-width: 610px;
 
-    @media (max-width: 820px) {
-      text-align: center;
+    @include media-lg {
+      margin-top: 30px;
+      max-width: 100%;
     }
   }
 
   &__label {
-    margin-bottom: 10px;
-
-    @include tablet {
-      text-align: center;
-    }
+    @include text-1;
+    color: $color-white;
   }
-}
 
-.landing-donation__text {
-  max-width: 610px;
-}
-
-.animals-donation__text {
-  max-width: 920px;
+  &__btn {
+    margin-top: 10px;
+  }
 }

@@ -1,59 +1,54 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-.button-primary {
-  width: 240px;
-  padding: 26px;
-  background-color: $color-orange;
-  border-radius: 5px;
+.button-user {
+  @include flex;
+  column-gap: 10px;
+  background-color: $color-turquoise;
+  border: 1px solid $color-white;
+  border-radius: 50px;
+  padding: 12px 16px;
   transition: $transition;
-  @include flex-center;
-  gap: 10px;
-  @include mobile {
-    width: 100%;
-    padding: 11.5px;
+
+  &:hover {
+    background-color: #068a7f;
   }
 
-  &:hover,
   &:active {
-    box-shadow: 0 4px 30px 0 rgba(245, 128, 33, 0.3);
-    background: #d26004;
-  }
-
-  &,
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    box-shadow: 0 4px 30px 0 rgba(0, 160, 146, 0.3);
+    background-color: #05786e;
+    transform: scale(1.03);
   }
 
   span {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 18px;
-    text-transform: uppercase;
     color: $color-white;
   }
 }
 
-.button-primary-2 {
-  width: 240px;
-  padding: 26px;
+.button-primary {
   background-color: $color-orange;
-  border-radius: 5px;
+  border-radius: $border-radius;
   transition: $transition;
-  @include flex-center;
-  gap: 10px;
-  @include mobile {
-    width: 100%;
-    padding: 11.5px;
-  }
 
   &:hover,
   &:active {
     box-shadow: 0 4px 30px 0 rgba(245, 128, 33, 0.3);
     background: #d26004;
   }
+
+  &:active {
+    transform: scale(1.03);
+  }
+
+  a {
+    @include flex;
+    justify-content: center;
+    column-gap: 10px;
+    padding: 26px;
+  }
+
   span {
     font-weight: 600;
     font-size: 18px;
@@ -63,35 +58,21 @@
 }
 
 .button-secondary {
-  width: 360px;
-  padding: 26px;
-  background-color: $color-turquoise;
-  border-radius: 5px;
-  transition: $transition;
   @include flex-center;
-  gap: 10px;
-
-  @include tablet {
-    width: 290px;
-  }
-
-  @include mobile {
-    width: 100%;
-    padding: 14px;
-  }
+  column-gap: 10px;
+  padding: 26px;
+  background-color: $color-orange;
+  border-radius: $border-radius;
+  transition: $transition;
 
   &:hover,
   &:active {
-    box-shadow: 0 4px 30px 0 rgba(0, 160, 146, 0.3);
-    background: #05786e;
+    box-shadow: 0 4px 30px 0 rgba(245, 128, 33, 0.3);
+    background: #d26004;
   }
 
-  &,
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+  &:active {
+    transform: scale(1.03);
   }
 
   span {
@@ -103,84 +84,82 @@
 }
 
 .button-donation {
-  border-radius: 5px;
+  @include flex-between;
+  width: 320px;
+  height: 74px;
   border: 1px solid $color-white;
-  display: grid;
-  grid-template-columns: minmax(200px, 1fr) minmax(76px, 80px);
-  align-items: center;
+  border-radius: $border-radius;
   overflow: hidden;
 
-  @include mobile {
-    grid-template-columns: minmax(0, 240px) minmax(0, 58px);
+  @include media-sm {
+    width: 300px;
+    height: 45px;
   }
 
   &:hover,
   &:active {
     .button-donation__icon {
-      background: #d26004;
+      background-color: #d26004;
     }
   }
 
   &__text {
+    padding-left: 14px;
     font-weight: 600;
     font-size: 18px;
     text-transform: uppercase;
     color: $color-white;
-    padding: 26px 14px;
 
-    @include tablet {
-      padding: 26px 39px;
-    }
-
-    @include mobile {
-      padding: 12px 26px;
+    @include media-sm {
       font-size: 16px;
     }
   }
 
   &__icon {
     @include flex-center;
-    border-radius: 5px;
-    background: $color-orange;
-    color: $color-white;
-    height: 100%;
+    background-color: $color-orange;
+    border-radius: $border-radius;
     transition: $transition;
+    width: 80px;
+    height: 100%;
   }
 }
 
-.button-transparent-navy {
-  width: 360px;
-  padding: 26px;
-  background-color: transparent;
-  border: 1px solid $color-navy;
-  border-radius: 5px;
-  transition: $transition;
+.button-turquoise {
   @include flex-center;
-  gap: 10px;
-
-  @include mobile {
-    width: 100%;
-    padding: 9px;
-  }
+  column-gap: 10px;
+  padding: 26px;
+  border: 1px solid $color-white;
+  border-radius: $border-radius;
+  transition: $transition;
 
   &:hover,
   &:active {
-    background: $color-navy;
-    border-color: $color-white;
-    span {
-      color: $color-white;
-    }
-    svg path {
-      fill: $color-white;
-    }
+    background-color: $color-turquoise;
   }
 
-  &,
+  &:active {
+    box-shadow: 0 4px 30px 0 rgba(0, 160, 146, 0.3);
+    transform: scale(1.01);
+  }
+
+  span {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $color-white;
+  }
+}
+
+.button-navy {
+  border: 1px solid $color-navy;
+  border-radius: $border-radius;
+  transition: $transition;
+
   a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    @include flex-center;
+    column-gap: 10px;
+    padding: 26px;
   }
 
   span {
@@ -189,37 +168,56 @@
     text-transform: uppercase;
     color: $color-navy;
   }
+
+  &:hover,
+  &:active {
+    background-color: $color-navy;
+    border-color: $color-white;
+
+    span {
+      color: $color-white;
+    }
+
+    svg path {
+      fill: $color-white;
+    }
+  }
 }
 
-.button-transparent-turquoise {
-  width: 360px;
-  padding: 26px;
-  background-color: transparent;
-  border: 1px solid $color-white;
-  border-radius: 5px;
-  transition: $transition;
+.button-card {
   @include flex-center;
-  gap: 10px;
+  column-gap: 10px;
+  border-radius: $border-radius;
+  transition: $transition;
 
-  @include mobile {
-    width: 100%;
-    padding: 9px;
-  }
-
-  &,
-  a {
-    @include flex-center;
-    gap: 10px;
+  span {
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: $color-orange;
   }
 
   &:hover,
   &:active {
-    background: $color-turquoise;
-    border-color: $color-white;
+    background-color: $color-orange;
+
     span {
       color: $color-white;
     }
+
+    svg path {
+      fill: $color-white;
+    }
   }
+}
+
+.button-contact {
+  @include flex-center;
+  column-gap: 10px;
+  padding: 26px;
+  background-color: $color-turquoise;
+  border-radius: $border-radius;
+  transition: $transition;
 
   span {
     font-weight: 600;
@@ -227,81 +225,29 @@
     text-transform: uppercase;
     color: $color-white;
   }
-}
-
-.button-transparent-orange {
-  padding: 24px;
-  background-color: transparent;
-  border-radius: 5px;
-  transition: $transition;
-  @include flex-center;
-  gap: 10px;
-
-  @include mobile {
-    width: 100%;
-    padding: 11.5px;
-  }
 
   &:hover,
   &:active {
-    background: $color-orange;
-    span {
-      color: $color-white;
-    }
-    svg path {
-      fill: $color-white;
-    }
+    box-shadow: 0 4px 30px 0 rgba(0, 160, 146, 0.3);
+    background: #05786e;
   }
 
-  &,
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-
-  span {
-    font-weight: 600;
-    font-size: 18px;
-    text-transform: uppercase;
-    color: $color-orange;
-  }
-}
-
-.button-play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  width: 68px;
-  height: 48px;
-  border: none;
-  border-radius: 25%;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba($color-black, 0.5);
-  transition: $transition;
-  z-index: 2;
-
-  &:hover,
   &:active {
-    background: $color-orange;
-  }
-
-  &::before {
-    content: "";
-    width: 0;
-    height: 0;
-    border-left: 20px solid $color-white;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    transform: translateX(2px);
+    transform: scale(1.03);
   }
 }
 
-.button__wrapper {
-  @include container;
+.slider__nav {
+  @include flex;
+  column-gap: 55px;
+
+  &-btn {
+    @include flex-center;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: $border-radius;
+    width: 60px;
+    height: 60px;
+    transition: $transition;
+  }
 }
