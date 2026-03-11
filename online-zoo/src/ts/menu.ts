@@ -1,18 +1,18 @@
-export function initMobileMenu() {
-  const burger = document.querySelector(".header__burger");
-  const nav = document.querySelector(".header__nav");
-  const overlay = document.querySelector(".header__overlay");
+export function initMobileMenu(): void {
+  const burger = document.querySelector<HTMLButtonElement>(".header__burger");
+  const nav = document.querySelector<HTMLElement>(".header__nav");
+  const overlay = document.querySelector<HTMLElement>(".header__overlay");
 
   if (!burger || !nav || !overlay) return;
 
-  const closeMenu = () => {
+  const closeMenu = (): void => {
     burger.classList.remove("header__burger_active");
     nav.classList.remove("header__nav_open");
     overlay.classList.remove("header__overlay_visible");
     document.body.classList.remove("no-scroll");
   };
 
-  const openMenu = () => {
+  const openMenu = (): void => {
     burger.classList.add("header__burger_active");
     nav.classList.add("header__nav_open");
     overlay.classList.add("header__overlay_visible");
@@ -20,7 +20,10 @@ export function initMobileMenu() {
   };
 
   burger.addEventListener("click", () => {
-    const isMenuOpen = burger.classList.contains("header__burger_active");
+    const isMenuOpen: boolean = burger.classList.contains(
+      "header__burger_active",
+    );
+
     if (isMenuOpen) {
       closeMenu();
       return;

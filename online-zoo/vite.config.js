@@ -6,14 +6,11 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: resolve(__dirname, "index.html"),
-
         map: resolve(__dirname, "pages/map.html"),
+        animals: resolve(__dirname, "pages/animals.html"),
         contact: resolve(__dirname, "pages/contact.html"),
-
-        eagles: resolve(__dirname, "pages/animals/eagles.html"),
-        gorilla: resolve(__dirname, "pages/animals/gorilla.html"),
-        lemur: resolve(__dirname, "pages/animals/lemur.html"),
-        panda: resolve(__dirname, "pages/animals/panda.html"),
+        signIn: resolve(__dirname, "pages/sign-in.html"),
+        register: resolve(__dirname, "pages/register.html"),
       },
     },
   },
