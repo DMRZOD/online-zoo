@@ -23,6 +23,14 @@
     }
   }
 
+  &__content {
+    max-width: 920px;
+
+    @include media-lg {
+      max-width: 100%;
+    }
+  }
+
   &__title {
     @include heading-3;
     color: $color-white;
@@ -32,11 +40,9 @@
     @include text-2;
     color: $color-white;
     margin-top: 20px;
-    max-width: 610px;
 
     @include media-lg {
       margin-top: 30px;
-      max-width: 100%;
     }
   }
 

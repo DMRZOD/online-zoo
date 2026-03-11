@@ -9,9 +9,10 @@
 @use "components/footer";
 @use "components/buttons";
 @use "components/cards";
+@use "components/sidebar";
 
 // Pages
 @use "pages/landing";
 @use "pages/map";
-// @use "pages/animals";
+@use "pages/animals";
 @use "pages/contact";

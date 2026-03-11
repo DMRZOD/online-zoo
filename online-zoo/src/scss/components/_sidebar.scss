@@ -1,0 +1,263 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.sidebar {
+  background-color: $color-navy;
+  position: absolute;
+  top: 110px;
+  left: 0;
+  width: 300px;
+  z-index: 2000;
+  transition:
+    width 0.3s ease,
+    transform 0.3s ease;
+
+  @include media-lg {
+    width: 230px;
+  }
+
+  &__top {
+    border-bottom: 1px solid $color-white;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__live {
+    width: 120px;
+    height: 38px;
+    padding: 8px 0;
+    border-radius: 0 0 5px 0;
+    @include flex-center;
+    gap: 10px;
+    background-color: $color-orange;
+    color: $color-white;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+
+    @include media-lg {
+      width: 90px;
+      height: 30px;
+      padding: 4px 0;
+    }
+  }
+
+  &__toggle {
+    width: 74px;
+    height: 74px;
+    @include flex-center;
+
+    img {
+      transform: rotate(180deg);
+      transition: transform 0.3s ease;
+    }
+
+    @include media-lg {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 70px 170px;
+    align-items: center;
+    gap: 20px;
+    padding: 50px 20px;
+    border-bottom: 1px solid $color-white;
+    cursor: pointer;
+    transition: $transition;
+
+    @include media-lg {
+      grid-template-columns: 40px 140px;
+      gap: 20px;
+      padding: 15px;
+    }
+
+    @include media-sm {
+      grid-template-columns: 30px 160px;
+      padding: 10px;
+    }
+
+    &-icon {
+      @include flex-center;
+
+      svg {
+        @include media-sm {
+          height: 30px;
+        }
+      }
+    }
+
+    &-text {
+      @include text-2;
+      color: $color-white;
+
+      @include media-lg {
+        font-size: 16px;
+      }
+
+      @include media-lg {
+        font-size: 14px;
+      }
+    }
+
+    &_active {
+      .sidebar__item-icon {
+        svg path {
+          fill: $color-white;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    @include flex-center;
+    height: 85px;
+
+    @include media-lg {
+      height: 50px;
+    }
+  }
+
+  &__down {
+    @include flex-center;
+    width: 70px;
+    height: 70px;
+
+    @include media-lg {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.sidebar_collapsed {
+  width: 220px;
+
+  @include media-xl {
+    width: 115px;
+  }
+
+  @include media-lg {
+    width: 80px;
+  }
+
+  @include media-sm {
+    width: 50px;
+  }
+
+  .sidebar__top {
+    @include media-xl {
+      justify-content: center;
+    }
+  }
+
+  .sidebar__live {
+    @include media-xl {
+      display: none;
+    }
+  }
+
+  .sidebar__toggle {
+    img {
+      transform: rotate(0deg);
+    }
+  }
+
+  .sidebar__item {
+    @include flex-center;
+    padding: 35px;
+
+    @include media-xl {
+      padding: 60px 30px;
+    }
+
+    @include media-lg {
+      padding: 35px 20px;
+    }
+
+    @include media-sm {
+      padding: 15px 12px;
+    }
+  }
+
+  .sidebar__item-icon {
+    background: $color-orange;
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    svg {
+      height: 60px;
+      path {
+        fill: $color-navy;
+      }
+    }
+
+    @include media-xl {
+      width: auto;
+      height: auto;
+      background: none;
+
+      svg {
+        height: 40px;
+        path {
+          fill: $color-orange;
+        }
+      }
+    }
+
+    @include media-lg {
+      svg {
+        height: 30px;
+      }
+    }
+
+    @include media-sm {
+      svg {
+        height: 20px;
+      }
+    }
+  }
+
+  .sidebar__item-text {
+    display: none;
+  }
+
+  .sidebar__item_active {
+    .sidebar__item-icon {
+      background: $color-white;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: -8px;
+        border: 3px solid $color-white;
+        border-radius: 50%;
+      }
+
+      @include media-xl {
+        background: none;
+
+        svg path {
+          fill: $color-white;
+        }
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.sidebar_fixed {
+  position: fixed;
+  top: 0;
+}
