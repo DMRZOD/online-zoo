@@ -1,51 +1,8 @@
-import type { Feedback, Pet } from "../types/api";
 import { getFeedback, getPets } from "../services/endpoint";
-
-const ERROR_TEXT: string = "Something went wrong. Please, refresh the page";
-const LOADER_TEXT: string = "Loading...";
-
-const createPetCard = (pet: Pet): string => {
-  return `
-    <a href="#" class="pets-card">
-      <div class="pets-card__label">${pet.name}</div>
-      <div class="pets-card__image">
-        <img src="/images/cards/panda.jpg" alt="${pet.commonName}" />
-      </div>
-      <div class="pets-card__content">
-        <div class="pets-card__top">
-          <div class="pets-card__name">${pet.commonName}</div>
-          <div class="pets-card__text">${pet.description}</div>
-        </div>
-        <button class="button-card pets-card__btn" type="button">
-          <span>View Live Cam</span>
-        </button>
-      </div>
-    </a>
-  `;
-};
-
-const createFeedbackCard = (item: Feedback): string => {
-  return `
-    <div class="review-card">
-      <div class="review-card__icon">
-        <img src="/icons/quote.svg" alt="Quote Mark" />
-      </div>
-      <div class="review-card__content">
-        <h4 class="review-card__title">${item.city}, ${item.month} ${item.year}</h4>
-        <p class="review-card__text">${item.text}</p>
-      </div>
-      <span class="review-card__author">${item.name}</span>
-    </div>
-  `;
-};
-
-const renderPets = (track: HTMLElement, pets: Pet[]): void => {
-  track.innerHTML = pets.map(createPetCard).join("");
-};
-
-const renderFeedback = (track: HTMLElement, feedback: Feedback[]): void => {
-  track.innerHTML = feedback.map(createFeedbackCard).join("");
-};
+import { renderFeedback, renderPets } from "../components/cards";
+import { renderLoader } from "../components/loader";
+import { renderErrorState } from "../components/error";
+import { ERROR_TEXT } from "../services/config";
 
 export const initLandingPage = (): void => {
   const petsTrack = document.querySelector<HTMLElement>(".pets__slider-track");
@@ -57,27 +14,27 @@ export const initLandingPage = (): void => {
     return;
   }
 
-  petsTrack.textContent = LOADER_TEXT;
-  reviewTrack.textContent = LOADER_TEXT;
+  // Render loader
+  renderLoader(petsTrack);
+  renderLoader(reviewTrack);
 
-  void loadLandingData(petsTrack, reviewTrack);
-};
+  const loadData = async (): Promise<void> => {
+    try {
+      // Fetch data
+      const [petsResponse, feedbackResponse] = await Promise.all([
+        getPets(),
+        getFeedback(),
+      ]);
 
-const loadLandingData = async (
-  petsTrack: HTMLElement,
-  reviewTrack: HTMLElement,
-): Promise<void> => {
-  try {
-    const [petsResponse, feedbackResponse] = await Promise.all([
-      getPets(),
-      getFeedback(),
-    ]);
-    renderPets(petsTrack, petsResponse.data);
-    renderFeedback(reviewTrack, feedbackResponse.data);
-  } catch (error: unknown) {
-    console.error("Landing data load error:", error);
+      // Render data
+      renderPets(petsTrack, petsResponse.data);
+      renderFeedback(reviewTrack, feedbackResponse.data);
+    } catch {
+      // Render error
+      renderErrorState(petsTrack, ERROR_TEXT);
+      renderErrorState(reviewTrack, ERROR_TEXT);
+    }
+  };
 
-    petsTrack.textContent = ERROR_TEXT;
-    reviewTrack.textContent = ERROR_TEXT;
-  }
+  void loadData();
 };
