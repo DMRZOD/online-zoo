@@ -1,0 +1,1 @@
+export const initAnimalsPage = (): void => {};

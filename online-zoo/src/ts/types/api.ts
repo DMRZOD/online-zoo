@@ -51,9 +51,35 @@ export interface LoginPayload {
   password: string;
 }
 
+export interface AuthUser {
+  login: string;
+  name: string;
+  email: string;
+}
+
+export interface AuthSession {
+  user: AuthUser;
+  token: string;
+}
+
 export interface DonationPayload {
   name: string;
   email: string;
   amount: number;
   petId: number;
+}
+
+export interface SavedCard {
+  cardNumber: string;
+  expiryDate: string;
+  cvv: string;
+}
+
+// API Types
+
+export type Result<T> = { ok: true; data: T } | { ok: false; error: ApiError };
+
+export interface ApiError {
+  message: string;
+  status: number;
 }
