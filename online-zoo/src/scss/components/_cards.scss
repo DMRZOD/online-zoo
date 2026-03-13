@@ -89,7 +89,6 @@
   justify-content: space-between;
   border-radius: $border-radius;
   background-color: $color-white;
-  box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.5);
 
   @include media-lg {
     padding: 50px 30px;

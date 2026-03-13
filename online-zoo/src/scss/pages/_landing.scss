@@ -317,13 +317,9 @@
   }
 
   &__slider {
-    padding-left: 260px;
+    padding-left: 40px;
     max-width: 100%;
     overflow: hidden;
-
-    @include media-xl {
-      padding-left: 40px;
-    }
 
     @include media-md {
       padding-left: 20px;

@@ -2,15 +2,18 @@ import { getFeedback, getPets } from "../services/endpoint";
 import { renderFeedback, renderPets } from "../components/cards";
 import { renderLoader } from "../components/loader";
 import { renderErrorState } from "../components/error";
+import { initInfiniteSlider } from "../components/slider";
 import { ERROR_TEXT } from "../services/config";
 
 export const initLandingPage = (): void => {
+  const petsSection = document.querySelector<HTMLElement>(".pets");
   const petsTrack = document.querySelector<HTMLElement>(".pets__slider-track");
+  const reviewSection = document.querySelector<HTMLElement>(".review");
   const reviewTrack = document.querySelector<HTMLElement>(
     ".review__slider-track",
   );
 
-  if (!petsTrack || !reviewTrack) {
+  if (!petsSection || !petsTrack || !reviewSection || !reviewTrack) {
     return;
   }
 
@@ -29,6 +32,19 @@ export const initLandingPage = (): void => {
       // Render data
       renderPets(petsTrack, petsResponse.data);
       renderFeedback(reviewTrack, feedbackResponse.data);
+
+      // Render slider
+      initInfiniteSlider({
+        section: petsSection,
+        track: petsTrack,
+        card: ".pets-card",
+      });
+
+      initInfiniteSlider({
+        section: reviewSection,
+        track: reviewTrack,
+        card: ".review-card",
+      });
     } catch {
       // Render error
       renderErrorState(petsTrack, ERROR_TEXT);
