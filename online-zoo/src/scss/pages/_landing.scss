@@ -714,7 +714,7 @@
 
     @include media-lg {
       margin: 50px 0;
-      overflow: hidden;
+      overflow: scroll;
     }
 
     @include media-sm {

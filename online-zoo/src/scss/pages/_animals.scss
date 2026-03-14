@@ -18,6 +18,19 @@
 
   &__container {
     @include container;
+    padding-left: 260px;
+
+    @include media-xl {
+      padding-left: 135px;
+    }
+
+    @include media-lg {
+      padding-left: 80px;
+    }
+
+    @include media-sm {
+      padding-left: 50px;
+    }
   }
 
   &__header {
@@ -93,21 +106,6 @@
   }
 
   &__content {
-    @include media-2xl {
-      padding-left: 220px;
-    }
-
-    @include media-xl {
-      padding-left: 95px;
-    }
-
-    @include media-lg {
-      padding-left: 60px;
-    }
-
-    @include media-sm {
-      padding-left: 40px;
-    }
   }
 
   &__video {

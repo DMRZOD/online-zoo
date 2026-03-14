@@ -32,12 +32,18 @@
 
   &__image {
     width: 100%;
+    aspect-ratio: 440 / 436;
+    overflow: hidden;
+
+    @include media-md {
+      aspect-ratio: 300 / 280;
+    }
 
     img {
-      @include media-md {
-        height: 333px;
-        object-fit: cover;
-      }
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
   }
 

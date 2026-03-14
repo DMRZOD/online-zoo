@@ -1,11 +1,15 @@
+import petData from "../../data/data.json";
 import type { Feedback, Pet } from "../types/api";
+import type { PetAssetMap } from "../types/common";
+
+const assets: PetAssetMap = petData as PetAssetMap;
 
 const createPetCard = (pet: Pet): string => {
   return `
     <a href="#" class="pets-card">
       <div class="pets-card__label">${pet.name}</div>
       <div class="pets-card__image">
-        <img src="/images/cards/panda.jpg" alt="${pet.commonName}" />
+        <img src="${assets[String(pet.id)].cardImage}" alt="${pet.commonName}" />
       </div>
       <div class="pets-card__content">
         <div class="pets-card__top">
