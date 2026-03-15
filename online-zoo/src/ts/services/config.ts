@@ -9,3 +9,5 @@ export const WHEEL_STEP_THRESHOLD: number = 40;
 export const DEFAULT_ZOOM: number = 10;
 export const TOAST_MESSAGE: string = "Your message has been sent successfully!";
 export const TOAST_DURATION_MS: number = 4000;
+export const TOKEN_KEY: string = "online_zoo_token";
+export const USER_KEY: string = "online_zoo_user";

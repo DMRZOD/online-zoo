@@ -6,6 +6,7 @@
 // Components
 @use "components/header";
 @use "components/donation";
+@use "components/popup";
 @use "components/footer";
 @use "components/buttons";
 @use "components/cards";
@@ -18,3 +19,4 @@
 @use "pages/map";
 @use "pages/animals";
 @use "pages/contact";
+@use "pages/auth";

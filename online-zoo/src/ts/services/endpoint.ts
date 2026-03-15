@@ -1,5 +1,5 @@
 import { BASE_URL } from "./config";
-import { getJson } from "./client";
+import { getJson, postJson } from "./client";
 
 import type {
   ApiResponse,
@@ -7,6 +7,10 @@ import type {
   Feedback,
   Camera,
   PetDetail,
+  LoginPayload,
+  RegisterPayload,
+  AuthUser,
+  AuthSession,
 } from "../types/api";
 
 export const getPets = (): Promise<ApiResponse<Pet[]>> => {
@@ -23,4 +27,26 @@ export const getCameras = (): Promise<ApiResponse<Camera[]>> => {
 
 export const getPetById = (id: number): Promise<ApiResponse<PetDetail>> => {
   return getJson<ApiResponse<PetDetail>>(`${BASE_URL}/pets/${id}`);
+};
+
+export const login = (
+  payload: LoginPayload,
+): Promise<ApiResponse<AuthSession>> => {
+  return postJson<ApiResponse<AuthSession>, LoginPayload>(
+    `${BASE_URL}/auth/login`,
+    payload,
+  );
+};
+
+export const register = (
+  payload: RegisterPayload,
+): Promise<{ data: AuthUser }> => {
+  return postJson<{ data: AuthUser }, RegisterPayload>(
+    `${BASE_URL}/auth/register`,
+    payload,
+  );
+};
+
+export const getProfile = (token: string): Promise<ApiResponse<AuthUser>> => {
+  return getJson<ApiResponse<AuthUser>>(`${BASE_URL}/auth/profile`, token);
 };

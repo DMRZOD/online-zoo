@@ -156,6 +156,262 @@
       </div>
     </footer>
 
+    <div class="popup">
+      <div class="popup__overlay"></div>
+
+      <div class="popup__container">
+        <div class="popup__header">
+          <h3 class="popup__title">Make your donation</h3>
+        </div>
+
+        <div class="popup-step" data-step="1">
+          <h4 class="popup-step__title">Donation Information:</h4>
+
+          <div class="popup-step__body">
+            <p class="popup-step__label">
+              <span class="popup-step__required">*</span> Choose your donation
+              amount:
+            </p>
+
+            <div class="popup-step__amounts">
+              <button class="popup-step__amount popup-step__amount_active">
+                $10
+              </button>
+              <button class="popup-step__amount">$20</button>
+              <button class="popup-step__amount">$30</button>
+              <button class="popup-step__amount">$50</button>
+              <button class="popup-step__amount">$80</button>
+              <button class="popup-step__amount">$100</button>
+            </div>
+
+            <div class="popup-step__other">
+              <button class="popup-step__other-button">Other amount</button>
+              <input class="popup-step__other-input" type="number" min="1" />
+            </div>
+
+            <div class="popup-step__pet">
+              <button class="popup-step__pet-button">For special pet</button>
+              <div class="popup-step__dropdown">
+                <button class="popup-step__dropdown-button">
+                  <span class="popup-step__dropdown-text"
+                    >Choose your favourite</span
+                  >
+                  <span class="popup-step__dropdown-icon">
+                    <svg
+                      width="17"
+                      height="10"
+                      viewBox="0 0 17 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0.359375 0.358887L8.11695 8.35889L16.3594 0.358887"
+                        stroke="black"
+                      />
+                    </svg>
+                  </span>
+                </button>
+
+                <ul class="popup-step__dropdown-list">
+                  <li>
+                    <button class="popup-step__dropdown-item">
+                      Lukas the Panda
+                    </button>
+                  </li>
+                  <li>
+                    <button class="popup-step__dropdown-item">
+                      Andy the Lemur
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <label class="popup-step__check">
+              <input class="popup-step__check-input" type="checkbox" />
+              <span class="popup-step__check-text"
+                >Make this a monthly recurring gift</span
+              >
+            </label>
+
+            <div class="popup-step__nav">
+              <div class="popup-step__pag">
+                <span
+                  class="popup-step__pag-item popup-step__pag-item_active"
+                  data-step="1"
+                ></span>
+                <span class="popup-step__pag-item" data-step="2"></span>
+                <span class="popup-step__pag-item" data-step="3"></span>
+              </div>
+
+              <a href="#" class="popup-step__back">Back</a>
+
+              <button class="popup-step__button popup-step__next" type="button">
+                <span class="popup-step__button-text">Next</span>
+                <span class="popup-step__button-icon">
+                  <img src="/icons/arrow-right.svg" alt="" />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="popup-step" data-step="2">
+          <h4 class="popup-step__title">Billing Information:</h4>
+
+          <div class="popup-step__body">
+            <p class="popup-step__label">
+              <span class="popup-step__required">*</span> Your Name
+            </p>
+            <input
+              class="popup-step__input"
+              type="text"
+              placeholder="First and last name"
+            />
+
+            <p class="popup-step__label">
+              <span class="popup-step__required">*</span> Your Email Address
+            </p>
+            <input
+              class="popup-step__input"
+              type="email"
+              placeholder="Enter your email"
+            />
+
+            <p class="popup-step__note">
+              You will receive emails from the Online Zoo, including updates and
+              news on the latest discoveries and translations. You can
+              unsubscribe at any time.
+            </p>
+
+            <div class="popup-step__nav">
+              <div class="popup-step__pag">
+                <span
+                  class="popup-step__pag-item popup-step__pag-item_active"
+                ></span>
+                <span
+                  class="popup-step__pag-item popup-step__pag-item_active"
+                ></span>
+                <span class="popup-step__pag-item"></span>
+              </div>
+
+              <a href="#" class="popup-step__back">Back</a>
+
+              <button class="popup-step__button popup-step__next" type="button">
+                <span class="popup-step__button-text">Next</span>
+                <span class="popup-step__button-icon">
+                  <img src="/icons/arrow-right.svg" alt="Arrow Right" />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="popup-step" data-step="3">
+          <h4 class="popup-step__title">Payment Information:</h4>
+
+          <div class="popup-step__body">
+            <div class="popup-step__row">
+              <div class="popup-step__field">
+                <p class="popup-step__label">
+                  <span class="popup-step__required">*</span> Credit Card Number
+                </p>
+                <input
+                  class="popup-step__input"
+                  type="text"
+                  placeholder="Enter card number"
+                  inputmode="numeric"
+                  maxlength="19"
+                />
+              </div>
+              <div class="popup-step__field popup-step__field_cvv">
+                <p class="popup-step__label">
+                  <span class="popup-step__required">*</span> CVV Number
+                </p>
+                <input
+                  class="popup-step__input popup-step__input_cvv"
+                  type="text"
+                  placeholder="CVV"
+                  inputmode="numeric"
+                  maxlength="4"
+                />
+              </div>
+            </div>
+
+            <p class="popup-step__label">
+              <span class="popup-step__required">*</span> Expiration Date
+            </p>
+            <div class="popup-step__expiry">
+              <div class="popup-step__dropdown">
+                <button class="popup-step__dropdown-button" type="button">
+                  <span class="popup-step__dropdown-text">Month</span>
+                  <span class="popup-step__dropdown-icon">
+                    <svg
+                      width="17"
+                      height="10"
+                      viewBox="0 0 17 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0.359375 0.358887L8.11695 8.35889L16.3594 0.358887"
+                        stroke="currentColor"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div class="popup-step__dropdown">
+                <button class="popup-step__dropdown-button" type="button">
+                  <span class="popup-step__dropdown-text">Year</span>
+                  <span class="popup-step__dropdown-icon">
+                    <svg
+                      width="17"
+                      height="10"
+                      viewBox="0 0 17 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0.359375 0.358887L8.11695 8.35889L16.3594 0.358887"
+                        stroke="currentColor"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <div class="popup-step__nav">
+              <div class="popup-step__pag">
+                <span
+                  class="popup-step__pag-item popup-step__pag-item_active"
+                ></span>
+                <span
+                  class="popup-step__pag-item popup-step__pag-item_active"
+                ></span>
+                <span
+                  class="popup-step__pag-item popup-step__pag-item_active"
+                ></span>
+              </div>
+
+              <a href="#" class="popup-step__back">Back</a>
+
+              <button
+                class="popup-step__button popup-step__complete"
+                type="button"
+              >
+                <span class="popup-step__button-text">Complete Donation</span>
+                <span class="popup-step__button-icon">
+                  <img src="/icons/arrow-right.svg" alt="Arrow Right" />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script type="module" src="/src/ts/main.ts"></script>
   </body>
 </html>

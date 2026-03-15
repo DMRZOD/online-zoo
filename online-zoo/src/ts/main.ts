@@ -11,6 +11,8 @@ import { initRegisterPage } from "./pages/register";
 
 // Components
 import { initMobileMenu } from "./components/menu";
+import { initPopup } from "./components/popup/popup";
+import { initHeaderUser } from "./components/account";
 
 const initPage = (): void => {
   const path: string = window.location.pathname;
@@ -46,6 +48,8 @@ const initApp = (): void => {
 
   // Components
   initMobileMenu();
+  initHeaderUser();
+  initPopup();
 };
 
 document.addEventListener("DOMContentLoaded", initApp);
