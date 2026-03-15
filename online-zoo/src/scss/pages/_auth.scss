@@ -4,6 +4,10 @@
 .auth {
   padding: 100px 0;
 
+  @include media-sm {
+    padding: 50px 0;
+  }
+
   &__container {
     @include container;
     max-width: 680px;
@@ -13,6 +17,10 @@
     @include heading-2;
     text-align: center;
     margin-bottom: 50px;
+
+    @include media-sm {
+      margin-bottom: 30px;
+    }
   }
 
   &__form {
