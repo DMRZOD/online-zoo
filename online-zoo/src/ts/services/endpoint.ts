@@ -11,6 +11,7 @@ import type {
   RegisterPayload,
   AuthUser,
   AuthSession,
+  DonationPayload,
 } from "../types/api";
 
 export const getPets = (): Promise<ApiResponse<Pet[]>> => {
@@ -49,4 +50,13 @@ export const register = (
 
 export const getProfile = (token: string): Promise<ApiResponse<AuthUser>> => {
   return getJson<ApiResponse<AuthUser>>(`${BASE_URL}/auth/profile`, token);
+};
+
+export const submitDonation = (
+  payload: DonationPayload,
+): Promise<ApiResponse<unknown>> => {
+  return postJson<ApiResponse<unknown>, DonationPayload>(
+    `${BASE_URL}/donations`,
+    payload,
+  );
 };

@@ -1004,14 +1004,14 @@
             </p>
 
             <div class="popup-step__amounts">
-              <button class="popup-step__amount popup-step__amount_active">
+              <button class="popup-step__amount" type="button" data-amount="10">
                 $10
               </button>
-              <button class="popup-step__amount">$20</button>
-              <button class="popup-step__amount">$30</button>
-              <button class="popup-step__amount">$50</button>
-              <button class="popup-step__amount">$80</button>
-              <button class="popup-step__amount">$100</button>
+              <button class="popup-step__amount" type="button">$20</button>
+              <button class="popup-step__amount" type="button">$30</button>
+              <button class="popup-step__amount" type="button">$50</button>
+              <button class="popup-step__amount" type="button">$80</button>
+              <button class="popup-step__amount" type="button">$100</button>
             </div>
 
             <div class="popup-step__other">
@@ -1141,6 +1141,31 @@
           <h4 class="popup-step__title">Payment Information:</h4>
 
           <div class="popup-step__body">
+            <div class="popup-step__saved-cards-wrap" style="display: none">
+              <p class="popup-step__label">Saved card</p>
+              <div class="popup-step__dropdown popup-step__dropdown_saved">
+                <button class="popup-step__dropdown-button" type="button">
+                  <span class="popup-step__dropdown-text"
+                    >Select saved card</span
+                  >
+                  <span class="popup-step__dropdown-icon">
+                    <svg
+                      width="17"
+                      height="10"
+                      viewBox="0 0 17 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0.359375 0.358887L8.11695 8.35889L16.3594 0.358887"
+                        stroke="currentColor"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <ul class="popup-step__dropdown-list"></ul>
+              </div>
+            </div>
             <div class="popup-step__row">
               <div class="popup-step__field">
                 <p class="popup-step__label">
@@ -1172,45 +1197,25 @@
               <span class="popup-step__required">*</span> Expiration Date
             </p>
             <div class="popup-step__expiry">
-              <div class="popup-step__dropdown">
-                <button class="popup-step__dropdown-button" type="button">
-                  <span class="popup-step__dropdown-text">Month</span>
-                  <span class="popup-step__dropdown-icon">
-                    <svg
-                      width="17"
-                      height="10"
-                      viewBox="0 0 17 10"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M0.359375 0.358887L8.11695 8.35889L16.3594 0.358887"
-                        stroke="currentColor"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </div>
-              <div class="popup-step__dropdown">
-                <button class="popup-step__dropdown-button" type="button">
-                  <span class="popup-step__dropdown-text">Year</span>
-                  <span class="popup-step__dropdown-icon">
-                    <svg
-                      width="17"
-                      height="10"
-                      viewBox="0 0 17 10"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M0.359375 0.358887L8.11695 8.35889L16.3594 0.358887"
-                        stroke="currentColor"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </div>
+              <input
+                class="popup-step__input popup-step__input_expiry"
+                type="text"
+                placeholder="MM/YY"
+                inputmode="numeric"
+                maxlength="5"
+                autocomplete="off"
+              />
             </div>
+
+            <label
+              class="popup-step__check popup-step__check_save-card"
+              style="display: none"
+            >
+              <input class="popup-step__check-input" type="checkbox" />
+              <span class="popup-step__check-text"
+                >Save card info for future donations</span
+              >
+            </label>
 
             <div class="popup-step__nav">
               <div class="popup-step__pag">
@@ -1230,6 +1235,7 @@
               <button
                 class="popup-step__button popup-step__complete"
                 type="button"
+                disabled
               >
                 <span class="popup-step__button-text">Complete Donation</span>
                 <span class="popup-step__button-icon">

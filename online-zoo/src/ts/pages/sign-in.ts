@@ -1,6 +1,7 @@
-import { validateLogin, validatePassword } from "../services/validation";
+import { validateLogin, validatePassword } from "../utils/validation";
 import { login, getProfile } from "../services/endpoint";
 import { setSession } from "../services/auth";
+import { FORM_ERROR_TEXT } from "../services/config";
 
 const FORM_ID = "signin-form";
 const LOGIN_ID = "signin-login";
@@ -9,7 +10,6 @@ const LOGIN_ERROR_ID = "signin-login-error";
 const PASSWORD_ERROR_ID = "signin-password-error";
 const FORM_ERROR_ID = "signin-form-error";
 const ERROR_CLASS = "auth__input_invalid";
-const FORM_ERROR_MSG = "Incorrect login or password";
 
 function getEl<T extends Element>(id: string): T | null {
   return document.getElementById(id) as T | null;
@@ -113,7 +113,7 @@ export function initSignInPage(): void {
       window.location.href = "/";
     } catch (err: unknown) {
       const status = (err as { status?: number })?.status;
-      if (status === 401) setFormError(FORM_ERROR_MSG);
+      if (status === 401) setFormError(FORM_ERROR_TEXT);
       else setFormError("Something went wrong. Please try again.");
     }
   });

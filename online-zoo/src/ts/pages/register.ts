@@ -4,7 +4,7 @@ import {
   validateName,
   validateEmail,
   validateConfirmPassword,
-} from "../services/validation";
+} from "../utils/validation";
 
 import { register } from "../services/endpoint";
 

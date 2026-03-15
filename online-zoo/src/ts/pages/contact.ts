@@ -1,4 +1,4 @@
-import { TOAST_MESSAGE, TOAST_DURATION_MS } from "../services/config";
+import { TOAST_TEXT, TOAST_DURATION_MS } from "../services/config";
 
 const showToast = (message: string): void => {
   const existing = document.querySelector(".toast");
@@ -37,6 +37,6 @@ export const initContactPage = (): void => {
       return;
     }
 
-    showToast(TOAST_MESSAGE);
+    showToast(TOAST_TEXT);
   });
 };

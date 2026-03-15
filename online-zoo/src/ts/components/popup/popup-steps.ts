@@ -28,12 +28,17 @@ export const goToStep = (step: number): void => {
   });
 };
 
+let onBeforeStepChange: ((fromStep: number, toStep: number) => void) | null =
+  null;
+
 const handleNext = (e: Event): void => {
   const target = (e.target as HTMLElement).closest(".popup-step__next");
   if (!target) return;
 
   e.preventDefault();
+  if ((target as HTMLButtonElement).disabled) return;
   if (currentStep < totalSteps) {
+    onBeforeStepChange?.(currentStep, currentStep + 1);
     goToStep(currentStep + 1);
   }
 };
@@ -54,8 +59,10 @@ const handleBack = (e: Event): void => {
 
 export const initDonationPopupSteps = (
   backFromFirstStep?: () => void,
+  beforeStepChange?: (fromStep: number, toStep: number) => void,
 ): void => {
   onBackFromFirstStep = backFromFirstStep ?? null;
+  onBeforeStepChange = beforeStepChange ?? null;
 
   const popup = document.querySelector(".popup");
   if (!popup) return;
