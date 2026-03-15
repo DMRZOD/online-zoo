@@ -11,6 +11,7 @@ import { initSidebarSlider } from "../components/sidebar/sidebar-slider";
 import { renderLive, initLiveSync } from "../components/live";
 import { renderDonation } from "../components/donation";
 import { renderInfo, loadPetInfo, initInfoSync } from "../components/info";
+import { initMapModal } from "../components/map";
 
 export const initAnimalsPage = (): void => {
   const mainSection = document.querySelector<HTMLElement>(".main");
@@ -42,7 +43,7 @@ export const initAnimalsPage = (): void => {
       initSidebarToggle();
       initLiveSync();
       initInfoSync();
-      // Load pet info
+      initMapModal();
       loadPetInfo(initialPetId);
     } catch {
       // Render error

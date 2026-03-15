@@ -331,12 +331,20 @@
   }
 
   &__image {
+    max-width: 440px;
+    max-height: 440px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+
     @include media-lg {
       order: 1;
-
-      img {
-        width: 100%;
-      }
+      max-width: 600px;
+      max-height: 600px;
     }
   }
 
