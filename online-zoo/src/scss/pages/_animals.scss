@@ -203,6 +203,7 @@
 }
 
 .info {
+  position: relative;
   padding: 150px 0;
 
   @include media-xl {
@@ -351,6 +352,41 @@
 
     @include media-sm {
       margin-top: 30px;
+    }
+  }
+
+  &__loading {
+    position: absolute;
+    inset: 0;
+    @include flex-center;
+    background: rgba($color-white, 0.85);
+    z-index: 10;
+  }
+
+  &__container_error {
+    @include flex-center;
+    width: 500px;
+    min-height: 220px;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: center;
+    border-radius: $border-radius;
+    background: #fde4e1;
+
+    @include media-sm {
+      width: auto;
+      max-width: 100%;
+      min-height: 120px;
+      padding: 20px;
+    }
+  }
+
+  &__error-text {
+    @include text-1;
+    color: #c0392b;
+
+    @include media-sm {
+      @include text-2;
     }
   }
 }
