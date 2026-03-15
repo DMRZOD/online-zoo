@@ -1,8 +1,8 @@
-import type { SliderOptions, SliderMetrics } from "../types/common";
+import type { SliderOptions, SliderMetrics } from "../../types/common";
 import {
   TRANSITION_DURATION_MS,
   WHEEL_STEP_THRESHOLD,
-} from "../services/config";
+} from "../../services/config";
 
 const navButtonsSelector = ".slider__nav .slider__nav-btn";
 

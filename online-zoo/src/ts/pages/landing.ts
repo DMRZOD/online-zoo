@@ -1,8 +1,8 @@
 import { getFeedback, getPets } from "../services/endpoint";
-import { renderFeedback, renderPets } from "../components/cards";
-import { renderLoader } from "../components/loader";
-import { renderErrorState } from "../components/error";
-import { initInfiniteSlider } from "../components/slider";
+import { renderFeedback, renderPets } from "../components/card/cards";
+import { renderLoader } from "../components/status/loader";
+import { renderErrorState } from "../components/status/error";
+import { initInfiniteSlider } from "../components/card/card-slider";
 import { ERROR_TEXT } from "../services/config";
 
 export const initLandingPage = (): void => {

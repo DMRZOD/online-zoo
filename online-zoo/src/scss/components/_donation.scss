@@ -55,3 +55,21 @@
     margin-top: 10px;
   }
 }
+
+.donation_zoos {
+  .donation__container {
+    padding-left: 260px;
+
+    @include media-xl {
+      padding-left: 135px;
+    }
+
+    @include media-lg {
+      padding-left: 80px;
+    }
+
+    @include media-sm {
+      padding-left: 50px;
+    }
+  }
+}

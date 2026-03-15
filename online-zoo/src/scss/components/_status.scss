@@ -67,3 +67,33 @@
     transform: rotate(360deg);
   }
 }
+
+// Zoos Status
+
+.zoos-loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.zoos-loading .header {
+  position: sticky;
+  top: 0;
+  z-index: 3000;
+}
+
+.zoos-loading .main {
+  display: grid;
+  place-items: center;
+  flex: 1;
+}
+
+.zoos-loading .footer {
+  margin-top: auto;
+}
+
+.live__content_loading {
+  min-height: 320px;
+  display: grid;
+  place-items: center;
+}

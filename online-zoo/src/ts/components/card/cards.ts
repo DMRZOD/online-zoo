@@ -1,6 +1,6 @@
-import petData from "../../data/data.json";
-import type { Feedback, Pet } from "../types/api";
-import type { PetAssetMap } from "../types/common";
+import petData from "../../../data/data.json";
+import type { Feedback, Pet } from "../../types/api";
+import type { PetAssetMap } from "../../types/common";
 
 const assets: PetAssetMap = petData as PetAssetMap;
 

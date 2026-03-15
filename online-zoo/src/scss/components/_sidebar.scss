@@ -14,6 +14,13 @@
 
   @include media-lg {
     width: 230px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include media-sm {
+    height: 300px;
   }
 
   &__top {
@@ -58,9 +65,24 @@
     }
   }
 
+  &__list-wrap {
+    overflow: hidden;
+    flex-shrink: 0;
+    height: calc(4 * var(--sidebar-item-height, 130px));
+
+    @include media-lg {
+      height: 400px; // 500px sidebar − top − bottom
+    }
+
+    @include media-sm {
+      height: 200px; // 300px sidebar − top − bottom
+    }
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
+    transition: transform 0.35s ease-out;
   }
 
   &__item {
@@ -68,7 +90,7 @@
     grid-template-columns: 70px 170px;
     align-items: center;
     gap: 20px;
-    padding: 50px 20px;
+    padding: 35px 20px;
     border-bottom: 1px solid $color-white;
     cursor: pointer;
     transition: $transition;
@@ -81,13 +103,16 @@
 
     @include media-sm {
       grid-template-columns: 30px 160px;
-      padding: 10px;
+      padding: 15px 12px;
     }
 
     &-icon {
       @include flex-center;
 
-      svg {
+      img {
+        filter: invert(55%) sepia(58%) saturate(1630%) hue-rotate(340deg)
+          brightness(100%) contrast(100%);
+
         @include media-sm {
           height: 30px;
         }
@@ -109,8 +134,8 @@
 
     &_active {
       .sidebar__item-icon {
-        svg path {
-          fill: $color-white;
+        img {
+          filter: brightness(0) invert(1);
         }
       }
     }
@@ -175,10 +200,6 @@
     padding: 35px;
 
     @include media-xl {
-      padding: 60px 30px;
-    }
-
-    @include media-lg {
       padding: 35px 20px;
     }
 
@@ -192,11 +213,9 @@
     width: 104px;
     height: 104px;
     border-radius: 50%;
-    svg {
+    img {
       height: 60px;
-      path {
-        fill: $color-navy;
-      }
+      filter: none;
     }
 
     @include media-xl {
@@ -204,22 +223,21 @@
       height: auto;
       background: none;
 
-      svg {
+      img {
         height: 40px;
-        path {
-          fill: $color-orange;
-        }
+        filter: invert(55%) sepia(58%) saturate(1630%) hue-rotate(340deg)
+          brightness(100%) contrast(100%);
       }
     }
 
     @include media-lg {
-      svg {
+      img {
         height: 30px;
       }
     }
 
     @include media-sm {
-      svg {
+      img {
         height: 20px;
       }
     }
@@ -245,8 +263,8 @@
       @include media-xl {
         background: none;
 
-        svg path {
-          fill: $color-white;
+        img {
+          filter: brightness(0) invert(1);
         }
 
         &::before {

@@ -105,9 +105,6 @@
     }
   }
 
-  &__content {
-  }
-
   &__video {
     max-width: 1400px;
     margin: 50px auto 100px;
@@ -223,9 +220,7 @@
   &__container {
     @include container;
 
-    @include media-2xl {
-      padding-left: 260px;
-    }
+    padding-left: 260px;
 
     @include media-xl {
       padding-left: 135px;
