@@ -7,6 +7,7 @@ import { initSidebarToggle } from "../components/sidebar/sidebar-toggle";
 import { animalsPageHtml } from "../components/animals-content";
 import { initSidebarSlider } from "../components/sidebar/sidebar-slider";
 import { renderLive, initLiveSync } from "../components/live";
+import { renderDonation } from "../components/donation";
 
 export const initAnimalsPage = (): void => {
   const mainSection = document.querySelector<HTMLElement>(".main");
@@ -26,10 +27,11 @@ export const initAnimalsPage = (): void => {
 
       const sidebarHtml = renderSidebar(cameras);
       const liveHtml = renderLive(cameras, initialPetId);
+      const donationHtml = renderDonation();
 
       const restHtml = animalsPageHtml();
 
-      mainSection.innerHTML = sidebarHtml + liveHtml + restHtml;
+      mainSection.innerHTML = sidebarHtml + liveHtml + donationHtml + restHtml;
 
       initSidebarSlider();
       initSidebarToggle();

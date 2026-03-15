@@ -1,11 +1,12 @@
 import { EVENT_PET_SELECTED } from "../../services/config";
 
 export const initSidebarSlider = (): void => {
+  const sidebar = document.querySelector<HTMLElement>(".sidebar");
   const wrap = document.querySelector<HTMLElement>(".sidebar__list-wrap");
   const list = document.querySelector<HTMLElement>(".sidebar__list");
   const downBtn = document.querySelector<HTMLButtonElement>(".sidebar__down");
 
-  if (!wrap || !list || !downBtn) return;
+  if (!sidebar || !wrap || !list || !downBtn) return;
 
   const items = list.querySelectorAll<HTMLElement>(".sidebar__item");
   const totalItems = items.length;
@@ -14,6 +15,14 @@ export const initSidebarSlider = (): void => {
 
   const half = totalItems / 2;
   const firstItem = items[0];
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY >= 110) {
+      sidebar.classList.add("sidebar_fixed");
+    } else {
+      sidebar.classList.remove("sidebar_fixed");
+    }
+  });
 
   const syncItemHeight = (): number => {
     const h = firstItem.offsetHeight;

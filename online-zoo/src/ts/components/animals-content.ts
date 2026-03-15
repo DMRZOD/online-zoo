@@ -4,29 +4,6 @@
  */
 export const animalsPageHtml = (): string => {
   return `
-      <section class="donation donation_zoos">
-        <div class="donation__container">
-          <div class="donation__content">
-            <h4 class="donation__title">Make the Bamboo Donation!</h4>
-            <p class="donation__text">
-              Our process for bamboo donations first starts with a site
-              evaluation. It is important that our team sees where the bamboo is
-              growing, then determining if the bamboo is a species that our
-              animals are currently eating. Thank you for your interest in
-              donating bamboo for our pandas.
-            </p>
-          </div>
-          <div class="donation__action">
-            <span class="donation__label">Quick Donate</span>
-            <button class="button-donation donation__btn">
-              <span class="button-donation__text">$ Donation Amount</span>
-              <span class="button-donation__icon">
-                <img src="/icons/arrow-right.svg" alt="Arrow Right" />
-              </span>
-            </button>
-          </div>
-        </div>
-      </section>
 
       <section class="info">
         <div class="info__container">
