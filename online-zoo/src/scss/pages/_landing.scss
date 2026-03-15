@@ -655,8 +655,10 @@
 
     @include media-sm {
       margin: 40px auto 450px;
-      padding: 11.5px;
       width: 300px;
+      a {
+        padding: 11.5px;
+      }
     }
   }
 }

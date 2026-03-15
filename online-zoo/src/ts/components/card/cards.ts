@@ -5,8 +5,9 @@ import type { PetAssetMap } from "../../types/common";
 const assets: PetAssetMap = petData as PetAssetMap;
 
 const createPetCard = (pet: Pet): string => {
+  const zoosUrl = `/pages/animals.html?pet=${pet.id}`;
   return `
-    <a href="#" class="pets-card">
+    <a href="${zoosUrl}" class="pets-card">
       <div class="pets-card__label">${pet.name}</div>
       <div class="pets-card__image">
         <img src="${assets[String(pet.id)].cardImage}" alt="${pet.commonName}" />

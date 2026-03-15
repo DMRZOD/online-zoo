@@ -1,6 +1,6 @@
 import { EVENT_PET_SELECTED } from "../../services/config";
 
-export const initSidebarSlider = (): void => {
+export const initSidebarSlider = (initialPetId?: number): void => {
   const sidebar = document.querySelector<HTMLElement>(".sidebar");
   const wrap = document.querySelector<HTMLElement>(".sidebar__list-wrap");
   const list = document.querySelector<HTMLElement>(".sidebar__list");
@@ -40,6 +40,16 @@ export const initSidebarSlider = (): void => {
       .querySelectorAll<HTMLElement>(`[data-index="${indexStr}"]`)
       .forEach((el) => el.classList.add("sidebar__item_active"));
   };
+
+  if (initialPetId != null && initialPetId > 0) {
+    const idStr = String(initialPetId);
+    for (let i = 0; i < half; i++) {
+      if (items[i].getAttribute("data-pet-id") === idStr) {
+        selectedIndex = i;
+        break;
+      }
+    }
+  }
 
   syncItemHeight();
   applyActiveState();

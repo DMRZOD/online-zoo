@@ -4,6 +4,8 @@ import "../scss/main.scss";
 // Pages
 import { initLandingPage } from "./pages/landing";
 import { initAnimalsPage } from "./pages/animals";
+import { initMapPage } from "./pages/map";
+import { initContactPage } from "./pages/contact";
 import { initSignInPage } from "./pages/sign-in";
 import { initRegisterPage } from "./pages/register";
 
@@ -19,6 +21,14 @@ const initPage = (): void => {
 
   if (path.includes("animals")) {
     initAnimalsPage();
+  }
+
+  if (path.includes("map")) {
+    initMapPage();
+  }
+
+  if (path.includes("contact")) {
+    initContactPage();
   }
 
   if (path.includes("sign-in")) {

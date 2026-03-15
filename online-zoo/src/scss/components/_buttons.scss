@@ -128,7 +128,6 @@
 .button-turquoise {
   @include flex-center;
   column-gap: 10px;
-  padding: 26px;
   border: 1px solid $color-white;
   border-radius: $border-radius;
   transition: $transition;
@@ -141,6 +140,12 @@
   &:active {
     box-shadow: 0 4px 30px 0 rgba(0, 160, 146, 0.3);
     transform: scale(1.01);
+  }
+
+  a {
+    @include flex-center;
+    column-gap: 10px;
+    padding: 26px;
   }
 
   span {

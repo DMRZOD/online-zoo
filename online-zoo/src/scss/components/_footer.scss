@@ -157,6 +157,7 @@
 
   &__btn {
     width: 360px;
+    padding: 26px;
 
     @include media-sm {
       width: 100%;
