@@ -6,6 +6,7 @@ import { renderSidebar } from "../components/sidebar/sidebar";
 import { initSidebarToggle } from "../components/sidebar/sidebar-toggle";
 import { animalsPageHtml } from "../components/animals-content";
 import { initSidebarSlider } from "../components/sidebar/sidebar-slider";
+import { renderLive, initLiveSync } from "../components/live";
 
 export const initAnimalsPage = (): void => {
   const mainSection = document.querySelector<HTMLElement>(".main");
@@ -18,15 +19,21 @@ export const initAnimalsPage = (): void => {
   const loadData = async (): Promise<void> => {
     try {
       const camerasResponse = await getCameras();
-      console.log(camerasResponse.data);
-
-      const sidebarHtml = renderSidebar(camerasResponse.data);
-      const restHtml = animalsPageHtml();
-      mainSection.innerHTML = sidebarHtml + restHtml;
       document.body.classList.remove("zoos-loading");
+
+      const cameras = camerasResponse.data;
+      const initialPetId = cameras[0]?.petId ?? "1";
+
+      const sidebarHtml = renderSidebar(cameras);
+      const liveHtml = renderLive(cameras, initialPetId);
+
+      const restHtml = animalsPageHtml();
+
+      mainSection.innerHTML = sidebarHtml + liveHtml + restHtml;
 
       initSidebarSlider();
       initSidebarToggle();
+      initLiveSync();
     } catch {
       renderErrorState(mainSection, ERROR_TEXT);
     }

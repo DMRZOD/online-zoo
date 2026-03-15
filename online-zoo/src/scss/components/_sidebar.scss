@@ -68,20 +68,22 @@
   &__list-wrap {
     overflow: hidden;
     flex-shrink: 0;
+    min-height: 0;
     height: calc(4 * var(--sidebar-item-height, 130px));
 
     @include media-lg {
-      height: 400px; // 500px sidebar − top − bottom
+      height: 400px;
     }
 
     @include media-sm {
-      height: 200px; // 300px sidebar − top − bottom
+      height: 200px;
     }
   }
 
   &__list {
     display: flex;
     flex-direction: column;
+    min-height: 0;
     transition: transform 0.35s ease-out;
   }
 
@@ -94,6 +96,7 @@
     border-bottom: 1px solid $color-white;
     cursor: pointer;
     transition: $transition;
+    min-height: 0;
 
     @include media-lg {
       grid-template-columns: 40px 140px;
@@ -108,10 +111,22 @@
 
     &-icon {
       @include flex-center;
+      min-width: 0; // разрешаем сжатие в grid
+      overflow: hidden;
 
       img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
         filter: invert(55%) sepia(58%) saturate(1630%) hue-rotate(340deg)
           brightness(100%) contrast(100%);
+
+        @include media-lg {
+          height: 40px;
+          width: auto;
+        }
 
         @include media-sm {
           height: 30px;
@@ -122,12 +137,15 @@
     &-text {
       @include text-2;
       color: $color-white;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
       @include media-lg {
         font-size: 16px;
       }
 
-      @include media-lg {
+      @include media-sm {
         font-size: 14px;
       }
     }
@@ -213,8 +231,16 @@
     width: 104px;
     height: 104px;
     border-radius: 50%;
+    min-width: 0;
+    overflow: hidden;
+    flex-shrink: 0;
+
     img {
       height: 60px;
+      width: auto;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
       filter: none;
     }
 
