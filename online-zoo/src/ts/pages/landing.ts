@@ -1,0 +1,56 @@
+import { getFeedback, getPets } from "../services/endpoint";
+import { renderFeedback, renderPets } from "../components/card/cards";
+import { renderLoader } from "../components/status/loader";
+import { renderErrorState } from "../components/status/error";
+import { initInfiniteSlider } from "../components/card/card-slider";
+import { ERROR_TEXT } from "../services/config";
+
+export const initLandingPage = (): void => {
+  const petsSection = document.querySelector<HTMLElement>(".pets");
+  const petsTrack = document.querySelector<HTMLElement>(".pets__slider-track");
+  const reviewSection = document.querySelector<HTMLElement>(".review");
+  const reviewTrack = document.querySelector<HTMLElement>(
+    ".review__slider-track",
+  );
+
+  if (!petsSection || !petsTrack || !reviewSection || !reviewTrack) {
+    return;
+  }
+
+  // Render loader
+  renderLoader(petsTrack);
+  renderLoader(reviewTrack);
+
+  const loadData = async (): Promise<void> => {
+    try {
+      // Fetch data
+      const [petsResponse, feedbackResponse] = await Promise.all([
+        getPets(),
+        getFeedback(),
+      ]);
+
+      // Render data
+      renderPets(petsTrack, petsResponse.data);
+      renderFeedback(reviewTrack, feedbackResponse.data);
+
+      // Render slider
+      initInfiniteSlider({
+        section: petsSection,
+        track: petsTrack,
+        card: ".pets-card",
+      });
+
+      initInfiniteSlider({
+        section: reviewSection,
+        track: reviewTrack,
+        card: ".review-card",
+      });
+    } catch {
+      // Render error
+      renderErrorState(petsTrack, ERROR_TEXT);
+      renderErrorState(reviewTrack, ERROR_TEXT);
+    }
+  };
+
+  void loadData();
+};

@@ -1,0 +1,207 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.pets-card {
+  position: relative;
+  background-color: $color-navy;
+  border-radius: $border-radius;
+  overflow: hidden;
+  width: 440px;
+  height: 747px;
+  @include flex-column;
+  transition: $transition;
+
+  @include media-md {
+    width: 300px;
+    height: 600px;
+  }
+
+  &:hover {
+    box-shadow: 0 4px 30px 0 rgba($color-navy, 0.5);
+    transform: scale(1.01);
+  }
+
+  &__label {
+    position: absolute;
+    background-color: $color-navy;
+    padding: 12px 20px;
+    border-bottom-right-radius: $border-radius;
+    @include text-1;
+    color: $color-white;
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 440 / 436;
+    overflow: hidden;
+
+    @include media-md {
+      aspect-ratio: 300 / 280;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__content {
+    height: 311px;
+    @include flex-column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 30px 50px;
+
+    @include media-md {
+      padding: 15px 15px 10px;
+    }
+  }
+
+  &__top {
+    @include flex-column;
+    row-gap: 20px;
+
+    @include media-md {
+      row-gap: 15px;
+    }
+  }
+
+  &__name {
+    @include text-1;
+    color: $color-white;
+    text-align: center;
+  }
+
+  &__text {
+    @include text-2;
+    color: $color-white;
+    text-align: center;
+  }
+
+  &__btn {
+    padding: 24px 0;
+    width: 240px;
+  }
+}
+
+.review-card {
+  position: relative;
+  width: 515px;
+  height: 463px;
+  padding: 136px 50px 70px;
+  @include flex-column;
+  justify-content: space-between;
+  border-radius: $border-radius;
+  background-color: $color-white;
+
+  @include media-lg {
+    padding: 50px 30px;
+    width: 523px;
+    height: 371px;
+    text-align: center;
+  }
+
+  @include media-sm {
+    width: 300px;
+    height: 549px;
+    padding: 115px 20px 50px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+
+    @include media-lg {
+      top: 40px;
+      left: 40px;
+    }
+  }
+
+  &__title {
+    @include text-1;
+
+    @include media-lg {
+      max-width: 290px;
+      margin: 0 auto;
+    }
+  }
+
+  &__text {
+    @include text-2;
+    margin-top: 20px;
+  }
+
+  &__author {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+}
+
+.care-card {
+  @include flex-column;
+  background-color: $color-navy;
+  border-radius: $border-radius;
+  transition: $transition;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 0 4px 30px 0 rgba($color-navy, 0.5);
+    transform: scale(1.01);
+  }
+
+  @include media-lg {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media-sm {
+    grid-template-columns: 1fr;
+    grid-template-rows: 350px 1fr;
+  }
+
+  &__content {
+    min-height: 285px;
+    @include flex-column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 25px 50px;
+
+    @include media-lg {
+      padding: 66px 20px 34px;
+    }
+
+    @include media-sm {
+      min-height: 220px;
+      padding: 15px 25px 20px;
+      gap: 5px;
+    }
+  }
+
+  &__image {
+    img {
+      width: 100%;
+      max-height: 373px;
+      object-fit: cover;
+
+      @include media-lg {
+        height: 100%;
+      }
+    }
+  }
+
+  &__text {
+    @include text-2;
+    color: $color-white;
+    text-align: center;
+  }
+
+  &__btn {
+    padding: 26px;
+    width: 142px;
+  }
+}

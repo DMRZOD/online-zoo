@@ -1,0 +1,134 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.auth {
+  padding: 100px 0;
+
+  @include media-sm {
+    padding: 50px 0;
+  }
+
+  &__container {
+    @include container;
+    max-width: 680px;
+  }
+
+  &__title {
+    @include heading-2;
+    text-align: center;
+    margin-bottom: 50px;
+
+    @include media-sm {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__form {
+    @include flex-column;
+    gap: 30px;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__label {
+    @include text-2;
+
+    span {
+      color: $color-turquoise;
+    }
+  }
+
+  &__input-wrap {
+    position: relative;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 17px 20px;
+    font-size: 18px;
+    border-radius: $border-radius;
+    border: 1px solid $color-black;
+    background-color: $color-white;
+    transition: all 0.1s ease;
+
+    &::placeholder {
+      @include text-2;
+      color: #969696;
+    }
+
+    &:focus {
+      box-shadow: 0 4px 30px 0 rgba($color-turquoise, 0.3);
+      border-color: $color-turquoise;
+    }
+
+    &_invalid {
+      border-color: #cc0000;
+
+      &:focus {
+        border-color: #cc0000;
+      }
+    }
+  }
+
+  &__error {
+    font-size: 14px;
+    color: #cc0000;
+    margin: 0;
+    display: none;
+  }
+
+  &__form-error {
+    font-size: 14px;
+    color: #cc0000;
+    margin: 0;
+    display: none;
+  }
+
+  &__submit {
+    margin: 0 auto;
+    width: 300px;
+    background-color: $color-orange;
+    @include flex-center;
+    column-gap: 10px;
+    padding: 20px;
+    border-radius: $border-radius;
+    transition: $transition;
+
+    span {
+      font-weight: 600;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: $color-white;
+    }
+
+    &:hover,
+    &:active {
+      box-shadow: 0 4px 30px 0 rgba(245, 128, 33, 0.3);
+      background: #d26004;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  &__footer {
+    margin-top: 30px;
+    text-align: center;
+    @include text-2;
+  }
+
+  &__link {
+    color: $color-turquoise;
+    font-weight: 600;
+    text-decoration: underline;
+
+    &:hover {
+      color: #05786e;
+    }
+  }
+}

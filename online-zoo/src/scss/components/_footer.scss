@@ -1,0 +1,167 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.footer {
+  background-color: $color-navy;
+  padding: 70px 0 40px;
+
+  @include media-lg {
+    padding: 50px 0;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__top {
+    @include flex-between;
+    border-bottom: 1px solid $color-white;
+    padding-bottom: 70px;
+
+    @include media-xl {
+      column-gap: 30px;
+    }
+
+    @include media-lg {
+      flex-direction: column;
+      row-gap: 50px;
+      padding-bottom: 50px;
+    }
+
+    @include media-sm {
+      row-gap: 30px;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__logos {
+    @include flex;
+    column-gap: 65px;
+
+    @include media-2xl {
+      column-gap: 30px;
+    }
+
+    @include media-lg {
+      column-gap: 80px;
+    }
+
+    @include media-sm {
+      flex-direction: column;
+      row-gap: 30px;
+    }
+  }
+
+  &__logo {
+    height: 50px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    column-gap: 46px;
+
+    @include media-2xl {
+      gap: 20px;
+    }
+
+    @include media-xl {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @include media-lg {
+      column-gap: 50px;
+    }
+
+    @include media-sm {
+      justify-content: space-between;
+      column-gap: 15px;
+    }
+  }
+
+  &__nav-link {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $color-white;
+    transition: $transition;
+
+    &:hover,
+    &:active {
+      color: $color-turquoise;
+    }
+
+    @include media-sm {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+
+  &__bottom {
+    @include flex-between;
+    margin-top: 40px;
+
+    @include media-lg {
+      flex-direction: column;
+      row-gap: 30px;
+      margin-top: 50px;
+    }
+
+    @include media-sm {
+      margin-top: 30px;
+    }
+  }
+
+  &__copyright {
+    @include flex;
+    column-gap: 50px;
+
+    @include media-lg {
+      order: 2;
+    }
+
+    @include media-sm {
+      flex-direction: column;
+      row-gap: 30px;
+    }
+  }
+
+  &__copyright-item {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    color: $color-white;
+  }
+
+  &__social {
+    @include flex;
+    column-gap: 40px;
+
+    @include media-lg {
+      column-gap: 50px;
+      order: 1;
+    }
+  }
+
+  &__social-link {
+    @include flex-center;
+    width: 40px;
+    height: 40px;
+    transition: $transition;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__btn {
+    width: 360px;
+    padding: 26px;
+
+    @include media-sm {
+      width: 100%;
+      padding: 9px !important;
+    }
+  }
+}

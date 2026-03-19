@@ -1,0 +1,288 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.map {
+  padding: 40px 0 150px;
+  @include flex-column;
+  align-items: center;
+  row-gap: 70px;
+
+  @include media-xl {
+    padding: 30px 0 100px;
+    row-gap: 30px;
+  }
+
+  @include media-lg {
+    padding: 30px 0 100px;
+    row-gap: 50px;
+  }
+
+  @include media-sm {
+    padding: 20px 0 50px;
+    row-gap: 30px;
+  }
+
+  &__title {
+    @include heading-2;
+    color: $color-navy;
+    text-align: center;
+    max-width: 600px;
+
+    @include media-lg {
+      @include heading-3;
+    }
+
+    @include media-sm {
+      @include text-1;
+      max-width: 300px;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+}
+
+.marker {
+  position: absolute;
+  width: 80px;
+  height: 120px;
+  background-image: url("/icons/map/tag.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 15px;
+  transition: $transition;
+  filter: drop-shadow(0px 4px 15px rgba($color-orange, 0.5));
+
+  @include media-lg {
+    width: 34px;
+    height: 51px;
+    padding-top: 7px;
+  }
+
+  @include media-sm {
+    width: 28px;
+    height: 42px;
+  }
+
+  &:hover {
+    background-image: url("/icons/map/tag-white.png");
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -8.5px;
+      width: 100px;
+      height: 144px;
+      background-image: url("/icons/map/tag-hover.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      @include media-lg {
+        width: 46px;
+        height: 68px;
+        top: -6.5px;
+      }
+
+      @include media-sm {
+        width: 40px;
+        height: 60px;
+        top: -7px;
+      }
+    }
+  }
+
+  &:active {
+    transform: scale(1.02);
+  }
+
+  &__icon {
+    @include media-lg {
+      width: 25px;
+    }
+
+    @include media-sm {
+      width: 17px;
+    }
+  }
+}
+
+// Marker Position
+
+.marker_eagle {
+  top: 46%;
+  left: 12.3%;
+
+  @include media-xl {
+    top: 43%;
+    left: 11.3%;
+  }
+
+  @include media-lg {
+    top: 50%;
+    left: 13.3%;
+  }
+
+  @include media-sm {
+    top: 46%;
+    left: 12.3%;
+  }
+}
+
+.marker_alligator {
+  top: 46%;
+  left: 21.3%;
+
+  @include media-xl {
+    top: 43%;
+    left: 20.3%;
+  }
+
+  @include media-lg {
+    top: 50%;
+    left: 22.3%;
+  }
+
+  @include media-sm {
+    top: 46%;
+    left: 21.3%;
+  }
+}
+
+.marker_lion {
+  top: 50.5%;
+  left: 41.5%;
+
+  @include media-xl {
+    top: 48.5%;
+    left: 40.5%;
+  }
+
+  @include media-lg {
+    top: 55.5%;
+    left: 42.5%;
+  }
+
+  @include media-sm {
+    top: 51.5%;
+    left: 41.5%;
+  }
+}
+
+.marker_gorilla {
+  top: 53.5%;
+  left: 49.3%;
+
+  @include media-xl {
+    top: 51.5%;
+    left: 48.8%;
+  }
+
+  @include media-lg {
+    top: 58.5%;
+    left: 50%;
+  }
+
+  @include media-sm {
+    top: 54.5%;
+    left: 49%;
+  }
+}
+
+.marker_lemur {
+  top: 66.5%;
+  left: 57%;
+
+  @include media-xl {
+    top: 64.5%;
+    left: 56%;
+  }
+
+  @include media-lg {
+    top: 71.5%;
+    left: 58%;
+
+    .marker__icon {
+      @include flex-center;
+      img {
+        height: 24px;
+      }
+    }
+  }
+
+  @include media-sm {
+    top: 67.5%;
+    left: 57%;
+
+    .marker__icon {
+      img {
+        height: 20px;
+      }
+    }
+  }
+}
+
+.marker_panda {
+  top: 38%;
+  left: 68.3%;
+
+  @include media-xl {
+    top: 36%;
+    left: 67.3%;
+  }
+
+  @include media-lg {
+    top: 43%;
+    left: 69.3%;
+  }
+
+  @include media-sm {
+    top: 39%;
+    left: 68.3%;
+  }
+}
+
+.marker_tiger {
+  top: 56.3%;
+  left: 72.7%;
+
+  @include media-xl {
+    top: 54.3%;
+    left: 71.7%;
+  }
+
+  @include media-lg {
+    top: 61.3%;
+    left: 73.7%;
+  }
+
+  @include media-sm {
+    top: 57.3%;
+    left: 72.7%;
+  }
+}
+
+.marker_coala {
+  top: 69.5%;
+  left: 82%;
+
+  @include media-xl {
+    top: 67.5%;
+    left: 81%;
+  }
+
+  @include media-lg {
+    top: 74.5%;
+    left: 83%;
+  }
+
+  @include media-sm {
+    top: 70.5%;
+    left: 82%;
+  }
+}

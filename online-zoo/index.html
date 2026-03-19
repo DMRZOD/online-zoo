@@ -1,0 +1,1255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Zoo</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <h1>Online Zoo</h1>
+
+        <a href="/" class="header__logo">
+          <img src="/icons/logo.svg" alt="Online Zoo Logo" />
+        </a>
+
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a href="#about" class="header__nav-link header__nav-link_active">
+                About
+              </a>
+            </li>
+            <li class="header__nav-item">
+              <a href="/pages/map.html" class="header__nav-link">Map</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="/pages/animals.html" class="header__nav-link">Zoos</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="/pages/contact.html" class="header__nav-link"
+                >Contact Us</a
+              >
+            </li>
+            <li class="header__nav-item">
+              <a
+                href="https://www.figma.com/file/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project"
+                class="header__nav-link"
+                target="_blank"
+              >
+                Design
+              </a>
+            </li>
+          </ul>
+
+          <div class="header__social">
+            <a
+              href="https://youtube.com"
+              class="header__social-link"
+              target="_blank"
+            >
+              <img src="/icons/youtube.svg" alt="YouTube" />
+            </a>
+            <a
+              href="https://instagram.com"
+              class="header__social-link"
+              target="_blank"
+            >
+              <img src="/icons/instagram.svg" alt="Instagram" />
+            </a>
+            <a
+              href="https://facebook.com"
+              class="header__social-link"
+              target="_blank"
+            >
+              <img src="/icons/facebook.svg" alt="Facebook" />
+            </a>
+          </div>
+
+          <button class="button-user header__btn">
+            <span>Account</span>
+            <img src="/icons/user.svg" alt="User Icon" />
+          </button>
+        </nav>
+
+        <button class="header__burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="header__overlay"></div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <div class="hero__container">
+          <h2 class="hero__title">Watch your favorite animal online</h2>
+          <p class="hero__text">
+            Explore the exciting and mysterious world of wild animals in a
+            natural setting without leaving your home.
+          </p>
+
+          <button class="button-primary hero__btn">
+            <a href="/pages/animals.html">
+              <span>View Live Cam</span>
+              <img src="/icons/arrow-right.svg" alt="Arrow Right" />
+            </a>
+          </button>
+        </div>
+        <img
+          src="/images/hero/hero-bg-mobile.jpg"
+          alt="Hero Background"
+          class="hero__bg"
+        />
+      </section>
+
+      <section class="about-top" id="about">
+        <div class="about-top__container">
+          <div class="about-top__content">
+            <h3 class="about-top__title">Welcome to the Online Zoo!</h3>
+            <p class="about-top__text">
+              On our website, using live webcams, fans of all ages can observe
+              various animals. Among them, are Giant pandas, eagles, alligators,
+              forest gorillas, African lions, and others. It is the whole
+              natural world in real-time in front of our cameras. We hope you
+              will enjoy watching closely and explore animals’ behavior and
+              habitats! Note: animals are not always on view on cameras, so
+              please check back if you don't see anything.
+            </p>
+          </div>
+          <div class="about-top__image">
+            <img src="images/about/welcome.jpg" alt="Welcome Photo" />
+          </div>
+        </div>
+      </section>
+
+      <section class="about-bottom">
+        <div class="about-bottom__container">
+          <div class="about-bottom__image">
+            <img src="images/about/how-we-work.jpg" alt="Eagles Photo" />
+          </div>
+          <div class="about-bottom__content">
+            <h3 class="about-bottom__title">How we work</h3>
+            <p class="about-bottom__text">
+              Online Zoo is a nonprofit committed to inspiring awareness and
+              preservation of nature and wild animals in our zoo and worldwide.
+              Every day, our experts work to safeguard the health and wellness
+              of the animals. To continue these efforts, we need your help.
+              We're so grateful to our numerous supporters. All donations, large
+              and small, go a long way to the conservation efforts of our pets.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="donation">
+        <div class="donation__container">
+          <div class="donation__content">
+            <h4 class="donation__title">Your donation makes a difference!</h4>
+            <p class="donation__text">
+              The Online Zoo's animal webcams are some of the most famous on
+              <br />
+              the internet. Tune in to watch your favourite animals — live,
+              24/7!
+            </p>
+          </div>
+          <div class="donation__action">
+            <span class="donation__label">Quick Donate</span>
+            <button class="button-donation donation__btn">
+              <span class="button-donation__text">$ Donation Amount</span>
+              <span class="button-donation__icon">
+                <img src="/icons/arrow-right.svg" alt="Arrow Right" />
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="pets">
+        <div class="pets__container">
+          <div class="pets__header">
+            <h3 class="pets__title">Meet some our pets</h3>
+            <p class="pets__text">
+              Do you have a special place in your heart for animals? Who are
+              your favorites? Perhaps you'd like to donate to special ones or
+              all our pets? We think it's important for you to choose how your
+              donation is used.
+            </p>
+          </div>
+
+          <div class="slider__nav pets__nav">
+            <button class="slider__nav-btn">
+              <svg
+                width="25"
+                height="22"
+                viewBox="0 0 25 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M11.0724 0.119971C11.2545 0.199174 11.42 0.315255 11.5593 0.461565C11.6989 0.607505 11.8097 0.780876 11.8853 0.971748C11.9609 1.16262 11.9998 1.36724 11.9998 1.57389C11.9998 1.78055 11.9609 1.98517 11.8853 2.17604C11.8097 2.36691 11.6989 2.54028 11.5593 2.68622L5.53159 9H22.6822C23.1066 9 23.5135 9.21071 23.8136 9.58579C24.1137 9.96086 24.2822 10.4696 24.2822 11C24.2822 11.5304 24.1137 12.0391 23.8136 12.4142C23.5135 12.7893 23.1066 13 22.6822 13H5.53081L11.5593 19.3146C11.8408 19.6096 11.999 20.0097 11.999 20.4269C11.999 20.8441 11.8408 21.2443 11.5593 21.5393C11.2777 21.8343 10.8959 22 10.4978 22C10.0996 22 9.71776 21.8343 9.43622 21.5393L0.440245 12.1127C0.300617 11.9668 0.189838 11.7934 0.114252 11.6026C0.0386677 11.4117 -0.000240326 11.2071 -0.000240326 11.0004C-0.000240326 10.7938 0.0386677 10.5891 0.114252 10.3983C0.189838 10.2074 0.300617 10.034 0.440245 9.88808L9.43622 0.461565C9.5755 0.315255 9.74095 0.199174 9.92311 0.119971C10.1053 0.0407677 10.3005 0 10.4978 0C10.695 0 10.8902 0.0407677 11.0724 0.119971Z"
+                  fill="#20113D"
+                />
+              </svg>
+            </button>
+            <button class="slider__nav-btn">
+              <svg
+                width="25"
+                height="22"
+                viewBox="0 0 25 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M13.2098 0.119971C13.0277 0.199174 12.8622 0.315255 12.7229 0.461565C12.5833 0.607505 12.4725 0.780876 12.397 0.971748C12.3214 1.16262 12.2825 1.36724 12.2825 1.57389C12.2825 1.78055 12.3214 1.98517 12.397 2.17604C12.4725 2.36691 12.5833 2.54028 12.7229 2.68622L18.7506 9H1.6C1.17565 9 0.768688 9.21071 0.468629 9.58579C0.168571 9.96086 0 10.4696 0 11C0 11.5304 0.168571 12.0391 0.468629 12.4142C0.768688 12.7893 1.17565 13 1.6 13H18.7514L12.7229 19.3146C12.4414 19.6096 12.2833 20.0097 12.2833 20.4269C12.2833 20.8441 12.4414 21.2443 12.7229 21.5393C13.0045 21.8343 13.3863 22 13.7845 22C14.1826 22 14.5645 21.8343 14.846 21.5393L23.842 12.1127C23.9816 11.9668 24.0924 11.7934 24.168 11.6026C24.2436 11.4117 24.2825 11.2071 24.2825 11.0004C24.2825 10.7938 24.2436 10.5891 24.168 10.3983C24.0924 10.2074 23.9816 10.034 23.842 9.88808L14.846 0.461565C14.7067 0.315255 14.5413 0.199174 14.3591 0.119971C14.177 0.0407677 13.9817 0 13.7845 0C13.5873 0 13.392 0.0407677 13.2098 0.119971Z"
+                  fill="#20113D"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="pets__slider">
+          <div class="pets__slider-track">
+            <a href="" class="pets-card">
+              <div class="pets-card__label">Lucas</div>
+
+              <div class="pets-card__image">
+                <img src="/images/cards/panda.jpg" alt="Panda" />
+              </div>
+
+              <div class="pets-card__content">
+                <div class="pets-card__top">
+                  <div class="pets-card__name">Giant Panda</div>
+                  <div class="pets-card__text">
+                    Native to central China, giant pandas have come to symbolize
+                    vulnerable species.
+                  </div>
+                </div>
+                <button class="button-card pets-card__btn">
+                  <span>View Live Cam</span>
+                  <svg
+                    width="28"
+                    height="25"
+                    viewBox="0 0 28 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M14.878 0.135121C14.6728 0.224325 14.4865 0.355065 14.3296 0.519851C14.1723 0.684221 14.0476 0.879485 13.9624 1.09446C13.8773 1.30944 13.8335 1.5399 13.8335 1.77265C13.8335 2.00539 13.8773 2.23586 13.9624 2.45083C14.0476 2.66581 14.1723 2.86107 14.3296 3.02544L21.1185 10.1365H1.80205C1.32411 10.1365 0.865757 10.3738 0.527808 10.7963C0.189858 11.2187 0 11.7917 0 12.3891C0 12.9865 0.189858 13.5594 0.527808 13.9819C0.865757 14.4043 1.32411 14.6416 1.80205 14.6416H21.1193L14.3296 21.7536C14.0125 22.0859 13.8344 22.5366 13.8344 23.0064C13.8344 23.4763 14.0125 23.927 14.3296 24.2592C14.6467 24.5915 15.0767 24.7782 15.5252 24.7782C15.9736 24.7782 16.4037 24.5915 16.7208 24.2592L26.8527 13.6423C27.01 13.478 27.1348 13.2827 27.2199 13.0677C27.305 12.8528 27.3489 12.6223 27.3489 12.3895C27.3489 12.1568 27.305 11.9263 27.2199 11.7114C27.1348 11.4964 27.01 11.3011 26.8527 11.1367L16.7208 0.519851C16.5639 0.355065 16.3775 0.224325 16.1724 0.135121C15.9672 0.0459159 15.7473 0 15.5252 0C15.3031 0 15.0831 0.0459159 14.878 0.135121Z"
+                      fill="#F58021"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </a>
+            <a href="" class="pets-card">
+              <div class="pets-card__label">Lucas</div>
+
+              <div class="pets-card__image">
+                <img src="/images/cards/panda.jpg" alt="Panda" />
+              </div>
+
+              <div class="pets-card__content">
+                <div class="pets-card__top">
+                  <div class="pets-card__name">Giant Panda</div>
+                  <div class="pets-card__text">
+                    Native to central China, giant pandas have come to symbolize
+                    vulnerable species.
+                  </div>
+                </div>
+                <button class="button-card pets-card__btn">
+                  <span>View Live Cam</span>
+                  <svg
+                    width="28"
+                    height="25"
+                    viewBox="0 0 28 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M14.878 0.135121C14.6728 0.224325 14.4865 0.355065 14.3296 0.519851C14.1723 0.684221 14.0476 0.879485 13.9624 1.09446C13.8773 1.30944 13.8335 1.5399 13.8335 1.77265C13.8335 2.00539 13.8773 2.23586 13.9624 2.45083C14.0476 2.66581 14.1723 2.86107 14.3296 3.02544L21.1185 10.1365H1.80205C1.32411 10.1365 0.865757 10.3738 0.527808 10.7963C0.189858 11.2187 0 11.7917 0 12.3891C0 12.9865 0.189858 13.5594 0.527808 13.9819C0.865757 14.4043 1.32411 14.6416 1.80205 14.6416H21.1193L14.3296 21.7536C14.0125 22.0859 13.8344 22.5366 13.8344 23.0064C13.8344 23.4763 14.0125 23.927 14.3296 24.2592C14.6467 24.5915 15.0767 24.7782 15.5252 24.7782C15.9736 24.7782 16.4037 24.5915 16.7208 24.2592L26.8527 13.6423C27.01 13.478 27.1348 13.2827 27.2199 13.0677C27.305 12.8528 27.3489 12.6223 27.3489 12.3895C27.3489 12.1568 27.305 11.9263 27.2199 11.7114C27.1348 11.4964 27.01 11.3011 26.8527 11.1367L16.7208 0.519851C16.5639 0.355065 16.3775 0.224325 16.1724 0.135121C15.9672 0.0459159 15.7473 0 15.5252 0C15.3031 0 15.0831 0.0459159 14.878 0.135121Z"
+                      fill="#F58021"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </a>
+            <a href="" class="pets-card">
+              <div class="pets-card__label">Lucas</div>
+
+              <div class="pets-card__image">
+                <img src="/images/cards/panda.jpg" alt="Panda" />
+              </div>
+
+              <div class="pets-card__content">
+                <div class="pets-card__top">
+                  <div class="pets-card__name">Giant Panda</div>
+                  <div class="pets-card__text">
+                    Native to central China, giant pandas have come to symbolize
+                    vulnerable species.
+                  </div>
+                </div>
+                <button class="button-card pets-card__btn">
+                  <span>View Live Cam</span>
+                  <svg
+                    width="28"
+                    height="25"
+                    viewBox="0 0 28 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M14.878 0.135121C14.6728 0.224325 14.4865 0.355065 14.3296 0.519851C14.1723 0.684221 14.0476 0.879485 13.9624 1.09446C13.8773 1.30944 13.8335 1.5399 13.8335 1.77265C13.8335 2.00539 13.8773 2.23586 13.9624 2.45083C14.0476 2.66581 14.1723 2.86107 14.3296 3.02544L21.1185 10.1365H1.80205C1.32411 10.1365 0.865757 10.3738 0.527808 10.7963C0.189858 11.2187 0 11.7917 0 12.3891C0 12.9865 0.189858 13.5594 0.527808 13.9819C0.865757 14.4043 1.32411 14.6416 1.80205 14.6416H21.1193L14.3296 21.7536C14.0125 22.0859 13.8344 22.5366 13.8344 23.0064C13.8344 23.4763 14.0125 23.927 14.3296 24.2592C14.6467 24.5915 15.0767 24.7782 15.5252 24.7782C15.9736 24.7782 16.4037 24.5915 16.7208 24.2592L26.8527 13.6423C27.01 13.478 27.1348 13.2827 27.2199 13.0677C27.305 12.8528 27.3489 12.6223 27.3489 12.3895C27.3489 12.1568 27.305 11.9263 27.2199 11.7114C27.1348 11.4964 27.01 11.3011 26.8527 11.1367L16.7208 0.519851C16.5639 0.355065 16.3775 0.224325 16.1724 0.135121C15.9672 0.0459159 15.7473 0 15.5252 0C15.3031 0 15.0831 0.0459159 14.878 0.135121Z"
+                      fill="#F58021"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </a>
+            <a href="" class="pets-card">
+              <div class="pets-card__label">Lucas</div>
+
+              <div class="pets-card__image">
+                <img src="/images/cards/panda.jpg" alt="Panda" />
+              </div>
+
+              <div class="pets-card__content">
+                <div class="pets-card__top">
+                  <div class="pets-card__name">Giant Panda</div>
+                  <div class="pets-card__text">
+                    Native to central China, giant pandas have come to symbolize
+                    vulnerable species.
+                  </div>
+                </div>
+                <button class="button-card pets-card__btn">
+                  <span>View Live Cam</span>
+                  <svg
+                    width="28"
+                    height="25"
+                    viewBox="0 0 28 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M14.878 0.135121C14.6728 0.224325 14.4865 0.355065 14.3296 0.519851C14.1723 0.684221 14.0476 0.879485 13.9624 1.09446C13.8773 1.30944 13.8335 1.5399 13.8335 1.77265C13.8335 2.00539 13.8773 2.23586 13.9624 2.45083C14.0476 2.66581 14.1723 2.86107 14.3296 3.02544L21.1185 10.1365H1.80205C1.32411 10.1365 0.865757 10.3738 0.527808 10.7963C0.189858 11.2187 0 11.7917 0 12.3891C0 12.9865 0.189858 13.5594 0.527808 13.9819C0.865757 14.4043 1.32411 14.6416 1.80205 14.6416H21.1193L14.3296 21.7536C14.0125 22.0859 13.8344 22.5366 13.8344 23.0064C13.8344 23.4763 14.0125 23.927 14.3296 24.2592C14.6467 24.5915 15.0767 24.7782 15.5252 24.7782C15.9736 24.7782 16.4037 24.5915 16.7208 24.2592L26.8527 13.6423C27.01 13.478 27.1348 13.2827 27.2199 13.0677C27.305 12.8528 27.3489 12.6223 27.3489 12.3895C27.3489 12.1568 27.305 11.9263 27.2199 11.7114C27.1348 11.4964 27.01 11.3011 26.8527 11.1367L16.7208 0.519851C16.5639 0.355065 16.3775 0.224325 16.1724 0.135121C15.9672 0.0459159 15.7473 0 15.5252 0C15.3031 0 15.0831 0.0459159 14.878 0.135121Z"
+                      fill="#F58021"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </a>
+            <a href="" class="pets-card">
+              <div class="pets-card__label">Lucas</div>
+
+              <div class="pets-card__image">
+                <img src="/images/cards/panda.jpg" alt="Panda" />
+              </div>
+
+              <div class="pets-card__content">
+                <div class="pets-card__top">
+                  <div class="pets-card__name">Giant Panda</div>
+                  <div class="pets-card__text">
+                    Native to central China, giant pandas have come to symbolize
+                    vulnerable species.
+                  </div>
+                </div>
+                <button class="button-card pets-card__btn">
+                  <span>View Live Cam</span>
+                  <svg
+                    width="28"
+                    height="25"
+                    viewBox="0 0 28 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M14.878 0.135121C14.6728 0.224325 14.4865 0.355065 14.3296 0.519851C14.1723 0.684221 14.0476 0.879485 13.9624 1.09446C13.8773 1.30944 13.8335 1.5399 13.8335 1.77265C13.8335 2.00539 13.8773 2.23586 13.9624 2.45083C14.0476 2.66581 14.1723 2.86107 14.3296 3.02544L21.1185 10.1365H1.80205C1.32411 10.1365 0.865757 10.3738 0.527808 10.7963C0.189858 11.2187 0 11.7917 0 12.3891C0 12.9865 0.189858 13.5594 0.527808 13.9819C0.865757 14.4043 1.32411 14.6416 1.80205 14.6416H21.1193L14.3296 21.7536C14.0125 22.0859 13.8344 22.5366 13.8344 23.0064C13.8344 23.4763 14.0125 23.927 14.3296 24.2592C14.6467 24.5915 15.0767 24.7782 15.5252 24.7782C15.9736 24.7782 16.4037 24.5915 16.7208 24.2592L26.8527 13.6423C27.01 13.478 27.1348 13.2827 27.2199 13.0677C27.305 12.8528 27.3489 12.6223 27.3489 12.3895C27.3489 12.1568 27.305 11.9263 27.2199 11.7114C27.1348 11.4964 27.01 11.3011 26.8527 11.1367L16.7208 0.519851C16.5639 0.355065 16.3775 0.224325 16.1724 0.135121C15.9672 0.0459159 15.7473 0 15.5252 0C15.3031 0 15.0831 0.0459159 14.878 0.135121Z"
+                      fill="#F58021"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </a>
+            <a href="" class="pets-card">
+              <div class="pets-card__label">Lucas</div>
+
+              <div class="pets-card__image">
+                <img src="/images/cards/panda.jpg" alt="Panda" />
+              </div>
+
+              <div class="pets-card__content">
+                <div class="pets-card__top">
+                  <div class="pets-card__name">Giant Panda</div>
+                  <div class="pets-card__text">
+                    Native to central China, giant pandas have come to symbolize
+                    vulnerable species.
+                  </div>
+                </div>
+                <button class="button-card pets-card__btn">
+                  <span>View Live Cam</span>
+                  <svg
+                    width="28"
+                    height="25"
+                    viewBox="0 0 28 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M14.878 0.135121C14.6728 0.224325 14.4865 0.355065 14.3296 0.519851C14.1723 0.684221 14.0476 0.879485 13.9624 1.09446C13.8773 1.30944 13.8335 1.5399 13.8335 1.77265C13.8335 2.00539 13.8773 2.23586 13.9624 2.45083C14.0476 2.66581 14.1723 2.86107 14.3296 3.02544L21.1185 10.1365H1.80205C1.32411 10.1365 0.865757 10.3738 0.527808 10.7963C0.189858 11.2187 0 11.7917 0 12.3891C0 12.9865 0.189858 13.5594 0.527808 13.9819C0.865757 14.4043 1.32411 14.6416 1.80205 14.6416H21.1193L14.3296 21.7536C14.0125 22.0859 13.8344 22.5366 13.8344 23.0064C13.8344 23.4763 14.0125 23.927 14.3296 24.2592C14.6467 24.5915 15.0767 24.7782 15.5252 24.7782C15.9736 24.7782 16.4037 24.5915 16.7208 24.2592L26.8527 13.6423C27.01 13.478 27.1348 13.2827 27.2199 13.0677C27.305 12.8528 27.3489 12.6223 27.3489 12.3895C27.3489 12.1568 27.305 11.9263 27.2199 11.7114C27.1348 11.4964 27.01 11.3011 26.8527 11.1367L16.7208 0.519851C16.5639 0.355065 16.3775 0.224325 16.1724 0.135121C15.9672 0.0459159 15.7473 0 15.5252 0C15.3031 0 15.0831 0.0459159 14.878 0.135121Z"
+                      fill="#F58021"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </a>
+            <a href="" class="pets-card">
+              <div class="pets-card__label">Lucas</div>
+
+              <div class="pets-card__image">
+                <img src="/images/cards/panda.jpg" alt="Panda" />
+              </div>
+
+              <div class="pets-card__content">
+                <div class="pets-card__top">
+                  <div class="pets-card__name">Giant Panda</div>
+                  <div class="pets-card__text">
+                    Native to central China, giant pandas have come to symbolize
+                    vulnerable species.
+                  </div>
+                </div>
+                <button class="button-card pets-card__btn">
+                  <span>View Live Cam</span>
+                  <svg
+                    width="28"
+                    height="25"
+                    viewBox="0 0 28 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M14.878 0.135121C14.6728 0.224325 14.4865 0.355065 14.3296 0.519851C14.1723 0.684221 14.0476 0.879485 13.9624 1.09446C13.8773 1.30944 13.8335 1.5399 13.8335 1.77265C13.8335 2.00539 13.8773 2.23586 13.9624 2.45083C14.0476 2.66581 14.1723 2.86107 14.3296 3.02544L21.1185 10.1365H1.80205C1.32411 10.1365 0.865757 10.3738 0.527808 10.7963C0.189858 11.2187 0 11.7917 0 12.3891C0 12.9865 0.189858 13.5594 0.527808 13.9819C0.865757 14.4043 1.32411 14.6416 1.80205 14.6416H21.1193L14.3296 21.7536C14.0125 22.0859 13.8344 22.5366 13.8344 23.0064C13.8344 23.4763 14.0125 23.927 14.3296 24.2592C14.6467 24.5915 15.0767 24.7782 15.5252 24.7782C15.9736 24.7782 16.4037 24.5915 16.7208 24.2592L26.8527 13.6423C27.01 13.478 27.1348 13.2827 27.2199 13.0677C27.305 12.8528 27.3489 12.6223 27.3489 12.3895C27.3489 12.1568 27.305 11.9263 27.2199 11.7114C27.1348 11.4964 27.01 11.3011 26.8527 11.1367L16.7208 0.519851C16.5639 0.355065 16.3775 0.224325 16.1724 0.135121C15.9672 0.0459159 15.7473 0 15.5252 0C15.3031 0 15.0831 0.0459159 14.878 0.135121Z"
+                      fill="#F58021"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </a>
+            <a href="" class="pets-card">
+              <div class="pets-card__label">Lucas</div>
+
+              <div class="pets-card__image">
+                <img src="/images/cards/panda.jpg" alt="Panda" />
+              </div>
+
+              <div class="pets-card__content">
+                <div class="pets-card__top">
+                  <div class="pets-card__name">Giant Panda</div>
+                  <div class="pets-card__text">
+                    Native to central China, giant pandas have come to symbolize
+                    vulnerable species.
+                  </div>
+                </div>
+                <button class="button-card pets-card__btn">
+                  <span>View Live Cam</span>
+                  <svg
+                    width="28"
+                    height="25"
+                    viewBox="0 0 28 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M14.878 0.135121C14.6728 0.224325 14.4865 0.355065 14.3296 0.519851C14.1723 0.684221 14.0476 0.879485 13.9624 1.09446C13.8773 1.30944 13.8335 1.5399 13.8335 1.77265C13.8335 2.00539 13.8773 2.23586 13.9624 2.45083C14.0476 2.66581 14.1723 2.86107 14.3296 3.02544L21.1185 10.1365H1.80205C1.32411 10.1365 0.865757 10.3738 0.527808 10.7963C0.189858 11.2187 0 11.7917 0 12.3891C0 12.9865 0.189858 13.5594 0.527808 13.9819C0.865757 14.4043 1.32411 14.6416 1.80205 14.6416H21.1193L14.3296 21.7536C14.0125 22.0859 13.8344 22.5366 13.8344 23.0064C13.8344 23.4763 14.0125 23.927 14.3296 24.2592C14.6467 24.5915 15.0767 24.7782 15.5252 24.7782C15.9736 24.7782 16.4037 24.5915 16.7208 24.2592L26.8527 13.6423C27.01 13.478 27.1348 13.2827 27.2199 13.0677C27.305 12.8528 27.3489 12.6223 27.3489 12.3895C27.3489 12.1568 27.305 11.9263 27.2199 11.7114C27.1348 11.4964 27.01 11.3011 26.8527 11.1367L16.7208 0.519851C16.5639 0.355065 16.3775 0.224325 16.1724 0.135121C15.9672 0.0459159 15.7473 0 15.5252 0C15.3031 0 15.0831 0.0459159 14.878 0.135121Z"
+                      fill="#F58021"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="pets__container">
+          <button class="button-navy pets__btn">
+            <a href="/pages/animals.html">
+              <span>Choose your favourite</span>
+              <svg
+                width="25"
+                height="22"
+                viewBox="0 0 25 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M13.2098 0.119971C13.0277 0.199174 12.8622 0.315255 12.7229 0.461565C12.5833 0.607505 12.4725 0.780876 12.397 0.971748C12.3214 1.16262 12.2825 1.36724 12.2825 1.57389C12.2825 1.78055 12.3214 1.98517 12.397 2.17604C12.4725 2.36691 12.5833 2.54028 12.7229 2.68622L18.7506 9H1.6C1.17565 9 0.768688 9.21071 0.468629 9.58579C0.168571 9.96086 0 10.4696 0 11C0 11.5304 0.168571 12.0391 0.468629 12.4142C0.768688 12.7893 1.17565 13 1.6 13H18.7514L12.7229 19.3146C12.4414 19.6096 12.2833 20.0097 12.2833 20.4269C12.2833 20.8441 12.4414 21.2443 12.7229 21.5393C13.0045 21.8343 13.3863 22 13.7845 22C14.1826 22 14.5645 21.8343 14.846 21.5393L23.842 12.1127C23.9816 11.9668 24.0924 11.7934 24.168 11.6026C24.2436 11.4117 24.2825 11.2071 24.2825 11.0004C24.2825 10.7938 24.2436 10.5891 24.168 10.3983C24.0924 10.2074 23.9816 10.034 23.842 9.88808L14.846 0.461565C14.7067 0.315255 14.5413 0.199174 14.3591 0.119971C14.177 0.0407677 13.9817 0 13.7845 0C13.5873 0 13.392 0.0407677 13.2098 0.119971Z"
+                  fill="#20113D"
+                />
+              </svg>
+            </a>
+          </button>
+        </div>
+      </section>
+
+      <section class="feed">
+        <div class="feed__container">
+          <h3 class="feed__title">Pay and Feed</h3>
+
+          <ul class="feed__list">
+            <li class="feed__item">
+              <div class="feed__head">
+                <span class="feed__step">01</span>
+                <span class="feed__line"></span>
+              </div>
+
+              <div class="feed__body">
+                <div class="feed__image">
+                  <img src="/images/feed/feed-1.jpg" alt="Chimpanzee" />
+                </div>
+
+                <div class="feed__content">
+                  <div class="feed__icon">
+                    <img src="/icons/feed-icon-1.svg" alt="Heart Icon" />
+                  </div>
+                  <h4 class="feed__subtitle">Your donation has an impact</h4>
+                  <p class="feed__text">
+                    Providing our animals with high-quality nutritious diets is
+                    just one element of animal care at our Zoo. We do all the
+                    best so that our animals can eat food similar to what they
+                    might find in their natural habitats while making sure they
+                    get the right mix of nutrients, proteins, and vitamins to be
+                    happy and healthy. Please help us provide nutritious food
+                    for our animals by donating. The generosity of people like
+                    you can help us make sure that our animals enjoy good food
+                    that keeps them in great condition.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="feed__item">
+              <div class="feed__head">
+                <span class="feed__step">02</span>
+                <span class="feed__line"></span>
+              </div>
+
+              <div class="feed__body">
+                <div class="feed__image">
+                  <img src="/images/feed/feed-2.jpg" alt="Banana" />
+                </div>
+
+                <div class="feed__content">
+                  <div class="feed__icon">
+                    <img src="/icons/feed-icon-2.svg" alt="Cash Icon" />
+                  </div>
+                  <h4 class="feed__subtitle">Make a donation</h4>
+                  <p class="feed__text">
+                    You can donate through your credit card without any fees. It
+                    is easy and safe. We do not keep donors' personal
+                    information on an online network. Choose an amount to give
+                    and the pet's name if needed. One of the most effective ways
+                    you can give is by making regular donations.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="feed__item">
+              <div class="feed__head">
+                <span class="feed__step">03</span>
+                <span class="feed__line"></span>
+              </div>
+
+              <div class="feed__body">
+                <div class="feed__image">
+                  <img src="/images/feed/feed-3.jpg" alt="Eating Animal" />
+                </div>
+
+                <div class="feed__content">
+                  <div class="feed__icon">
+                    <img src="/icons/feed-icon-3.svg" alt="Product Icon" />
+                  </div>
+                  <h4 class="feed__subtitle">
+                    Bring your food charity — straight to your favorites pets.
+                  </h4>
+                  <p class="feed__text">
+                    After your donation, the animal receives its favorite foods.
+                    You can support your favorite animals or any animal you care
+                    about and make a real personal impact. Never doubt that your
+                    donation can make a difference even if it is small.
+                  </p>
+
+                  <button class="button-secondary feed__btn">
+                    <span>Donate Now</span>
+                    <img src="/icons/arrow-right.svg" alt="Arrow Right" />
+                  </button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="review">
+        <div class="review__container">
+          <div class="review__header">
+            <h3 class="review__title">What our users think</h3>
+            <p class="review__text">
+              We are continuously striving to improve the experiences of our
+              future guests. Below you can leave your own feedback, or simply
+              view feedback from past clients.
+            </p>
+          </div>
+
+          <div class="review__slider">
+            <div class="review__slider-track">
+              <div class="review-card">
+                <div class="review-card__icon">
+                  <img src="/icons/quote.svg" alt="Quote Mark" />
+                </div>
+                <div class="review-card__content">
+                  <h4 class="review-card__title">New Jersey, June 2020</h4>
+                  <p class="review-card__text">
+                    I am writing to thank you for your mission is to bring
+                    people closer to nature! Like myself, children were very
+                    impressed by the opportunity to explore the life of
+                    incredible animals in real-time.
+                  </p>
+                </div>
+                <span class="review-card__author">Karen Maithlan</span>
+              </div>
+              <div class="review-card">
+                <div class="review-card__icon">
+                  <img src="/icons/quote.svg" alt="Quote Mark" />
+                </div>
+                <div class="review-card__content">
+                  <h4 class="review-card__title">New Jersey, June 2020</h4>
+                  <p class="review-card__text">
+                    I am writing to thank you for your mission is to bring
+                    people closer to nature! Like myself, children were very
+                    impressed by the opportunity to explore the life of
+                    incredible animals in real-time.
+                  </p>
+                </div>
+                <span class="review-card__author">Karen Maithlan</span>
+              </div>
+              <div class="review-card">
+                <div class="review-card__icon">
+                  <img src="/icons/quote.svg" alt="Quote Mark" />
+                </div>
+                <div class="review-card__content">
+                  <h4 class="review-card__title">New Jersey, June 2020</h4>
+                  <p class="review-card__text">
+                    I am writing to thank you for your mission is to bring
+                    people closer to nature! Like myself, children were very
+                    impressed by the opportunity to explore the life of
+                    incredible animals in real-time.
+                  </p>
+                </div>
+                <span class="review-card__author">Karen Maithlan</span>
+              </div>
+              <div class="review-card">
+                <div class="review-card__icon">
+                  <img src="/icons/quote.svg" alt="Quote Mark" />
+                </div>
+                <div class="review-card__content">
+                  <h4 class="review-card__title">New Jersey, June 2020</h4>
+                  <p class="review-card__text">
+                    I am writing to thank you for your mission is to bring
+                    people closer to nature! Like myself, children were very
+                    impressed by the opportunity to explore the life of
+                    incredible animals in real-time.
+                  </p>
+                </div>
+                <span class="review-card__author">Karen Maithlan</span>
+              </div>
+              <div class="review-card">
+                <div class="review-card__icon">
+                  <img src="/icons/quote.svg" alt="Quote Mark" />
+                </div>
+                <div class="review-card__content">
+                  <h4 class="review-card__title">New Jersey, June 2020</h4>
+                  <p class="review-card__text">
+                    I am writing to thank you for your mission is to bring
+                    people closer to nature! Like myself, children were very
+                    impressed by the opportunity to explore the life of
+                    incredible animals in real-time.
+                  </p>
+                </div>
+                <span class="review-card__author">Karen Maithlan</span>
+              </div>
+            </div>
+
+            <div class="slider__nav review__nav">
+              <button class="slider__nav-btn">
+                <svg
+                  width="25"
+                  height="22"
+                  viewBox="0 0 25 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.0724 0.119971C11.2545 0.199174 11.42 0.315255 11.5593 0.461565C11.6989 0.607505 11.8097 0.780876 11.8853 0.971748C11.9609 1.16262 11.9998 1.36724 11.9998 1.57389C11.9998 1.78055 11.9609 1.98517 11.8853 2.17604C11.8097 2.36691 11.6989 2.54028 11.5593 2.68622L5.53159 9H22.6822C23.1066 9 23.5135 9.21071 23.8136 9.58579C24.1137 9.96086 24.2822 10.4696 24.2822 11C24.2822 11.5304 24.1137 12.0391 23.8136 12.4142C23.5135 12.7893 23.1066 13 22.6822 13H5.53081L11.5593 19.3146C11.8408 19.6096 11.999 20.0097 11.999 20.4269C11.999 20.8441 11.8408 21.2443 11.5593 21.5393C11.2777 21.8343 10.8959 22 10.4978 22C10.0996 22 9.71776 21.8343 9.43622 21.5393L0.440245 12.1127C0.300617 11.9668 0.189838 11.7934 0.114252 11.6026C0.0386677 11.4117 -0.000240326 11.2071 -0.000240326 11.0004C-0.000240326 10.7938 0.0386677 10.5891 0.114252 10.3983C0.189838 10.2074 0.300617 10.034 0.440245 9.88808L9.43622 0.461565C9.5755 0.315255 9.74095 0.199174 9.92311 0.119971C10.1053 0.0407677 10.3005 0 10.4978 0C10.695 0 10.8902 0.0407677 11.0724 0.119971Z"
+                    fill="white"
+                  />
+                </svg>
+              </button>
+              <button class="slider__nav-btn">
+                <svg
+                  width="25"
+                  height="22"
+                  viewBox="0 0 25 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M13.2098 0.119971C13.0277 0.199174 12.8622 0.315255 12.7229 0.461565C12.5833 0.607505 12.4725 0.780876 12.397 0.971748C12.3214 1.16262 12.2825 1.36724 12.2825 1.57389C12.2825 1.78055 12.3214 1.98517 12.397 2.17604C12.4725 2.36691 12.5833 2.54028 12.7229 2.68622L18.7506 9H1.6C1.17565 9 0.768688 9.21071 0.468629 9.58579C0.168571 9.96086 0 10.4696 0 11C0 11.5304 0.168571 12.0391 0.468629 12.4142C0.768688 12.7893 1.17565 13 1.6 13H18.7514L12.7229 19.3146C12.4414 19.6096 12.2833 20.0097 12.2833 20.4269C12.2833 20.8441 12.4414 21.2443 12.7229 21.5393C13.0045 21.8343 13.3863 22 13.7845 22C14.1826 22 14.5645 21.8343 14.846 21.5393L23.842 12.1127C23.9816 11.9668 24.0924 11.7934 24.168 11.6026C24.2436 11.4117 24.2825 11.2071 24.2825 11.0004C24.2825 10.7938 24.2436 10.5891 24.168 10.3983C24.0924 10.2074 23.9816 10.034 23.842 9.88808L14.846 0.461565C14.7067 0.315255 14.5413 0.199174 14.3591 0.119971C14.177 0.0407677 13.9817 0 13.7845 0C13.5873 0 13.392 0.0407677 13.2098 0.119971Z"
+                    fill="white"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <button class="button-turquoise review__btn">
+            <a href="/pages/contact.html">
+              <span>Leave Feedback</span>
+              <img src="/icons/arrow-right.svg" alt="Arrow Right" />
+            </a>
+          </button>
+        </div>
+      </section>
+
+      <section class="care">
+        <div class="care__container">
+          <div class="care__header">
+            <h3 class="care__title">Care for the animals you love</h3>
+            <p class="care__text">
+              You can help to look after the animals you love with your gift
+              today
+            </p>
+          </div>
+
+          <div class="care__slider">
+            <div class="care__slider-track">
+              <div class="care__slider-image">
+                <img src="/images/care/koala.jpg" alt="Koala" />
+              </div>
+
+              <a href="/pages/animals.html" class="care-card">
+                <div class="care-card__image">
+                  <img src="/images/care/panda.jpg" alt="Panda" />
+                </div>
+
+                <div class="care-card__content">
+                  <p class="care-card__text">
+                    Your $30 could give Lucas a slice of panda cake, made with
+                    our secret recipe.
+                  </p>
+
+                  <button class="button-card care-card__btn">
+                    <span>Feed</span>
+                    <svg
+                      width="28"
+                      height="25"
+                      viewBox="0 0 28 25"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M14.878 0.135121C14.6728 0.224325 14.4865 0.355065 14.3296 0.519851C14.1723 0.684221 14.0476 0.879485 13.9624 1.09446C13.8773 1.30944 13.8335 1.5399 13.8335 1.77265C13.8335 2.00539 13.8773 2.23586 13.9624 2.45083C14.0476 2.66581 14.1723 2.86107 14.3296 3.02544L21.1185 10.1365H1.80205C1.32411 10.1365 0.865757 10.3738 0.527808 10.7963C0.189858 11.2187 0 11.7917 0 12.3891C0 12.9865 0.189858 13.5594 0.527808 13.9819C0.865757 14.4043 1.32411 14.6416 1.80205 14.6416H21.1193L14.3296 21.7536C14.0125 22.0859 13.8344 22.5366 13.8344 23.0064C13.8344 23.4763 14.0125 23.927 14.3296 24.2592C14.6467 24.5915 15.0767 24.7782 15.5252 24.7782C15.9736 24.7782 16.4037 24.5915 16.7208 24.2592L26.8527 13.6423C27.01 13.478 27.1348 13.2827 27.2199 13.0677C27.305 12.8528 27.3489 12.6223 27.3489 12.3895C27.3489 12.1568 27.305 11.9263 27.2199 11.7114C27.1348 11.4964 27.01 11.3011 26.8527 11.1367L16.7208 0.519851C16.5639 0.355065 16.3775 0.224325 16.1724 0.135121C15.9672 0.0459159 15.7473 0 15.5252 0C15.3031 0 15.0831 0.0459159 14.878 0.135121Z"
+                        fill="#F58021"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </a>
+
+              <a href="/pages/animals.html" class="care-card">
+                <div class="care-card__image">
+                  <img src="/images/care/tiger.jpg" alt="Tiger" />
+                </div>
+
+                <div class="care-card__content">
+                  <p class="care-card__text">
+                    Your $150 will help to care for Senja, a Sumatran tiger, for
+                    three weeks.
+                  </p>
+
+                  <button class="button-card care-card__btn">
+                    <span>Feed</span>
+                    <svg
+                      width="28"
+                      height="25"
+                      viewBox="0 0 28 25"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M14.878 0.135121C14.6728 0.224325 14.4865 0.355065 14.3296 0.519851C14.1723 0.684221 14.0476 0.879485 13.9624 1.09446C13.8773 1.30944 13.8335 1.5399 13.8335 1.77265C13.8335 2.00539 13.8773 2.23586 13.9624 2.45083C14.0476 2.66581 14.1723 2.86107 14.3296 3.02544L21.1185 10.1365H1.80205C1.32411 10.1365 0.865757 10.3738 0.527808 10.7963C0.189858 11.2187 0 11.7917 0 12.3891C0 12.9865 0.189858 13.5594 0.527808 13.9819C0.865757 14.4043 1.32411 14.6416 1.80205 14.6416H21.1193L14.3296 21.7536C14.0125 22.0859 13.8344 22.5366 13.8344 23.0064C13.8344 23.4763 14.0125 23.927 14.3296 24.2592C14.6467 24.5915 15.0767 24.7782 15.5252 24.7782C15.9736 24.7782 16.4037 24.5915 16.7208 24.2592L26.8527 13.6423C27.01 13.478 27.1348 13.2827 27.2199 13.0677C27.305 12.8528 27.3489 12.6223 27.3489 12.3895C27.3489 12.1568 27.305 11.9263 27.2199 11.7114C27.1348 11.4964 27.01 11.3011 26.8527 11.1367L16.7208 0.519851C16.5639 0.355065 16.3775 0.224325 16.1724 0.135121C15.9672 0.0459159 15.7473 0 15.5252 0C15.3031 0 15.0831 0.0459159 14.878 0.135121Z"
+                        fill="#F58021"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </a>
+
+              <a href="/pages/animals.html" class="care-card">
+                <div class="care-card__image">
+                  <img src="/images/care/lemur.jpg" alt="Lemur" />
+                </div>
+
+                <div class="care-card__content">
+                  <p class="care-card__text">
+                    With your support, we can give Andy his favorite fruits.
+                    Especially when it's not fruit season in its natural
+                    habitat.
+                  </p>
+
+                  <button class="button-card care-card__btn">
+                    <span>Feed</span>
+                    <svg
+                      width="28"
+                      height="25"
+                      viewBox="0 0 28 25"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M14.878 0.135121C14.6728 0.224325 14.4865 0.355065 14.3296 0.519851C14.1723 0.684221 14.0476 0.879485 13.9624 1.09446C13.8773 1.30944 13.8335 1.5399 13.8335 1.77265C13.8335 2.00539 13.8773 2.23586 13.9624 2.45083C14.0476 2.66581 14.1723 2.86107 14.3296 3.02544L21.1185 10.1365H1.80205C1.32411 10.1365 0.865757 10.3738 0.527808 10.7963C0.189858 11.2187 0 11.7917 0 12.3891C0 12.9865 0.189858 13.5594 0.527808 13.9819C0.865757 14.4043 1.32411 14.6416 1.80205 14.6416H21.1193L14.3296 21.7536C14.0125 22.0859 13.8344 22.5366 13.8344 23.0064C13.8344 23.4763 14.0125 23.927 14.3296 24.2592C14.6467 24.5915 15.0767 24.7782 15.5252 24.7782C15.9736 24.7782 16.4037 24.5915 16.7208 24.2592L26.8527 13.6423C27.01 13.478 27.1348 13.2827 27.2199 13.0677C27.305 12.8528 27.3489 12.6223 27.3489 12.3895C27.3489 12.1568 27.305 11.9263 27.2199 11.7114C27.1348 11.4964 27.01 11.3011 26.8527 11.1367L16.7208 0.519851C16.5639 0.355065 16.3775 0.224325 16.1724 0.135121C15.9672 0.0459159 15.7473 0 15.5252 0C15.3031 0 15.0831 0.0459159 14.878 0.135121Z"
+                        fill="#F58021"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </a>
+
+              <a href="/pages/animals.html" class="care-card">
+                <div class="care-card__image">
+                  <img src="/images/care/eagle.jpg" alt="Eagle" />
+                </div>
+
+                <div class="care-card__content">
+                  <p class="care-card__text">
+                    Sam & Lora have hatched and raised numerous young and will
+                    be happy with your help.
+                  </p>
+
+                  <button class="button-card care-card__btn">
+                    <span>Feed</span>
+                    <svg
+                      width="28"
+                      height="25"
+                      viewBox="0 0 28 25"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M14.878 0.135121C14.6728 0.224325 14.4865 0.355065 14.3296 0.519851C14.1723 0.684221 14.0476 0.879485 13.9624 1.09446C13.8773 1.30944 13.8335 1.5399 13.8335 1.77265C13.8335 2.00539 13.8773 2.23586 13.9624 2.45083C14.0476 2.66581 14.1723 2.86107 14.3296 3.02544L21.1185 10.1365H1.80205C1.32411 10.1365 0.865757 10.3738 0.527808 10.7963C0.189858 11.2187 0 11.7917 0 12.3891C0 12.9865 0.189858 13.5594 0.527808 13.9819C0.865757 14.4043 1.32411 14.6416 1.80205 14.6416H21.1193L14.3296 21.7536C14.0125 22.0859 13.8344 22.5366 13.8344 23.0064C13.8344 23.4763 14.0125 23.927 14.3296 24.2592C14.6467 24.5915 15.0767 24.7782 15.5252 24.7782C15.9736 24.7782 16.4037 24.5915 16.7208 24.2592L26.8527 13.6423C27.01 13.478 27.1348 13.2827 27.2199 13.0677C27.305 12.8528 27.3489 12.6223 27.3489 12.3895C27.3489 12.1568 27.305 11.9263 27.2199 11.7114C27.1348 11.4964 27.01 11.3011 26.8527 11.1367L16.7208 0.519851C16.5639 0.355065 16.3775 0.224325 16.1724 0.135121C15.9672 0.0459159 15.7473 0 15.5252 0C15.3031 0 15.0831 0.0459159 14.878 0.135121Z"
+                        fill="#F58021"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <button class="button-navy care__btn">
+            <a href="/pages/animals.html">
+              <span>Choose your favourite</span>
+              <svg
+                width="25"
+                height="22"
+                viewBox="0 0 25 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M13.2098 0.119971C13.0277 0.199174 12.8622 0.315255 12.7229 0.461565C12.5833 0.607505 12.4725 0.780876 12.397 0.971748C12.3214 1.16262 12.2825 1.36724 12.2825 1.57389C12.2825 1.78055 12.3214 1.98517 12.397 2.17604C12.4725 2.36691 12.5833 2.54028 12.7229 2.68622L18.7506 9H1.6C1.17565 9 0.768688 9.21071 0.468629 9.58579C0.168571 9.96086 0 10.4696 0 11C0 11.5304 0.168571 12.0391 0.468629 12.4142C0.768688 12.7893 1.17565 13 1.6 13H18.7514L12.7229 19.3146C12.4414 19.6096 12.2833 20.0097 12.2833 20.4269C12.2833 20.8441 12.4414 21.2443 12.7229 21.5393C13.0045 21.8343 13.3863 22 13.7845 22C14.1826 22 14.5645 21.8343 14.846 21.5393L23.842 12.1127C23.9816 11.9668 24.0924 11.7934 24.168 11.6026C24.2436 11.4117 24.2825 11.2071 24.2825 11.0004C24.2825 10.7938 24.2436 10.5891 24.168 10.3983C24.0924 10.2074 23.9816 10.034 23.842 9.88808L14.846 0.461565C14.7067 0.315255 14.5413 0.199174 14.3591 0.119971C14.177 0.0407677 13.9817 0 13.7845 0C13.5873 0 13.392 0.0407677 13.2098 0.119971Z"
+                  fill="#20113D"
+                />
+              </svg>
+            </a>
+          </button>
+        </div>
+        <div class="care__image">
+          <img src="/images/care/touch-the-animal.jpg" alt="Touch The Animal" />
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__top">
+          <div class="footer__logos">
+            <a href="/" class="footer__logo">
+              <img src="/icons/logo-white.svg" alt="Online Zoo" />
+            </a>
+            <a
+              href="https://yemdigital.com"
+              class="footer__logo"
+              target="_blank"
+            >
+              <img src="/icons/yem-logo.svg" alt="Yem Digital" />
+            </a>
+            <a href="https://rs.school" class="footer__logo" target="_blank">
+              <img src="/icons/rs-school-logo.svg" alt="RS School" />
+            </a>
+          </div>
+
+          <nav class="footer__nav">
+            <a href="#about" class="footer__nav-link">About</a>
+            <a href="/pages/map.html" class="footer__nav-link">Map</a>
+            <a href="/pages/animals.html" class="footer__nav-link">Zoos</a>
+            <a href="/pages/contact.html" class="footer__nav-link"
+              >Contact Us</a
+            >
+          </nav>
+
+          <button class="button-turquoise footer__btn">
+            <span>Donate for Volunteers</span>
+            <img src="/icons/arrow-right.svg" alt="Arrow Right" />
+          </button>
+        </div>
+
+        <div class="footer__bottom">
+          <div class="footer__copyright">
+            <span class="footer__copyright-item">© 2021 DinaK</span>
+            <span class="footer__copyright-item">© Yem Digital</span>
+            <span class="footer__copyright-item">© RSSchool</span>
+          </div>
+
+          <div class="footer__social">
+            <a
+              href="https://youtube.com"
+              class="header__social-link"
+              target="_blank"
+            >
+              <img src="/icons/youtube.svg" alt="YouTube" />
+            </a>
+            <a
+              href="https://instagram.com"
+              class="header__social-link"
+              target="_blank"
+            >
+              <img src="/icons/instagram.svg" alt="Instagram" />
+            </a>
+            <a
+              href="https://facebook.com"
+              class="header__social-link"
+              target="_blank"
+            >
+              <img src="/icons/facebook.svg" alt="Facebook" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="popup">
+      <div class="popup__overlay"></div>
+
+      <div class="popup__container">
+        <div class="popup__header">
+          <h3 class="popup__title">Make your donation</h3>
+        </div>
+
+        <div class="popup-step" data-step="1">
+          <h4 class="popup-step__title">Donation Information:</h4>
+
+          <div class="popup-step__body">
+            <p class="popup-step__label">
+              <span class="popup-step__required">*</span> Choose your donation
+              amount:
+            </p>
+
+            <div class="popup-step__amounts">
+              <button class="popup-step__amount" type="button" data-amount="10">
+                $10
+              </button>
+              <button class="popup-step__amount" type="button">$20</button>
+              <button class="popup-step__amount" type="button">$30</button>
+              <button class="popup-step__amount" type="button">$50</button>
+              <button class="popup-step__amount" type="button">$80</button>
+              <button class="popup-step__amount" type="button">$100</button>
+            </div>
+
+            <div class="popup-step__other">
+              <button class="popup-step__other-button">Other amount</button>
+              <input class="popup-step__other-input" type="number" min="1" />
+            </div>
+
+            <div class="popup-step__pet">
+              <button class="popup-step__pet-button">For special pet</button>
+              <div class="popup-step__dropdown">
+                <button class="popup-step__dropdown-button">
+                  <span class="popup-step__dropdown-text"
+                    >Choose your favourite</span
+                  >
+                  <span class="popup-step__dropdown-icon">
+                    <svg
+                      width="17"
+                      height="10"
+                      viewBox="0 0 17 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0.359375 0.358887L8.11695 8.35889L16.3594 0.358887"
+                        stroke="black"
+                      />
+                    </svg>
+                  </span>
+                </button>
+
+                <ul class="popup-step__dropdown-list">
+                  <li>
+                    <button class="popup-step__dropdown-item">
+                      Lukas the Panda
+                    </button>
+                  </li>
+                  <li>
+                    <button class="popup-step__dropdown-item">
+                      Andy the Lemur
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <label class="popup-step__check">
+              <input class="popup-step__check-input" type="checkbox" />
+              <span class="popup-step__check-text"
+                >Make this a monthly recurring gift</span
+              >
+            </label>
+
+            <div class="popup-step__nav">
+              <div class="popup-step__pag">
+                <span
+                  class="popup-step__pag-item popup-step__pag-item_active"
+                  data-step="1"
+                ></span>
+                <span class="popup-step__pag-item" data-step="2"></span>
+                <span class="popup-step__pag-item" data-step="3"></span>
+              </div>
+
+              <a href="#" class="popup-step__back">Back</a>
+
+              <button class="popup-step__button popup-step__next" type="button">
+                <span class="popup-step__button-text">Next</span>
+                <span class="popup-step__button-icon">
+                  <img src="/icons/arrow-right.svg" alt="" />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="popup-step" data-step="2">
+          <h4 class="popup-step__title">Billing Information:</h4>
+
+          <div class="popup-step__body">
+            <p class="popup-step__label">
+              <span class="popup-step__required">*</span> Your Name
+            </p>
+            <input
+              class="popup-step__input"
+              type="text"
+              placeholder="First and last name"
+            />
+            <p class="popup-step__error" aria-live="polite"></p>
+
+            <p class="popup-step__label">
+              <span class="popup-step__required">*</span> Your Email Address
+            </p>
+            <input
+              class="popup-step__input"
+              type="email"
+              placeholder="Enter your email"
+            />
+            <p class="popup-step__error" aria-live="polite"></p>
+
+            <p class="popup-step__note">
+              You will receive emails from the Online Zoo, including updates and
+              news on the latest discoveries and translations. You can
+              unsubscribe at any time.
+            </p>
+
+            <div class="popup-step__nav">
+              <div class="popup-step__pag">
+                <span
+                  class="popup-step__pag-item popup-step__pag-item_active"
+                ></span>
+                <span
+                  class="popup-step__pag-item popup-step__pag-item_active"
+                ></span>
+                <span class="popup-step__pag-item"></span>
+              </div>
+
+              <a href="#" class="popup-step__back">Back</a>
+
+              <button class="popup-step__button popup-step__next" type="button">
+                <span class="popup-step__button-text">Next</span>
+                <span class="popup-step__button-icon">
+                  <img src="/icons/arrow-right.svg" alt="Arrow Right" />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="popup-step" data-step="3">
+          <h4 class="popup-step__title">Payment Information:</h4>
+
+          <div class="popup-step__body">
+            <div class="popup-step__saved-cards-wrap" style="display: none">
+              <p class="popup-step__label">Saved card</p>
+              <div class="popup-step__dropdown popup-step__dropdown_saved">
+                <button class="popup-step__dropdown-button" type="button">
+                  <span class="popup-step__dropdown-text"
+                    >Select saved card</span
+                  >
+                  <span class="popup-step__dropdown-icon">
+                    <svg
+                      width="17"
+                      height="10"
+                      viewBox="0 0 17 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0.359375 0.358887L8.11695 8.35889L16.3594 0.358887"
+                        stroke="currentColor"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <ul class="popup-step__dropdown-list"></ul>
+              </div>
+            </div>
+            <div class="popup-step__row">
+              <div class="popup-step__field">
+                <p class="popup-step__label">
+                  <span class="popup-step__required">*</span> Credit Card Number
+                </p>
+                <input
+                  class="popup-step__input"
+                  type="text"
+                  placeholder="Enter card number"
+                  inputmode="numeric"
+                  maxlength="19"
+                />
+              </div>
+              <div class="popup-step__field popup-step__field_cvv">
+                <p class="popup-step__label">
+                  <span class="popup-step__required">*</span> CVV Number
+                </p>
+                <input
+                  class="popup-step__input popup-step__input_cvv"
+                  type="text"
+                  placeholder="CVV"
+                  inputmode="numeric"
+                  maxlength="4"
+                />
+              </div>
+            </div>
+
+            <p class="popup-step__label">
+              <span class="popup-step__required">*</span> Expiration Date
+            </p>
+            <div class="popup-step__expiry">
+              <input
+                class="popup-step__input popup-step__input_expiry"
+                type="text"
+                placeholder="MM/YY"
+                inputmode="numeric"
+                maxlength="5"
+                autocomplete="off"
+              />
+            </div>
+
+            <label
+              class="popup-step__check popup-step__check_save-card"
+              style="display: none"
+            >
+              <input class="popup-step__check-input" type="checkbox" />
+              <span class="popup-step__check-text"
+                >Save card info for future donations</span
+              >
+            </label>
+
+            <div class="popup-step__nav">
+              <div class="popup-step__pag">
+                <span
+                  class="popup-step__pag-item popup-step__pag-item_active"
+                ></span>
+                <span
+                  class="popup-step__pag-item popup-step__pag-item_active"
+                ></span>
+                <span
+                  class="popup-step__pag-item popup-step__pag-item_active"
+                ></span>
+              </div>
+
+              <a href="#" class="popup-step__back">Back</a>
+
+              <button
+                class="popup-step__button popup-step__complete"
+                type="button"
+                disabled
+              >
+                <span class="popup-step__button-text">Complete Donation</span>
+                <span class="popup-step__button-icon">
+                  <img src="/icons/arrow-right.svg" alt="Arrow Right" />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/ts/main.ts"></script>
+  </body>
+</html>

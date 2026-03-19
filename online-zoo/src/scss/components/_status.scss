@@ -1,0 +1,99 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.error {
+  display: grid;
+  place-items: center;
+  width: 500px;
+  height: 220px;
+  padding: 40px;
+  text-align: center;
+  border-radius: $border-radius;
+  background: #fde4e1;
+
+  @include media-sm {
+    padding: 20px;
+    height: 120px;
+  }
+}
+
+.error__text {
+  @include text-1;
+  color: #c0392b;
+
+  @include media-sm {
+    @include text-2;
+  }
+}
+
+.review__slider-track {
+  .error {
+    @media (max-width: 570px) {
+      width: 300px;
+    }
+  }
+}
+
+.loader {
+  display: grid;
+  place-items: center;
+  width: 500px;
+  height: 220px;
+}
+
+.loader__spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba($color-turquoise, 0.2);
+  border-top-color: $color-turquoise;
+  border-radius: 50%;
+  animation: spinner 0.9s linear infinite;
+}
+
+.pets__slider-track:has(.loader),
+.pets__slider-track:has(.error) {
+  width: 100%;
+  @include flex-center;
+}
+
+.pets__slider:has(.loader),
+.pets__slider:has(.error) {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Zoos Status
+
+.zoos-loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.zoos-loading .header {
+  position: sticky;
+  top: 0;
+  z-index: 3000;
+}
+
+.zoos-loading .main {
+  display: grid;
+  place-items: center;
+  flex: 1;
+}
+
+.zoos-loading .footer {
+  margin-top: auto;
+}
+
+.live__content_loading {
+  min-height: 320px;
+  display: grid;
+  place-items: center;
+}

@@ -1,0 +1,36 @@
+export function initMobileMenu(): void {
+  const burger = document.querySelector<HTMLButtonElement>(".header__burger");
+  const nav = document.querySelector<HTMLElement>(".header__nav");
+  const overlay = document.querySelector<HTMLElement>(".header__overlay");
+
+  if (!burger || !nav || !overlay) return;
+
+  const closeMenu = (): void => {
+    burger.classList.remove("header__burger_active");
+    nav.classList.remove("header__nav_open");
+    overlay.classList.remove("header__overlay_visible");
+    document.body.classList.remove("no-scroll");
+  };
+
+  const openMenu = (): void => {
+    burger.classList.add("header__burger_active");
+    nav.classList.add("header__nav_open");
+    overlay.classList.add("header__overlay_visible");
+    document.body.classList.add("no-scroll");
+  };
+
+  burger.addEventListener("click", () => {
+    const isMenuOpen: boolean = burger.classList.contains(
+      "header__burger_active",
+    );
+
+    if (isMenuOpen) {
+      closeMenu();
+      return;
+    }
+
+    openMenu();
+  });
+
+  overlay.addEventListener("click", closeMenu);
+}
