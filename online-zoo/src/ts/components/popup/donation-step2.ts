@@ -18,14 +18,23 @@ function getNextButton(): HTMLButtonElement | null {
   );
 }
 
-function getInputs(step: HTMLElement): {
+type Step2Inputs = {
   name: HTMLInputElement | null;
   email: HTMLInputElement | null;
-} {
+  nameError: HTMLParagraphElement | null;
+  emailError: HTMLParagraphElement | null;
+};
+
+function getInputs(step: HTMLElement): Step2Inputs {
   const inputs = step.querySelectorAll<HTMLInputElement>(".popup-step__input");
+  const errors = step.querySelectorAll<HTMLParagraphElement>(
+    ".popup-step__error",
+  );
   return {
     name: inputs[0] ?? null,
     email: inputs[1] ?? null,
+    nameError: errors[0] ?? null,
+    emailError: errors[1] ?? null,
   };
 }
 
@@ -45,7 +54,12 @@ export function initDonationStep2(): void {
   const step = getStep();
   if (!step) return;
 
-  const { name: nameInput, email: emailInput } = getInputs(step);
+  const {
+    name: nameInput,
+    email: emailInput,
+    nameError,
+    emailError,
+  } = getInputs(step);
   if (!nameInput || !emailInput) return;
 
   const user = getStoredUser();
@@ -60,9 +74,11 @@ export function initDonationStep2(): void {
     if (msg) {
       nameInput.classList.add(INPUT_INVALID_CLASS);
       nameInput.setAttribute("aria-invalid", "true");
+      if (nameError) nameError.textContent = msg;
     } else {
       nameInput.classList.remove(INPUT_INVALID_CLASS);
       nameInput.removeAttribute("aria-invalid");
+      if (nameError) nameError.textContent = "";
     }
     setDonationState({ name: nameInput.value.trim() });
     updateNextButton(step);
@@ -73,9 +89,11 @@ export function initDonationStep2(): void {
     if (msg) {
       emailInput.classList.add(INPUT_INVALID_CLASS);
       emailInput.setAttribute("aria-invalid", "true");
+      if (emailError) emailError.textContent = msg;
     } else {
       emailInput.classList.remove(INPUT_INVALID_CLASS);
       emailInput.removeAttribute("aria-invalid");
+      if (emailError) emailError.textContent = "";
     }
     setDonationState({ email: emailInput.value.trim() });
     updateNextButton(step);
@@ -85,10 +103,12 @@ export function initDonationStep2(): void {
   nameInput.addEventListener("focus", () => {
     nameInput.classList.remove(INPUT_INVALID_CLASS);
     nameInput.removeAttribute("aria-invalid");
+    if (nameError) nameError.textContent = "";
     updateNextButton(step);
   });
   nameInput.addEventListener("input", () => {
     setDonationState({ name: nameInput.value });
+    if (nameError) nameError.textContent = "";
     updateNextButton(step);
   });
 
@@ -96,10 +116,12 @@ export function initDonationStep2(): void {
   emailInput.addEventListener("focus", () => {
     emailInput.classList.remove(INPUT_INVALID_CLASS);
     emailInput.removeAttribute("aria-invalid");
+    if (emailError) emailError.textContent = "";
     updateNextButton(step);
   });
   emailInput.addEventListener("input", () => {
     setDonationState({ email: emailInput.value });
+    if (emailError) emailError.textContent = "";
     updateNextButton(step);
   });
 
@@ -111,9 +133,11 @@ export function syncDonationStep2FromState(): void {
   const step = getStep();
   if (!step) return;
   const state = getDonationState();
-  const { name, email } = getInputs(step);
+  const { name, email, nameError, emailError } = getInputs(step);
   if (name) name.value = state.name;
   if (email) email.value = state.email;
+  if (nameError) nameError.textContent = "";
+  if (emailError) emailError.textContent = "";
   updateNextButton(step);
 }
 
@@ -121,12 +145,14 @@ export function prefillStep2FromUser(): void {
   const step = getStep();
   if (!step) return;
   const user = getStoredUser();
-  const { name, email } = getInputs(step);
+  const { name, email, nameError, emailError } = getInputs(step);
   if (user) {
     if (name) name.value = user.name;
     if (email) email.value = user.email;
     setDonationState({ name: user.name, email: user.email });
   }
+  if (nameError) nameError.textContent = "";
+  if (emailError) emailError.textContent = "";
   getNextButton()?.setAttribute("disabled", "disabled");
   updateNextButton(step);
 }
@@ -134,7 +160,9 @@ export function prefillStep2FromUser(): void {
 export function syncStep2ToState(): void {
   const step = getStep();
   if (!step) return;
-  const { name, email } = getInputs(step);
+  const { name, email, nameError, emailError } = getInputs(step);
   if (name) setDonationState({ name: name.value.trim() });
   if (email) setDonationState({ email: email.value.trim() });
+  if (nameError) nameError.textContent = "";
+  if (emailError) emailError.textContent = "";
 }

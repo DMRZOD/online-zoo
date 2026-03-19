@@ -1,5 +1,8 @@
 const NUMERIC_ONLY = /^\d+$/;
 const NAME_LETTERS_SPACES = /^[a-zA-Z\s]+$/;
+const BILLING_NAME_MIN_LENGTH = 3;
+
+export const OTHER_AMOUNT_NON_DIGIT_MESSAGE = "Only numeric values are allowed";
 const EMAIL_FORMAT = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const CARD_16_DIGITS = /^\d{16}$/;
 const CVV_3_DIGITS = /^\d{3}$/;
@@ -9,7 +12,7 @@ export function validateOtherAmount(value: string): string | null {
   const trimmed = value.trim();
   if (!trimmed) return "Enter amount";
   if (/[eE.-]/.test(trimmed)) return "Scientific notation is not allowed";
-  if (!NUMERIC_ONLY.test(trimmed)) return "Only numeric values are allowed";
+  if (!NUMERIC_ONLY.test(trimmed)) return OTHER_AMOUNT_NON_DIGIT_MESSAGE;
   const num = parseInt(trimmed, 10);
   if (Number.isNaN(num) || num <= 0) return "Amount must be greater than 0";
   return null;
@@ -18,6 +21,9 @@ export function validateOtherAmount(value: string): string | null {
 export function validateBillingName(value: string): string | null {
   const trimmed = value.trim();
   if (!trimmed) return "Name is required";
+  if (trimmed.length < BILLING_NAME_MIN_LENGTH) {
+    return `Name must be at least ${BILLING_NAME_MIN_LENGTH} characters`;
+  }
   if (!NAME_LETTERS_SPACES.test(trimmed)) {
     return "Only letters and spaces are allowed";
   }

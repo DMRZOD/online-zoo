@@ -1,9 +1,28 @@
 import { getPets } from "../../services/endpoint";
 import type { Pet } from "../../types/api";
-import { validateOtherAmount } from "../../utils/popup-validation";
+import {
+  OTHER_AMOUNT_NON_DIGIT_MESSAGE,
+  validateOtherAmount,
+} from "../../utils/popup-validation";
 import { getDonationState, setDonationState } from "./donation-state";
 
 const STEP_SELECTOR = ".popup-step[data-step='1']";
+const OTHER_INPUT_INVALID_CLASS = "popup-step__input_invalid";
+
+function setOtherAmountInputError(
+  input: HTMLInputElement,
+  message: string | null,
+): void {
+  if (message) {
+    input.setAttribute("aria-invalid", "true");
+    input.setAttribute("title", message);
+    input.classList.add(OTHER_INPUT_INVALID_CLASS);
+  } else {
+    input.removeAttribute("aria-invalid");
+    input.removeAttribute("title");
+    input.classList.remove(OTHER_INPUT_INVALID_CLASS);
+  }
+}
 
 let onNextStateChange: ((enabled: boolean) => void) | null = null;
 
@@ -57,6 +76,7 @@ function initAmountButtons(step: HTMLElement): void {
     amounts.forEach((b) => b.classList.remove("popup-step__amount_active"));
     btn.classList.add("popup-step__amount_active");
     otherInputEl.value = "";
+    setOtherAmountInputError(otherInputEl, null);
     otherButton?.classList.remove("popup-step__other-button_active");
     const amount = parseAmountFromButton(btn);
     setDonationState({ amount });
@@ -70,11 +90,35 @@ function initAmountButtons(step: HTMLElement): void {
   otherButton?.addEventListener("click", () => {
     amounts.forEach((b) => b.classList.remove("popup-step__amount_active"));
     otherButton.classList.add("popup-step__other-button_active");
+    setOtherAmountInputError(otherInputEl, null);
     otherInputEl.focus();
     const raw = otherInputEl.value.trim();
     const parsed = /^\d+$/.test(raw) ? parseInt(raw, 10) : 0;
     setDonationState({ amount: parsed > 0 ? parsed : 0 });
     updateNextButton();
+  });
+
+  otherInputEl.addEventListener("beforeinput", (e) => {
+    if (e.defaultPrevented) return;
+    const ie = e as InputEvent;
+    if (
+      ie.inputType === "insertText" ||
+      ie.inputType === "insertCompositionText"
+    ) {
+      const data = ie.data;
+      if (data != null && data !== "" && /\D/.test(data)) {
+        e.preventDefault();
+        setOtherAmountInputError(otherInputEl, OTHER_AMOUNT_NON_DIGIT_MESSAGE);
+      }
+    }
+  });
+
+  otherInputEl.addEventListener("paste", (e) => {
+    const text = e.clipboardData?.getData("text/plain") ?? "";
+    if (text !== "" && /\D/.test(text)) {
+      e.preventDefault();
+      setOtherAmountInputError(otherInputEl, OTHER_AMOUNT_NON_DIGIT_MESSAGE);
+    }
   });
 
   otherInputEl.addEventListener("input", () => {
@@ -84,17 +128,27 @@ function initAmountButtons(step: HTMLElement): void {
       otherInputEl.value = otherInputEl.value.replace(/[eE.-]/g, "");
     const num = v ? parseInt(v, 10) : 0;
     setDonationState({ amount: num > 0 ? num : 0 });
+    setOtherAmountInputError(otherInputEl, null);
     updateNextButton();
   });
 
+  otherInputEl.addEventListener("focus", () => {
+    setOtherAmountInputError(otherInputEl, null);
+  });
+
   otherInputEl.addEventListener("blur", () => {
+    const otherActive = otherButton?.classList.contains(
+      "popup-step__other-button_active",
+    );
+    if (!otherActive) {
+      setOtherAmountInputError(otherInputEl, null);
+      return;
+    }
     const err = validateOtherAmount(otherInputEl.value);
-    if (err && otherInputEl.value.trim()) {
-      otherInputEl.setAttribute("aria-invalid", "true");
-      otherInputEl.classList.add("popup-step__input_invalid");
+    if (err) {
+      setOtherAmountInputError(otherInputEl, err);
     } else {
-      otherInputEl.removeAttribute("aria-invalid");
-      otherInputEl.classList.remove("popup-step__input_invalid");
+      setOtherAmountInputError(otherInputEl, null);
     }
   });
 }

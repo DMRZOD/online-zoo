@@ -105,6 +105,10 @@
     &::placeholder {
       color: $color-black;
     }
+
+    &.popup-step__input_invalid {
+      border-color: #c00;
+    }
   }
 
   &__pet {
@@ -312,6 +316,14 @@
       max-width: 120px;
       margin-bottom: 20px;
     }
+  }
+
+  &__error {
+    @include text-2;
+    font-size: 14px;
+    color: #cc0000;
+    margin: -24px 0 30px;
+    min-height: 18px;
   }
 
   &__saved-cards-wrap {
