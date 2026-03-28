@@ -8,9 +8,10 @@
       "design": "Diseño"
     },
     "footer": {
-      "designed": "Diseñado y desarrollado por",
-      "rsSchool": "RS School",
-      "copyright": "© 2025 Online Zoo. Todos los derechos reservados."
+      "donate": "Donar para Voluntarios",
+      "copyrightDinak": "© 2021 DinaK",
+      "copyrightYem": "© Yem Digital",
+      "copyrightRs": "© RSSchool"
     },
     "theme": {
       "light": "Modo claro",
