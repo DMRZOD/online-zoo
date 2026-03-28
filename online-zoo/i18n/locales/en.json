@@ -1,12 +1,11 @@
 {
   "common": {
     "nav": {
-      "home": "Home",
-      "animals": "Animals",
+      "about": "About",
       "map": "Map",
+      "zoos": "Zoos",
       "contact": "Contact Us",
-      "signIn": "Sign In",
-      "register": "Register"
+      "design": "Design"
     },
     "footer": {
       "designed": "Designed and Developed by",
