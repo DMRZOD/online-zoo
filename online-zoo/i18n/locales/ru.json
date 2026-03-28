@@ -1,0 +1,26 @@
+{
+  "common": {
+    "nav": {
+      "home": "Главная",
+      "animals": "Животные",
+      "map": "Карта",
+      "contact": "Контакты",
+      "signIn": "Войти",
+      "register": "Регистрация"
+    },
+    "footer": {
+      "designed": "Дизайн и разработка",
+      "rsSchool": "RS School",
+      "copyright": "© 2025 Online Zoo. Все права защищены."
+    },
+    "theme": {
+      "light": "Светлая тема",
+      "dark": "Тёмная тема"
+    },
+    "language": {
+      "en": "English",
+      "ru": "Русский",
+      "es": "Español"
+    }
+  }
+}

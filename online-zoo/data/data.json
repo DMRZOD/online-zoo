@@ -1,0 +1,338 @@
+{
+  "1": {
+    "commonName": "Giant Panda",
+    "cardImage": "/images/cards/giant-panda.jpg",
+    "sidebarIcon": "/icons/zoos/giant-panda.svg",
+    "zooImage": "/images/zoos/giant-panda.jpg",
+    "videos": [
+      { "id": "k-7_sWrR1rk", "title": "Main cam" },
+      { "id": "j_imkoLouT8", "title": "Side cam 1" },
+      { "id": "YdP2fFyjBWQ", "title": "Side cam 2" },
+      { "id": "dqT-UlYlg1s", "title": "Side cam 3" }
+    ]
+  },
+  "2": {
+    "commonName": "Madagascarian Lemur",
+    "cardImage": "/images/cards/madagascarian-lemur.jpg",
+    "sidebarIcon": "/icons/zoos/madagascarian-lemur.svg",
+    "zooImage": "/images/zoos/madagascarian-lemur.jpg",
+    "videos": [
+      { "id": "jcjDrE1ye-E", "title": "Main cam" },
+      { "id": "aoBDyEPCmTc", "title": "Side cam 1" },
+      { "id": "fHCQ5-1n07M", "title": "Side cam 2" },
+      { "id": "J8aoOhp6hIM", "title": "Side cam 3" }
+    ]
+  },
+  "3": {
+    "commonName": "Gorilla Congo",
+    "cardImage": "/images/cards/gorilla-congo.jpg",
+    "sidebarIcon": "/icons/zoos/gorilla-congo.svg",
+    "zooImage": "/images/zoos/gorilla-congo.jpg",
+    "videos": [
+      { "id": "T2EJNAph7q8", "title": "Main cam" },
+      { "id": "_X57lHbQP6k", "title": "Side cam 1" },
+      { "id": "Pr3fR9iUoX8", "title": "Side cam 2" },
+      { "id": "VF5S0uGG6tg", "title": "Side cam 3" }
+    ]
+  },
+  "4": {
+    "commonName": "Chinese Alligator",
+    "cardImage": "/images/cards/chinese-alligator.jpg",
+    "sidebarIcon": "/icons/zoos/chinese-alligator.svg",
+    "zooImage": "/images/zoos/chinese-alligator.jpg",
+    "videos": [
+      { "id": "AbafKuxcHpQ", "title": "Main cam" },
+      { "id": "lZL-TaSfKYQ", "title": "Side cam 1" },
+      { "id": "ycAnNy5cbKo", "title": "Side cam 2" },
+      { "id": "gxfVDWLg0NQ", "title": "Side cam 3" }
+    ]
+  },
+  "5": {
+    "commonName": "Eagle",
+    "cardImage": "/images/cards/eagle.jpg",
+    "sidebarIcon": "/icons/zoos/eagle.svg",
+    "zooImage": "/images/zoos/eagle.jpg",
+    "videos": [
+      { "id": "2P0VCMYZenw", "title": "Main cam" },
+      { "id": "mLsKoqfxrXI", "title": "Side cam 1" },
+      { "id": "rLnd4V8Gfq4", "title": "Side cam 2" },
+      { "id": "cTbuW501Pl4", "title": "Side cam 3" }
+    ]
+  },
+  "6": {
+    "commonName": "Australian Koala",
+    "cardImage": "/images/cards/australian-koala.jpg",
+    "sidebarIcon": "/icons/zoos/australian-coala.svg",
+    "zooImage": "/images/zoos/australian-koala.jpg",
+    "videos": [
+      { "id": "oI3ADcDH0Uc", "title": "Main cam" },
+      { "id": "jQH50vKSv2o", "title": "Side cam 1" },
+      { "id": "xPtV-YRpMgI", "title": "Side cam 2" },
+      { "id": "vWvk7RH9OiA", "title": "Side cam 3" }
+    ]
+  },
+  "7": {
+    "commonName": "African Lion",
+    "cardImage": "/images/cards/african-lion.jpg",
+    "sidebarIcon": "/icons/zoos/african-lion.svg",
+    "zooImage": "/images/zoos/african-lion.jpg",
+    "videos": [
+      { "id": "tlZwYsJpqjo", "title": "Main cam" },
+      { "id": "OMkEVX23BdM", "title": "Side cam 1" },
+      { "id": "8-6YqxYAkd0", "title": "Side cam 2" },
+      { "id": "nkMDWJMAZrk", "title": "Side cam 3" }
+    ]
+  },
+  "8": {
+    "commonName": "Sumatran Tiger",
+    "cardImage": "/images/cards/sumatran-tiger.jpg",
+    "sidebarIcon": "/icons/zoos/sumatran-tiger.svg",
+    "zooImage": "/images/zoos/sumatran-tiger.jpg",
+    "videos": [
+      { "id": "fa_JyGT0ni4", "title": "Main cam" },
+      { "id": "FK3dav4bA4s", "title": "Side cam 1" },
+      { "id": "Fh-vt2MkfVM", "title": "Side cam 2" },
+      { "id": "BbMGbUoqZck", "title": "Side cam 3" }
+    ]
+  },
+  "9": {
+    "commonName": "Red Panda",
+    "cardImage": "/images/cards/red-panda.jpg",
+    "sidebarIcon": "/icons/zoos/red-panda.svg",
+    "zooImage": "/images/zoos/red-panda.jpg",
+    "videos": [
+      { "id": "wagEXoSguyk", "title": "Main cam" },
+      { "id": "uCPFFJ6I0gs", "title": "Side cam 1" },
+      { "id": "oQrV4j1qA5Q", "title": "Side cam 2" },
+      { "id": "8wGOyIS9BX8", "title": "Side cam 3" }
+    ]
+  },
+  "10": {
+    "commonName": "Mountain Gorilla",
+    "cardImage": "/images/cards/mountain-gorilla.jpg",
+    "sidebarIcon": "/icons/zoos/mountain-gorilla.svg",
+    "zooImage": "/images/zoos/mountain-gorilla.jpg",
+    "videos": [
+      { "id": "MpiHQUCT1Cc", "title": "Main cam" },
+      { "id": "QyCAVHRiUKs", "title": "Side cam 1" },
+      { "id": "AgxKHat2CPI", "title": "Side cam 2" },
+      { "id": "110rswzIhyo", "title": "Side cam 3" }
+    ]
+  },
+  "11": {
+    "commonName": "African Elephant",
+    "cardImage": "/images/cards/african-elephant.jpg",
+    "sidebarIcon": "/icons/zoos/african-elephant.svg",
+    "zooImage": "/images/zoos/african-elephant.jpg",
+    "videos": [
+      { "id": "AA0UZVXJd2o", "title": "Main cam" },
+      { "id": "P8frC_cLLD4", "title": "Side cam 1" },
+      { "id": "qASaRYaHl1g", "title": "Side cam 2" },
+      { "id": "uJwLz-IZe6k", "title": "Side cam 3" }
+    ]
+  },
+  "12": {
+    "commonName": "Sea Otter",
+    "cardImage": "/images/cards/sea-otter.jpg",
+    "sidebarIcon": "/icons/zoos/sea-otter.svg",
+    "zooImage": "/images/zoos/sea-otter.jpg",
+    "videos": [
+      { "id": "ieK72UT3SIE", "title": "Main cam" },
+      { "id": "mLSqCjv9B7o", "title": "Side cam 1" },
+      { "id": "5k4FzfqDZ9Y", "title": "Side cam 2" },
+      { "id": "mFjwTzhV6P0", "title": "Side cam 3" }
+    ]
+  },
+  "13": {
+    "commonName": "Bengal Tiger",
+    "cardImage": "/images/cards/bengal-tiger.jpg",
+    "sidebarIcon": "/icons/zoos/bengal-tiger.svg",
+    "zooImage": "/images/zoos/bengal-tiger.jpg",
+    "videos": [
+      { "id": "cwsdTKoGv5U", "title": "Main cam" },
+      { "id": "YZ13qxi2UVg", "title": "Side cam 1" },
+      { "id": "ja4GNdU2vYc", "title": "Side cam 2" },
+      { "id": "lSXp1edRzRA", "title": "Side cam 3" }
+    ]
+  },
+  "14": {
+    "commonName": "Gray Wolf",
+    "cardImage": "/images/cards/gray-wolf.jpg",
+    "sidebarIcon": "/icons/zoos/gray-wolf.svg",
+    "zooImage": "/images/zoos/gray-wolf.jpg",
+    "videos": [
+      { "id": "yCn9H4A7ZVY", "title": "Main cam" },
+      { "id": "pgUIm6NVwh4", "title": "Side cam 1" },
+      { "id": "EJS63dsuotE", "title": "Side cam 2" },
+      { "id": "p_a52FoKROY", "title": "Side cam 3" }
+    ]
+  },
+  "15": {
+    "commonName": "Fennec Fox",
+    "cardImage": "/images/cards/fennec-fox.jpg",
+    "sidebarIcon": "/icons/zoos/fennec-fox.svg",
+    "zooImage": "/images/zoos/fennec-fox.jpg",
+    "videos": [
+      { "id": "S9atRW1DgbQ", "title": "Main cam" },
+      { "id": "BP7-lEvE128", "title": "Side cam 1" },
+      { "id": "1IGw4UZcFkM", "title": "Side cam 2" },
+      { "id": "BZwbNRatTLg", "title": "Side cam 3" }
+    ]
+  },
+  "16": {
+    "commonName": "Grizzly Bear",
+    "cardImage": "/images/cards/grizzly-bear.jpg",
+    "sidebarIcon": "/icons/zoos/grizzly-bear.svg",
+    "zooImage": "/images/zoos/grizzly-bear.jpg",
+    "videos": [
+      { "id": "aAfXsxLSblM", "title": "Main cam" },
+      { "id": "jWE1hefbVpA", "title": "Side cam 1" },
+      { "id": "DGLU6Rz1TDA", "title": "Side cam 2" },
+      { "id": "GfSSTktaU9M", "title": "Side cam 3" }
+    ]
+  },
+  "17": {
+    "commonName": "Bottlenose Dolphin",
+    "cardImage": "/images/cards/bottlenose-dolphin.jpg",
+    "sidebarIcon": "/icons/zoos/bottlenose-dolphin.svg",
+    "zooImage": "/images/zoos/bottlenose-dolphin.jpg",
+    "videos": [
+      { "id": "FDydbe6QDXs", "title": "Main cam" },
+      { "id": "G7L4YzGAvMA", "title": "Side cam 1" },
+      { "id": "xoFlUYJn3v0", "title": "Side cam 2" },
+      { "id": "su-Vm7cBl-A", "title": "Side cam 3" }
+    ]
+  },
+  "18": {
+    "commonName": "Snow Leopard",
+    "cardImage": "/images/cards/snow-leopard.jpg",
+    "sidebarIcon": "/icons/zoos/snow-leopard.svg",
+    "zooImage": "/images/zoos/snow-leopard.jpg",
+    "videos": [
+      { "id": "JTlveCrymV8", "title": "Main cam" },
+      { "id": "O4VQG82Gvp8", "title": "Side cam 1" },
+      { "id": "A4X7aDQ9zSU", "title": "Side cam 2" },
+      { "id": "a4LwHQnHkig", "title": "Side cam 3" }
+    ]
+  },
+  "19": {
+    "commonName": "Polar Bear",
+    "cardImage": "/images/cards/polar-bear.jpg",
+    "sidebarIcon": "/icons/zoos/polar-bear.svg",
+    "zooImage": "/images/zoos/polar-bear.jpg",
+    "videos": [
+      { "id": "RCiHizt8o-Y", "title": "Main cam" },
+      { "id": "64ZaC04ppLQ", "title": "Side cam 1" },
+      { "id": "HWAl88PzWMY", "title": "Side cam 2" },
+      { "id": "COk0Sbbc_co", "title": "Side cam 3" }
+    ]
+  },
+  "20": {
+    "commonName": "Jaguar",
+    "cardImage": "/images/cards/jaguar.jpg",
+    "sidebarIcon": "/icons/zoos/jaguar.svg",
+    "zooImage": "/images/zoos/jaguar.jpg",
+    "videos": [
+      { "id": "fQ8ug4QJw74", "title": "Main cam" },
+      { "id": "6AhIG69Z_9M", "title": "Side cam 1" },
+      { "id": "Eh8_gMesIRE", "title": "Side cam 2" },
+      { "id": "Qe_4sVyNxHw", "title": "Side cam 3" }
+    ]
+  },
+  "21": {
+    "commonName": "Ring-Tailed Lemur",
+    "cardImage": "/images/cards/ring-tailed-lemur.jpg",
+    "sidebarIcon": "/icons/zoos/ring-tailed-lemur.svg",
+    "zooImage": "/images/zoos/ring-tailed-lemur.jpg",
+    "videos": [
+      { "id": "jcjDrE1ye-E", "title": "Main cam" },
+      { "id": "jJA3dYwIB3s", "title": "Side cam 1" },
+      { "id": "We5EHfpl7gk", "title": "Side cam 2" },
+      { "id": "Xfo37pb1z8M", "title": "Side cam 3" }
+    ]
+  },
+  "22": {
+    "commonName": "White Rhinoceros",
+    "cardImage": "/images/cards/white-rhinoceros.jpg",
+    "sidebarIcon": "/icons/zoos/white-rhinoceros.svg",
+    "zooImage": "/images/zoos/white-rhinoceros.jpg",
+    "videos": [
+      { "id": "NOgl1nW0NtA", "title": "Main cam" },
+      { "id": "yA6gHs6KkwU", "title": "Side cam 1" },
+      { "id": "oOQkWBSJy54", "title": "Side cam 2" },
+      { "id": "GAj1S37wTqQ", "title": "Side cam 3" }
+    ]
+  },
+  "23": {
+    "commonName": "Arctic Fox",
+    "cardImage": "/images/cards/arctic-fox.jpg",
+    "sidebarIcon": "/icons/zoos/arctic-fox.svg",
+    "zooImage": "/images/zoos/arctic-fox.jpg",
+    "videos": [
+      { "id": "wUDVUZHKno8", "title": "Main cam" },
+      { "id": "k2kiyWu_XNc", "title": "Side cam 1" },
+      { "id": "rX5kPjzW33c", "title": "Side cam 2" },
+      { "id": "agCJKXlnHsI", "title": "Side cam 3" }
+    ]
+  },
+  "24": {
+    "commonName": "Saltwater Crocodile",
+    "cardImage": "/images/cards/saltwater-crocodile.jpg",
+    "sidebarIcon": "/icons/zoos/saltwater-crocodile.svg",
+    "zooImage": "/images/zoos/saltwater-crocodile.jpg",
+    "videos": [
+      { "id": "5WIdIs3A9Ok", "title": "Main cam" },
+      { "id": "hLcZc8Hb3VA", "title": "Side cam 1" },
+      { "id": "RfNJ5hPp8rI", "title": "Side cam 2" },
+      { "id": "aa9xYPrcovI", "title": "Side cam 3" }
+    ]
+  },
+  "25": {
+    "commonName": "Scarlet Macaw",
+    "cardImage": "/images/cards/scarlet-macaw.jpg",
+    "sidebarIcon": "/icons/zoos/scarlet-macaw.svg",
+    "zooImage": "/images/zoos/scarlet-macaw.jpg",
+    "videos": [
+      { "id": "c7ox2DYLdgo", "title": "Main cam" },
+      { "id": "kVALWjSeDUE", "title": "Side cam 1" },
+      { "id": "DgBR1IaSjfY", "title": "Side cam 2" },
+      { "id": "Qft0HuZvu4Q", "title": "Side cam 3" }
+    ]
+  },
+  "26": {
+    "commonName": "Komodo Dragon",
+    "cardImage": "/images/cards/komodo-dragon.jpg",
+    "sidebarIcon": "/icons/zoos/komodo-dragon.svg",
+    "zooImage": "/images/zoos/komodo-dragon.jpg",
+    "videos": [
+      { "id": "bSvQ4ZYwJH8", "title": "Main cam" },
+      { "id": "C20t4OJDpVA", "title": "Side cam 1" },
+      { "id": "NmxMirUlmNk", "title": "Side cam 2" },
+      { "id": "q7CQInAXoqY", "title": "Side cam 3" }
+    ]
+  },
+  "27": {
+    "commonName": "Sloth",
+    "cardImage": "/images/cards/sloth.jpg",
+    "sidebarIcon": "/icons/zoos/sloth.svg",
+    "zooImage": "/images/zoos/sloth.jpg",
+    "videos": [
+      { "id": "DpV4k3Edr-I", "title": "Main cam" },
+      { "id": "Ck8wR6gtdmg", "title": "Side cam 1" },
+      { "id": "qYKrqd9VacY", "title": "Side cam 2" },
+      { "id": "1WR8VHUVZ7g", "title": "Side cam 3" }
+    ]
+  },
+  "28": {
+    "commonName": "Cheetah",
+    "cardImage": "/images/cards/cheetah.jpg",
+    "sidebarIcon": "/icons/zoos/cheetah.svg",
+    "zooImage": "/images/zoos/cheetah.jpg",
+    "videos": [
+      { "id": "feg3tYeOOME", "title": "Main cam" },
+      { "id": "WqrmL_j_1yI", "title": "Side cam 1" },
+      { "id": "KV5igoAy7uk", "title": "Side cam 2" },
+      { "id": "mYRZSDXwARw", "title": "Side cam 3" }
+    ]
+  }
+}

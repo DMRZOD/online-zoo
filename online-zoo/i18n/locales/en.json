@@ -1,0 +1,26 @@
+{
+  "common": {
+    "nav": {
+      "home": "Home",
+      "animals": "Animals",
+      "map": "Map",
+      "contact": "Contact Us",
+      "signIn": "Sign In",
+      "register": "Register"
+    },
+    "footer": {
+      "designed": "Designed and Developed by",
+      "rsSchool": "RS School",
+      "copyright": "© 2025 Online Zoo. All rights reserved."
+    },
+    "theme": {
+      "light": "Light mode",
+      "dark": "Dark mode"
+    },
+    "language": {
+      "en": "English",
+      "ru": "Русский",
+      "es": "Español"
+    }
+  }
+}
