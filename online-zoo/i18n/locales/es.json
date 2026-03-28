@@ -1,4 +1,11 @@
 {
+  "landing": {
+    "hero": {
+      "title": "Observa tu animal favorito en línea",
+      "text": "Explora el emocionante y misterioso mundo de los animales salvajes en su entorno natural sin salir de casa.",
+      "cta": "Ver cámara en vivo"
+    }
+  },
   "common": {
     "nav": {
       "about": "Acerca de",

@@ -198,3 +198,31 @@
     border-radius: 4px;
   }
 }
+
+/* ===== Hero background (responsive images) ===== */
+.hero-bg {
+  background-image: url("/images/hero/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 1200px) {
+  .hero-bg {
+    background-image: url("/images/hero/hero-bg-laptop.jpg");
+  }
+}
+
+@media (max-width: 920px) {
+  .hero-bg {
+    background-image: url("/images/hero/hero-bg-tablet.jpg");
+    background-size: contain;
+    background-position: bottom right;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-bg {
+    background-image: none;
+  }
+}

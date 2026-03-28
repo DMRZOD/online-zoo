@@ -1,4 +1,11 @@
 {
+  "landing": {
+    "hero": {
+      "title": "Watch your favorite animal online",
+      "text": "Explore the exciting and mysterious world of wild animals in a natural setting without leaving your home.",
+      "cta": "View Live Cam"
+    }
+  },
   "common": {
     "nav": {
       "about": "About",
