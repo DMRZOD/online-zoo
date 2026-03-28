@@ -20,6 +20,12 @@
       "contact": "Contact Us",
       "design": "Design"
     },
+    "donation": {
+      "title": "Your donation makes a difference!",
+      "text": "The Online Zoo's animal webcams are some of the most famous on the internet. Tune in to watch your favourite animals — live, 24/7!",
+      "quickDonate": "Quick Donate",
+      "placeholder": "$ Donation Amount"
+    },
     "footer": {
       "donate": "Donate for Volunteers",
       "copyrightDinak": "© 2021 DinaK",

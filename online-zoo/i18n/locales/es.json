@@ -20,6 +20,12 @@
       "contact": "Contacto",
       "design": "Diseño"
     },
+    "donation": {
+      "title": "¡Tu donación marca la diferencia!",
+      "text": "Las cámaras web de animales del Zoológico en Línea son de las más famosas en internet. ¡Sintoniza para ver a tus animales favoritos — en vivo, 24/7!",
+      "quickDonate": "Donación rápida",
+      "placeholder": "$ Monto de donación"
+    },
     "footer": {
       "donate": "Donar para Voluntarios",
       "copyrightDinak": "© 2021 DinaK",

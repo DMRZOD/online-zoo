@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/damirmarufjonov/**)",
+      "Bash(find /Users/damirmarufjonov/Developer/RS-School/online-zoo/online-zoo -name *.scss -type f)",
+      "Bash(xargs ls:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}
