@@ -65,7 +65,7 @@ export default function Header() {
     <header className="bg-orange w-full">
       <div className="mx-auto flex max-w-[1480px] items-center justify-between px-5 py-7.5 lg:px-10">
         {/* Logo */}
-        <Link href="/" className="relative z-50 shrink-0" onClick={closeMenu}>
+        <Link href="/" className="relative shrink-0" onClick={closeMenu}>
           <Image
             src="/icons/logo.svg"
             alt="Online Zoo"
@@ -136,9 +136,7 @@ export default function Header() {
         >
           <span
             className={`block h-0.75 w-full rounded-sm transition-all duration-300 ${
-              menuOpen
-                ? "translate-y-2.25 rotate-45 bg-white"
-                : "bg-black"
+              menuOpen ? "translate-y-2.25 rotate-45 bg-white" : "bg-black"
             }`}
           />
           <span
@@ -148,9 +146,7 @@ export default function Header() {
           />
           <span
             className={`block h-0.75 w-full rounded-sm transition-all duration-300 ${
-              menuOpen
-                ? "-translate-y-2.25 -rotate-45 bg-white"
-                : "bg-black"
+              menuOpen ? "-translate-y-2.25 -rotate-45 bg-white" : "bg-black"
             }`}
           />
         </button>
@@ -171,7 +167,7 @@ export default function Header() {
             menuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <ul className="flex flex-col gap-6">
+          <ul className="flex flex-col items-center gap-6">
             {NAV_LINKS.map(({ key, href }) => (
               <li key={key}>
                 <Link

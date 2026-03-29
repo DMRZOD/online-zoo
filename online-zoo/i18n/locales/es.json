@@ -18,6 +18,12 @@
       "chooseFavourite": "Elige tu favorito",
       "error": "Algo salió mal. Por favor, actualiza la página"
     },
+    "review": {
+      "title": "Qué piensan nuestros usuarios",
+      "text": "Nos esforzamos continuamente por mejorar las experiencias de nuestros futuros visitantes. A continuación puedes dejar tus propios comentarios o simplemente ver los comentarios de clientes anteriores.",
+      "leaveFeedback": "Dejar comentario",
+      "error": "Algo salió mal. Por favor, actualiza la página"
+    },
     "feed": {
       "title": "Paga y alimenta",
       "step1Title": "Tu donación tiene un impacto",

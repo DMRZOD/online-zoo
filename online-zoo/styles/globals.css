@@ -186,7 +186,7 @@
   }
 
   ::-webkit-scrollbar {
-    width: 4px;
+    width: 8px;
   }
 
   ::-webkit-scrollbar-track {
@@ -224,5 +224,31 @@
 @media (max-width: 480px) {
   .hero-bg {
     background-image: none;
+  }
+}
+
+/* ===== Review background (responsive images) ===== */
+.review-bg {
+  background-image: url("/images/review/review-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 1200px) {
+  .review-bg {
+    background-image: url("/images/review/review-bg-laptop.jpg");
+  }
+}
+
+@media (max-width: 920px) {
+  .review-bg {
+    background-image: url("/images/review/review-bg-tablet.jpg");
+  }
+}
+
+@media (max-width: 480px) {
+  .review-bg {
+    background-image: url("/images/review/review-bg-mobile.jpg");
   }
 }

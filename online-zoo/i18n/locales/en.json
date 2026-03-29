@@ -18,6 +18,12 @@
       "chooseFavourite": "Choose your favourite",
       "error": "Something went wrong. Please, refresh the page"
     },
+    "review": {
+      "title": "What our users think",
+      "text": "We are continuously striving to improve the experiences of our future guests. Below you can leave your own feedback, or simply view feedback from past clients.",
+      "leaveFeedback": "Leave Feedback",
+      "error": "Something went wrong. Please, refresh the page"
+    },
     "feed": {
       "title": "Pay and Feed",
       "step1Title": "Your donation has an impact",

@@ -3,6 +3,7 @@ import AboutSection from "@/components/landing/about-section";
 import DonationSection from "@/components/landing/donation-section";
 import PetsSection from "@/components/landing/pets-section";
 import FeedSection from "@/components/landing/feed-section";
+import ReviewSection from "@/components/landing/review-section";
 
 export default async function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default async function HomePage() {
       <DonationSection />
       <PetsSection />
       <FeedSection />
+      <ReviewSection />
     </>
   );
 }
