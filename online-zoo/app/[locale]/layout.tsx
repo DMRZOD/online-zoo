@@ -17,7 +17,10 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Online Zoo",
-  description: "Virtual zoo with live animal cameras",
+  description: "Virtual Zoo With Live Animal Cameras",
+  icons: {
+    icon: "/icons/favicon.svg",
+  },
 };
 
 export default async function LocaleLayout({

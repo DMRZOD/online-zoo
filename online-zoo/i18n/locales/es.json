@@ -10,6 +10,13 @@
       "welcomeText": "En nuestro sitio web, usando cámaras web en vivo, los aficionados de todas las edades pueden observar varios animales. Entre ellos, están los pandas gigantes, águilas, caimanes, gorilas de bosque, leones africanos y otros. Es todo el mundo natural en tiempo real frente a nuestras cámaras. ¡Esperamos que disfrutes observando de cerca y explorando el comportamiento y los hábitats de los animales! Nota: los animales no siempre están a la vista de las cámaras, así que vuelve a consultar si no ves nada.",
       "howWeWorkTitle": "Cómo trabajamos",
       "howWeWorkText": "El Zoológico en Línea es una organización sin fines de lucro comprometida con inspirar la conciencia y la preservación de la naturaleza y los animales salvajes en nuestro zoológico y en todo el mundo. Cada día, nuestros expertos trabajan para salvaguardar la salud y el bienestar de los animales. Para continuar estos esfuerzos, necesitamos tu ayuda. Estamos muy agradecidos con nuestros numerosos colaboradores. Todas las donaciones, grandes y pequeñas, contribuyen en gran medida a los esfuerzos de conservación de nuestras mascotas."
+    },
+    "pets": {
+      "title": "Conoce a nuestras mascotas",
+      "text": "¿Tienes un lugar especial en tu corazón para los animales? ¿Quiénes son tus favoritos? Quizás te gustaría donar a algunos especiales o a todas nuestras mascotas. Creemos que es importante que elijas cómo se usa tu donación.",
+      "viewLiveCam": "Ver cámara en vivo",
+      "chooseFavourite": "Elige tu favorito",
+      "error": "Algo salió mal. Por favor, actualiza la página"
     }
   },
   "common": {

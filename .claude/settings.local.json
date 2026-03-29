@@ -1,9 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Read(//Users/damirmarufjonov/**)",
-      "Bash(find /Users/damirmarufjonov/Developer/RS-School/online-zoo/online-zoo -name *.scss -type f)",
-      "Bash(xargs ls:*)",
+      "Read(//Users/damirmarufjonov/Developer/RS-School/online-zoo/**)",
+      "Bash(grep -E \"\\(scss|css\\)$\")",
+      "Bash(curl -s \"https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/pets\")",
+      "Bash(grep -E '\"\"motion\"\"|\"\"framer-motion\"\"' package.json)",
       "Bash(npm run:*)"
     ]
   }

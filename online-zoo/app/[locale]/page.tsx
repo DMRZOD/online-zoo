@@ -1,6 +1,7 @@
 import HeroSection from "@/components/landing/hero-section";
 import AboutSection from "@/components/landing/about-section";
 import DonationSection from "@/components/landing/donation-section";
+import PetsSection from "@/components/landing/pets-section";
 
 export default async function HomePage() {
   return (
@@ -8,6 +9,7 @@ export default async function HomePage() {
       <HeroSection />
       <AboutSection />
       <DonationSection />
+      <PetsSection />
     </>
   );
 }
