@@ -33,6 +33,16 @@
       "step3Title": "Bring your food charity — straight to your favorites pets.",
       "step3Text": "After your donation, the animal receives its favorite foods. You can support your favorite animals or any animal you care about and make a real personal impact. Never doubt that your donation can make a difference even if it is small.",
       "donateNow": "Donate Now"
+    },
+    "care": {
+      "title": "Care for the animals you love",
+      "text": "You can help to look after the animals you love with your gift today",
+      "feed": "Feed",
+      "chooseFavourite": "Choose your favourite",
+      "panda": "Your $30 could give Lucas a slice of panda cake, made with our secret recipe.",
+      "tiger": "Your $150 will help to care for Senja, a Sumatran tiger, for three weeks.",
+      "lemur": "With your support, we can give Andy his favorite fruits. Especially when it's not fruit season in its natural habitat.",
+      "eagle": "Sam & Lora have hatched and raised numerous young and will be happy with your help."
     }
   },
   "common": {

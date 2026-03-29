@@ -4,6 +4,7 @@ import DonationSection from "@/components/landing/donation-section";
 import PetsSection from "@/components/landing/pets-section";
 import FeedSection from "@/components/landing/feed-section";
 import ReviewSection from "@/components/landing/review-section";
+import CareSection from "@/components/landing/care-section";
 
 export default async function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default async function HomePage() {
       <PetsSection />
       <FeedSection />
       <ReviewSection />
+      <CareSection />
     </>
   );
 }

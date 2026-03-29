@@ -33,6 +33,16 @@
       "step3Title": "Lleva tu donación de comida — directamente a tus mascotas favoritas.",
       "step3Text": "Después de tu donación, el animal recibe sus alimentos favoritos. Puedes apoyar a tus animales favoritos o cualquier animal que te importe y tener un impacto personal real. Nunca dudes de que tu donación puede marcar la diferencia, incluso si es pequeña.",
       "donateNow": "Donar Ahora"
+    },
+    "care": {
+      "title": "Cuida a los animales que amas",
+      "text": "Puedes ayudar a cuidar a los animales que amas con tu donación hoy",
+      "feed": "Alimentar",
+      "chooseFavourite": "Elige tu favorito",
+      "panda": "Tus $30 podrían darle a Lucas una rebanada de pastel de panda, hecho con nuestra receta secreta.",
+      "tiger": "Tus $150 ayudarán a cuidar a Senja, un tigre de Sumatra, durante tres semanas.",
+      "lemur": "Con tu apoyo, podemos darle a Andy sus frutas favoritas. Especialmente cuando no es temporada de frutas en su hábitat natural.",
+      "eagle": "Sam y Lora han incubado y criado numerosas crías y estarán felices con tu ayuda."
     }
   },
   "common": {
