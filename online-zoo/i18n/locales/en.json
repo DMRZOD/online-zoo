@@ -17,6 +17,16 @@
       "viewLiveCam": "View Live Cam",
       "chooseFavourite": "Choose your favourite",
       "error": "Something went wrong. Please, refresh the page"
+    },
+    "feed": {
+      "title": "Pay and Feed",
+      "step1Title": "Your donation has an impact",
+      "step1Text": "Providing our animals with high-quality nutritious diets is just one element of animal care at our Zoo. We do all the best so that our animals can eat food similar to what they might find in their natural habitats while making sure they get the right mix of nutrients, proteins, and vitamins to be happy and healthy. Please help us provide nutritious food for our animals by donating. The generosity of people like you can help us make sure that our animals enjoy good food that keeps them in great condition.",
+      "step2Title": "Make a donation",
+      "step2Text": "You can donate through your credit card without any fees. It is easy and safe. We do not keep donors' personal information on an online network. Choose an amount to give and the pet's name if needed. One of the most effective ways you can give is by making regular donations.",
+      "step3Title": "Bring your food charity — straight to your favorites pets.",
+      "step3Text": "After your donation, the animal receives its favorite foods. You can support your favorite animals or any animal you care about and make a real personal impact. Never doubt that your donation can make a difference even if it is small.",
+      "donateNow": "Donate Now"
     }
   },
   "common": {

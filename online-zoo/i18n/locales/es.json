@@ -17,6 +17,16 @@
       "viewLiveCam": "Ver cámara en vivo",
       "chooseFavourite": "Elige tu favorito",
       "error": "Algo salió mal. Por favor, actualiza la página"
+    },
+    "feed": {
+      "title": "Paga y alimenta",
+      "step1Title": "Tu donación tiene un impacto",
+      "step1Text": "Proporcionar a nuestros animales dietas nutritivas de alta calidad es solo un elemento del cuidado animal en nuestro zoológico. Hacemos todo lo posible para que nuestros animales puedan comer alimentos similares a los que encontrarían en sus hábitats naturales, asegurándonos de que obtengan la combinación adecuada de nutrientes, proteínas y vitaminas para estar felices y saludables. Por favor, ayúdanos a proporcionar alimentos nutritivos para nuestros animales donando. La generosidad de personas como tú puede ayudarnos a asegurar que nuestros animales disfruten de buena comida que los mantenga en excelente condición.",
+      "step2Title": "Haz una donación",
+      "step2Text": "Puedes donar a través de tu tarjeta de crédito sin comisiones. Es fácil y seguro. No guardamos la información personal de los donantes en una red en línea. Elige una cantidad para dar y el nombre de la mascota si es necesario. Una de las formas más efectivas de dar es haciendo donaciones regulares.",
+      "step3Title": "Lleva tu donación de comida — directamente a tus mascotas favoritas.",
+      "step3Text": "Después de tu donación, el animal recibe sus alimentos favoritos. Puedes apoyar a tus animales favoritos o cualquier animal que te importe y tener un impacto personal real. Nunca dudes de que tu donación puede marcar la diferencia, incluso si es pequeña.",
+      "donateNow": "Donar Ahora"
     }
   },
   "common": {
