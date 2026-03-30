@@ -67,6 +67,22 @@
     "sidebarError": "No se pudieron cargar los animales. Por favor, actualiza la página.",
     "refresh": "Actualizar"
   },
+  "contact": {
+    "title": "Contáctanos",
+    "text": "Ya sea que tengas una pregunta o simplemente quieras saludar, estaremos encantados de escucharte. Por favor, usa el formulario para enviarnos un mensaje y te responderemos lo antes posible. Ya sea que tengas una pregunta o simplemente quieras saludar, estaremos encantados de escucharte. Por favor, usa el formulario para enviarnos un mensaje y te responderemos lo antes posible.",
+    "toast": "¡Tu mensaje ha sido enviado con éxito!",
+    "form": {
+      "nameLabel": "Tu Nombre",
+      "emailLabel": "Tu Correo Electrónico",
+      "subjectLabel": "Asunto",
+      "messageLabel": "Mensaje",
+      "namePlaceholder": "Nombre y apellido",
+      "emailPlaceholder": "Ingresa tu correo",
+      "subjectPlaceholder": "Ingresa el asunto",
+      "messagePlaceholder": "Ingresa tu mensaje",
+      "submit": "Enviar Mensaje"
+    }
+  },
   "common": {
     "nav": {
       "about": "Acerca de",
