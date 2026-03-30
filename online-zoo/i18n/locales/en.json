@@ -45,6 +45,28 @@
       "eagle": "Sam & Lora have hatched and raised numerous young and will be happy with your help."
     }
   },
+  "animals": {
+    "live": "Live",
+    "cams": "Cams",
+    "donateNow": "Donate Now",
+    "moreLiveViews": "More live views",
+    "keepStreaming": "Keep the {name} cams Streaming!",
+    "quickDonate": "Quick Donate",
+    "donationPlaceholder": "$ Donation Amount",
+    "didYouKnow": "Did you know?",
+    "commonName": "Common name",
+    "scientificName": "Scientific name",
+    "type": "Type",
+    "size": "Size",
+    "diet": "Diet",
+    "habitat": "Habitat",
+    "range": "Range",
+    "viewMap": "View Map",
+    "error": "Something went wrong. Please try again later.",
+    "loading": "Loading...",
+    "sidebarError": "Failed to load animals. Please refresh the page.",
+    "refresh": "Refresh"
+  },
   "common": {
     "nav": {
       "about": "About",

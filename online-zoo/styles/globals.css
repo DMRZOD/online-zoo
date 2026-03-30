@@ -252,3 +252,8 @@
     background-image: url("/images/review/review-bg-mobile.jpg");
   }
 }
+
+/* ===== Sidebar icon orange filter ===== */
+@utility filter-orange {
+  filter: invert(55%) sepia(58%) saturate(1630%) hue-rotate(340deg) brightness(100%) contrast(100%);
+}

@@ -45,6 +45,28 @@
       "eagle": "Sam y Lora han incubado y criado numerosas crías y estarán felices con tu ayuda."
     }
   },
+  "animals": {
+    "live": "En vivo",
+    "cams": "Cámaras",
+    "donateNow": "Donar Ahora",
+    "moreLiveViews": "Más vistas en vivo",
+    "keepStreaming": "¡Mantén las cámaras de {name} en vivo!",
+    "quickDonate": "Donación rápida",
+    "donationPlaceholder": "$ Monto de donación",
+    "didYouKnow": "¿Sabías que?",
+    "commonName": "Nombre común",
+    "scientificName": "Nombre científico",
+    "type": "Tipo",
+    "size": "Tamaño",
+    "diet": "Dieta",
+    "habitat": "Hábitat",
+    "range": "Distribución",
+    "viewMap": "Ver Mapa",
+    "error": "Algo salió mal. Inténtalo más tarde.",
+    "loading": "Cargando...",
+    "sidebarError": "No se pudieron cargar los animales. Por favor, actualiza la página.",
+    "refresh": "Actualizar"
+  },
   "common": {
     "nav": {
       "about": "Acerca de",
