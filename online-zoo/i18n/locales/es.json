@@ -83,6 +83,9 @@
       "submit": "Enviar Mensaje"
     }
   },
+  "map": {
+    "title": "Descubre dónde viven los animales"
+  },
   "common": {
     "nav": {
       "about": "Acerca de",

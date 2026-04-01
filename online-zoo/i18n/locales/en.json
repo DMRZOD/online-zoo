@@ -83,6 +83,9 @@
       "submit": "Send Message"
     }
   },
+  "map": {
+    "title": "Find where are the animals live"
+  },
   "common": {
     "nav": {
       "about": "About",

@@ -255,5 +255,217 @@
 
 /* ===== Sidebar icon orange filter ===== */
 @utility filter-orange {
-  filter: invert(55%) sepia(58%) saturate(1630%) hue-rotate(340deg) brightness(100%) contrast(100%);
+  filter: invert(55%) sepia(58%) saturate(1630%) hue-rotate(340deg)
+    brightness(100%) contrast(100%);
+}
+
+/* ===== Map markers ===== */
+.marker {
+  position: absolute;
+  width: 80px;
+  height: 120px;
+  background-image: url("/icons/map/tag.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 15px;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0px 4px 15px rgba(0, 160, 146, 0.4));
+}
+
+.marker:hover {
+  background-image: url("/icons/map/tag-white.png");
+}
+
+.marker:hover::after {
+  content: "";
+  position: absolute;
+  top: -8.5px;
+  width: 100px;
+  height: 144px;
+  background-image: url("/icons/map/tag-hover.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.marker:active {
+  transform: scale(1.02);
+}
+
+.marker__icon {
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Positions — default (≥1200px) */
+.marker_eagle {
+  top: 46%;
+  left: 12.3%;
+}
+.marker_alligator {
+  top: 46%;
+  left: 21.3%;
+}
+.marker_lion {
+  top: 50.5%;
+  left: 41.5%;
+}
+.marker_gorilla {
+  top: 53.5%;
+  left: 49.3%;
+}
+.marker_lemur {
+  top: 66.5%;
+  left: 57%;
+}
+.marker_panda {
+  top: 38%;
+  left: 68.3%;
+}
+.marker_tiger {
+  top: 56.3%;
+  left: 72.7%;
+}
+.marker_coala {
+  top: 69.5%;
+  left: 82%;
+}
+
+/* xl ≤1200px */
+@media (max-width: 1200px) {
+  .marker_eagle {
+    top: 43%;
+    left: 11.3%;
+  }
+  .marker_alligator {
+    top: 43%;
+    left: 20.3%;
+  }
+  .marker_lion {
+    top: 48.5%;
+    left: 40.5%;
+  }
+  .marker_gorilla {
+    top: 51.5%;
+    left: 48.8%;
+  }
+  .marker_lemur {
+    top: 64.5%;
+    left: 56%;
+  }
+  .marker_panda {
+    top: 36%;
+    left: 67.3%;
+  }
+  .marker_tiger {
+    top: 54.3%;
+    left: 71.7%;
+  }
+  .marker_coala {
+    top: 67.5%;
+    left: 81%;
+  }
+}
+
+/* lg ≤920px */
+@media (max-width: 920px) {
+  .marker {
+    width: 34px;
+    height: 51px;
+    padding-top: 7px;
+  }
+  .marker:hover::after {
+    top: -6.5px;
+    width: 46px;
+    height: 68px;
+  }
+  .marker__icon {
+    width: 25px;
+  }
+  .marker_eagle {
+    top: 50%;
+    left: 13.3%;
+  }
+  .marker_alligator {
+    top: 50%;
+    left: 22.3%;
+  }
+  .marker_lion {
+    top: 55.5%;
+    left: 42.5%;
+  }
+  .marker_gorilla {
+    top: 58.5%;
+    left: 50%;
+  }
+  .marker_lemur {
+    top: 71.5%;
+    left: 58%;
+  }
+  .marker_panda {
+    top: 43%;
+    left: 69.3%;
+  }
+  .marker_tiger {
+    top: 61.3%;
+    left: 73.7%;
+  }
+  .marker_coala {
+    top: 74.5%;
+    left: 83%;
+  }
+}
+
+/* sm ≤480px */
+@media (max-width: 480px) {
+  .marker {
+    width: 28px;
+    height: 42px;
+  }
+  .marker:hover::after {
+    top: -7px;
+    width: 40px;
+    height: 60px;
+  }
+  .marker__icon {
+    width: 17px;
+  }
+  .marker_eagle {
+    top: 46%;
+    left: 12.3%;
+  }
+  .marker_alligator {
+    top: 46%;
+    left: 21.3%;
+  }
+  .marker_lion {
+    top: 51.5%;
+    left: 41.5%;
+  }
+  .marker_gorilla {
+    top: 54.5%;
+    left: 49%;
+  }
+  .marker_lemur {
+    top: 67.5%;
+    left: 57%;
+  }
+  .marker_panda {
+    top: 39%;
+    left: 68.3%;
+  }
+  .marker_tiger {
+    top: 57.3%;
+    left: 72.7%;
+  }
+  .marker_coala {
+    top: 70.5%;
+    left: 82%;
+  }
 }
