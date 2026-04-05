@@ -27,20 +27,17 @@ export default function CareSlider({ cards, texts, feedLabel }: CareSliderProps)
   const [isGrid, setIsGrid] = useState(false);
   const wheelAccum = useRef(0);
 
-  const checkGridMode = useCallback(() => {
-    setIsGrid(window.innerWidth >= 920);
-  }, []);
-
   useEffect(() => {
-    checkGridMode();
+    setIsGrid(window.innerWidth >= 920);
+
     const onResize = () => {
-      checkGridMode();
+      setIsGrid(window.innerWidth >= 920);
       setCurrentIndex(0);
       wheelAccum.current = 0;
     };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
-  }, [checkGridMode]);
+  }, []);
 
   const moveNext = useCallback(() => {
     if (isAnimatingRef.current) return;

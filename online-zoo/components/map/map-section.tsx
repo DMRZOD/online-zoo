@@ -6,15 +6,15 @@ interface MapTranslations {
 }
 
 const markers = [
-  { name: "eagle", alt: "Eagle", icon: "/icons/map/eagle.svg" },
-  { name: "alligator", alt: "Alligator", icon: "/icons/map/alligator.svg" },
-  { name: "lion", alt: "Lion", icon: "/icons/map/lion.svg" },
-  { name: "gorilla", alt: "Gorilla", icon: "/icons/map/gorilla.svg" },
-  { name: "lemur", alt: "Lemur", icon: "/icons/map/lemur.svg" },
-  { name: "panda", alt: "Panda", icon: "/icons/map/panda.svg" },
-  { name: "tiger", alt: "Tiger", icon: "/icons/map/tiger.svg" },
-  { name: "coala", alt: "Koala", icon: "/icons/map/coala.svg" },
-] as const;
+  { name: "eagle", alt: "Eagle", icon: "/icons/map/eagle.svg", petId: 5 },
+  { name: "alligator", alt: "Alligator", icon: "/icons/map/alligator.svg", petId: 4 },
+  { name: "lion", alt: "Lion", icon: "/icons/map/lion.svg", petId: 7 },
+  { name: "gorilla", alt: "Gorilla", icon: "/icons/map/gorilla.svg", petId: 3 },
+  { name: "lemur", alt: "Lemur", icon: "/icons/map/lemur.svg", petId: 2 },
+  { name: "panda", alt: "Panda", icon: "/icons/map/panda.svg", petId: 1 },
+  { name: "tiger", alt: "Tiger", icon: "/icons/map/tiger.svg", petId: 8 },
+  { name: "coala", alt: "Koala", icon: "/icons/map/coala.svg", petId: 6 },
+];
 
 export default function MapSection({
   translations,
@@ -39,7 +39,7 @@ export default function MapSection({
         {markers.map((m) => (
           <Link
             key={m.name}
-            href="/animals"
+            href={`/animals?pet=${m.petId}`}
             className={`marker marker_${m.name}`}
           >
             <span className="marker__icon">

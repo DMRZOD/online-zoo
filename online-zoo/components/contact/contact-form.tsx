@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
 interface ContactFormProps {
@@ -14,10 +14,17 @@ interface ContactFormProps {
   messagePlaceholder: string;
   submit: string;
   toast: string;
+  validation: {
+    required: string;
+    invalidEmail: string;
+  };
 }
 
-const inputClasses =
-  "w-full rounded-[5px] border border-border bg-background px-5 py-[17px] text-lg text-foreground placeholder:text-muted-foreground transition-all duration-100 focus:border-turquoise focus:shadow-[0_4px_30px_0_rgba(0,160,146,0.3)] focus:outline-none [&:invalid:not(:placeholder-shown)]:border-orange [&:invalid:not(:placeholder-shown)]:bg-[rgba(245,128,33,0.2)] [&:invalid:not(:placeholder-shown)]:outline-none";
+const inputBase =
+  "w-full rounded-[5px] border border-border bg-background px-5 py-[17px] text-lg text-foreground placeholder:text-muted-foreground transition-all duration-100 focus:border-turquoise focus:shadow-[0_4px_30px_0_rgba(0,160,146,0.3)] focus:outline-none";
+const inputError = "border-[#cc0000] bg-[rgba(204,0,0,0.05)]";
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function ContactForm({
   nameLabel,
@@ -30,14 +37,48 @@ export default function ContactForm({
   messagePlaceholder,
   submit,
   toast,
+  validation,
 }: ContactFormProps) {
-  const formRef = useRef<HTMLFormElement>(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [showToast, setShowToast] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  function getErrors() {
+    const errs: Record<string, string> = {};
+    if (!name.trim()) errs.name = validation.required;
+    if (!email.trim()) errs.email = validation.required;
+    else if (!EMAIL_RE.test(email.trim())) errs.email = validation.invalidEmail;
+    if (!subject.trim()) errs.subject = validation.required;
+    if (!message.trim()) errs.message = validation.required;
+    return errs;
+  }
+
+  const errors = getErrors();
+
+  function shouldShowError(field: string) {
+    return (submitted || touched[field]) && errors[field];
+  }
+
+  function handleBlur(field: string) {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+  }
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!formRef.current?.checkValidity()) return;
-    formRef.current.reset();
+    setSubmitted(true);
+    if (Object.keys(errors).length > 0) return;
+
+    setName("");
+    setEmail("");
+    setSubject("");
+    setMessage("");
+    setTouched({});
+    setSubmitted(false);
     setShowToast(true);
     setTimeout(() => setShowToast(false), 3000);
   }
@@ -56,7 +97,6 @@ export default function ContactForm({
 
       {/* Form */}
       <form
-        ref={formRef}
         onSubmit={handleSubmit}
         noValidate
         className="flex w-full flex-col gap-y-[30px] xl:max-w-[740px]"
@@ -71,9 +111,14 @@ export default function ContactForm({
             type="text"
             name="name"
             placeholder={namePlaceholder}
-            required
-            className={inputClasses}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            onBlur={() => handleBlur("name")}
+            className={`${inputBase} ${shouldShowError("name") ? inputError : ""}`}
           />
+          {shouldShowError("name") && (
+            <p className="text-sm text-[#cc0000]" role="alert">{errors.name}</p>
+          )}
         </div>
 
         {/* Email */}
@@ -86,9 +131,14 @@ export default function ContactForm({
             type="email"
             name="email"
             placeholder={emailPlaceholder}
-            required
-            className={inputClasses}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            onBlur={() => handleBlur("email")}
+            className={`${inputBase} ${shouldShowError("email") ? inputError : ""}`}
           />
+          {shouldShowError("email") && (
+            <p className="text-sm text-[#cc0000]" role="alert">{errors.email}</p>
+          )}
         </div>
 
         {/* Subject */}
@@ -101,9 +151,14 @@ export default function ContactForm({
             type="text"
             name="subject"
             placeholder={subjectPlaceholder}
-            required
-            className={inputClasses}
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
+            onBlur={() => handleBlur("subject")}
+            className={`${inputBase} ${shouldShowError("subject") ? inputError : ""}`}
           />
+          {shouldShowError("subject") && (
+            <p className="text-sm text-[#cc0000]" role="alert">{errors.subject}</p>
+          )}
         </div>
 
         {/* Message */}
@@ -115,9 +170,14 @@ export default function ContactForm({
           <textarea
             name="message"
             placeholder={messagePlaceholder}
-            required
-            className={`${inputClasses} h-[200px] resize-y`}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            onBlur={() => handleBlur("message")}
+            className={`${inputBase} h-[200px] resize-y ${shouldShowError("message") ? inputError : ""}`}
           />
+          {shouldShowError("message") && (
+            <p className="text-sm text-[#cc0000]" role="alert">{errors.message}</p>
+          )}
         </div>
 
         {/* Submit button */}

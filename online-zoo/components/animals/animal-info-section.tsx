@@ -1,8 +1,13 @@
 "use client";
 
+import { useState } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import { Link } from "@/i18n/navigation";
 import type { PetDetail } from "@/types/api";
+
+const MapModal = dynamic(() => import("@/components/map/map-modal"), {
+  ssr: false,
+});
 
 interface AnimalInfoSectionProps {
   petDetail: PetDetail | null;
@@ -29,6 +34,8 @@ export default function AnimalInfoSection({
   isLoading,
   translations: t,
 }: AnimalInfoSectionProps) {
+  const [mapOpen, setMapOpen] = useState(false);
+
   if (isLoading) {
     return (
       <section className="px-2.5 py-[50px] sm:px-5 sm:py-[100px] lg:px-10 lg:py-[150px]">
@@ -126,9 +133,10 @@ export default function AnimalInfoSection({
 
             {/* View Map button */}
             <div className="mt-8 flex">
-              <Link
-                href="/map"
-                className="group flex w-[240px] items-center justify-center gap-2.5 rounded-[5px] border border-transparent px-6 py-6 transition-all duration-300 hover:bg-orange [&:hover_span]:text-white [&:hover_svg_path]:fill-white"
+              <button
+                type="button"
+                onClick={() => setMapOpen(true)}
+                className="group flex w-[240px] cursor-pointer items-center justify-center gap-2.5 rounded-[5px] border border-transparent px-6 py-6 transition-all duration-300 hover:bg-orange [&:hover_span]:text-white [&:hover_svg_path]:fill-white"
               >
                 <span className="text-lg font-semibold uppercase text-orange transition-colors duration-300">
                   {t.viewMap}
@@ -147,8 +155,17 @@ export default function AnimalInfoSection({
                     className="fill-orange transition-colors duration-300"
                   />
                 </svg>
-              </Link>
+              </button>
             </div>
+
+            {/* Map Modal */}
+            {mapOpen && petDetail.latitude && petDetail.longitude && (
+              <MapModal
+                lat={parseFloat(petDetail.latitude)}
+                lng={parseFloat(petDetail.longitude)}
+                onClose={() => setMapOpen(false)}
+              />
+            )}
           </div>
 
           {/* Animal image */}

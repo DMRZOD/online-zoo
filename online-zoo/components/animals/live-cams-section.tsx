@@ -16,15 +16,13 @@ interface LiveCamsSectionProps {
   };
 }
 
-export default function LiveCamsSection({
-  animalName,
-  videos,
-  translations: t,
-}: LiveCamsSectionProps) {
-  const mainVideo = videos[0];
-  const sideVideos = videos.slice(1);
+interface DonateButtonProps {
+  label: string;
+  className?: string;
+}
 
-  const DonateButton = ({ className }: { className?: string }) => (
+function DonateButton({ label, className }: DonateButtonProps) {
+  return (
     <button
       type="button"
       className={cn(
@@ -33,7 +31,7 @@ export default function LiveCamsSection({
       )}
     >
       <span className="text-lg font-semibold uppercase text-white">
-        {t.donateNow}
+        {label}
       </span>
       <svg
         width="28"
@@ -51,6 +49,15 @@ export default function LiveCamsSection({
       </svg>
     </button>
   );
+}
+
+export default function LiveCamsSection({
+  animalName,
+  videos,
+  translations: t,
+}: LiveCamsSectionProps) {
+  const mainVideo = videos[0];
+  const sideVideos = videos.slice(1);
 
   return (
     <section className="px-2.5 pb-[50px] pt-[30px] sm:px-5 sm:pb-[100px] sm:pt-[50px] lg:px-10 lg:pb-[150px]">
@@ -61,7 +68,7 @@ export default function LiveCamsSection({
             {t.live} {animalName} {t.cams}
           </h3>
           {/* Desktop donate button (lg+) */}
-          <DonateButton className="hidden lg:flex lg:w-[240px] lg:justify-self-end" />
+          <DonateButton label={t.donateNow} className="hidden lg:flex lg:w-[240px] lg:justify-self-end" />
         </div>
 
         {/* Main video */}
@@ -76,7 +83,7 @@ export default function LiveCamsSection({
         )}
 
         {/* Tablet donate button (sm to lg) */}
-        <DonateButton className="mx-auto mb-[30px] hidden w-[212px] py-[13px] sm:flex lg:hidden" />
+        <DonateButton label={t.donateNow} className="mx-auto mb-[30px] hidden w-[212px] py-[13px] sm:flex lg:hidden" />
 
         {/* More live views */}
         {sideVideos.length > 0 && (
@@ -89,7 +96,7 @@ export default function LiveCamsSection({
         )}
 
         {/* Mobile donate button (<sm) */}
-        <DonateButton className="mt-[50px] flex w-full py-[11.5px] sm:hidden" />
+        <DonateButton label={t.donateNow} className="mt-[50px] flex w-full py-[11.5px] sm:hidden" />
       </div>
     </section>
   );

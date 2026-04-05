@@ -3,6 +3,7 @@ import ContactSection from "@/components/contact/contact-section";
 
 export default async function ContactPage() {
   const t = await getTranslations("contact");
+  const v = await getTranslations("validation");
 
   const translations = {
     title: t("title"),
@@ -17,6 +18,10 @@ export default async function ContactPage() {
     messagePlaceholder: t("form.messagePlaceholder"),
     submit: t("form.submit"),
     toast: t("toast"),
+    validation: {
+      required: v("required"),
+      invalidEmail: v("invalidEmail"),
+    },
   };
 
   return <ContactSection translations={translations} />;

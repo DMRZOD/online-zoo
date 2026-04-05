@@ -14,6 +14,10 @@ interface ContactTranslations {
   messagePlaceholder: string;
   submit: string;
   toast: string;
+  validation: {
+    required: string;
+    invalidEmail: string;
+  };
 }
 
 interface ContactSectionProps {
@@ -60,6 +64,7 @@ export default function ContactSection({ translations }: ContactSectionProps) {
             messagePlaceholder={translations.messagePlaceholder}
             submit={translations.submit}
             toast={translations.toast}
+            validation={translations.validation}
           />
         </div>
       </div>

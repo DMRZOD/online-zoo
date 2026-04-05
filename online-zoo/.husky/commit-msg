@@ -1,0 +1,2 @@
+cd online-zoo
+npx --no -- commitlint --edit "$1"

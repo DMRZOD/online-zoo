@@ -1,1 +1,2 @@
-npm test
+cd online-zoo
+npm run lint && npx tsc --noEmit
