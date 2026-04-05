@@ -26,10 +26,10 @@ export const getFeedback = () =>
   getJson<ApiResponse<Feedback[]>>(`${BASE_URL}/feedback`);
 
 export const register = (payload: RegisterPayload) =>
-  postJson<AuthSession, RegisterPayload>(`${BASE_URL}/auth/register`, payload);
+  postJson<ApiResponse<AuthSession>, RegisterPayload>(`${BASE_URL}/auth/register`, payload);
 
 export const login = (payload: LoginPayload) =>
-  postJson<AuthSession, LoginPayload>(`${BASE_URL}/auth/login`, payload);
+  postJson<ApiResponse<AuthSession>, LoginPayload>(`${BASE_URL}/auth/login`, payload);
 
 export const getProfile = (token: string) =>
   getJson<ApiResponse<AuthUser>>(`${BASE_URL}/auth/profile`, token);

@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { usePathname } from "@/i18n/navigation";
+import AccountButton from "@/components/layout/account-button";
 
 const FIGMA_URL =
   "https://www.figma.com/file/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project";
@@ -125,6 +126,9 @@ export default function Header() {
               </a>
             ))}
           </div>
+
+          {/* Account button */}
+          <AccountButton />
         </nav>
 
         {/* Burger button (mobile) */}
@@ -195,6 +199,11 @@ export default function Header() {
               </a>
             </li>
           </ul>
+
+          {/* Account button — mobile sidebar pill */}
+          <div className="mt-8 flex justify-center">
+            <AccountButton variant="sidebar" />
+          </div>
         </nav>
       </div>
     </header>

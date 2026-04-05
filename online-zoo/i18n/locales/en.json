@@ -86,6 +86,34 @@
   "map": {
     "title": "Find where are the animals live"
   },
+  "auth": {
+    "account": "Account",
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "registration": "Registration",
+    "signInTitle": "Sign In",
+    "registerTitle": "Registration",
+    "loginLabel": "Login",
+    "loginPlaceholder": "Enter your login",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPasswordLabel": "Confirm Password",
+    "confirmPasswordPlaceholder": "Repeat your password",
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?"
+  },
+  "validation": {
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address",
+    "passwordMismatch": "Passwords do not match",
+    "networkError": "Network error. Please try again.",
+    "invalidCredentials": "Invalid login or password",
+    "loginTaken": "This login is already taken"
+  },
   "common": {
     "nav": {
       "about": "About",

@@ -46,7 +46,7 @@ export async function postJson<T, B = Record<string, unknown>>(
       let error: ApiError;
       try {
         const json = await res.json();
-        error = { message: json.message || res.statusText, status: res.status };
+        error = { message: json.message || json.error || res.statusText, status: res.status };
       } catch {
         error = { message: res.statusText, status: res.status };
       }

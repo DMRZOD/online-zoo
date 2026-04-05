@@ -86,6 +86,34 @@
   "map": {
     "title": "Найдите, где живут животные"
   },
+  "auth": {
+    "account": "Аккаунт",
+    "signIn": "Войти",
+    "signOut": "Выйти",
+    "registration": "Регистрация",
+    "signInTitle": "Войти",
+    "registerTitle": "Регистрация",
+    "loginLabel": "Логин",
+    "loginPlaceholder": "Введите логин",
+    "passwordLabel": "Пароль",
+    "passwordPlaceholder": "Введите пароль",
+    "confirmPasswordLabel": "Подтверждение пароля",
+    "confirmPasswordPlaceholder": "Повторите пароль",
+    "nameLabel": "Имя",
+    "namePlaceholder": "Введите ваше имя",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Введите email",
+    "noAccount": "Нет аккаунта?",
+    "hasAccount": "Уже есть аккаунт?"
+  },
+  "validation": {
+    "required": "Это поле обязательно",
+    "invalidEmail": "Введите корректный email адрес",
+    "passwordMismatch": "Пароли не совпадают",
+    "networkError": "Ошибка сети. Попробуйте снова.",
+    "invalidCredentials": "Неверный логин или пароль",
+    "loginTaken": "Этот логин уже занят"
+  },
   "common": {
     "nav": {
       "about": "О нас",
