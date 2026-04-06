@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
+import DonateButton from "@/components/donation/donate-button";
 
 const steps = [
   {
@@ -72,7 +73,7 @@ export default async function FeedSection() {
                   </p>
 
                   {step.number === "03" && (
-                    <button className="mt-[30px] flex w-full cursor-pointer items-center justify-center gap-2.5 rounded-[5px] bg-orange p-[11.5px] text-lg font-semibold uppercase text-white transition-all duration-300 hover:bg-orange-hover hover:shadow-[0_4px_30px_0_rgba(245,128,33,0.3)] active:scale-[1.03] sm:mt-[50px] sm:w-[240px] sm:p-[18px]">
+                    <DonateButton className="mt-[30px] flex w-full cursor-pointer items-center justify-center gap-2.5 rounded-[5px] bg-orange p-[11.5px] text-lg font-semibold uppercase text-white transition-all duration-300 hover:bg-orange-hover hover:shadow-[0_4px_30px_0_rgba(245,128,33,0.3)] active:scale-[1.03] sm:mt-[50px] sm:w-[240px] sm:p-[18px]">
                       <span>{t("donateNow")}</span>
                       <Image
                         src="/icons/arrow-right.svg"
@@ -80,7 +81,7 @@ export default async function FeedSection() {
                         width={25}
                         height={22}
                       />
-                    </button>
+                    </DonateButton>
                   )}
                 </div>
               </div>

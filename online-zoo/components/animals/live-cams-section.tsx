@@ -68,7 +68,7 @@ export default function LiveCamsSection({
             {t.live} {animalName} {t.cams}
           </h3>
           {/* Desktop donate button (lg+) */}
-          <DonateButton label={t.donateNow} className="hidden lg:flex lg:w-[240px] lg:justify-self-end" />
+          <DonateButton label={t.donateNow} className="hidden lg:flex lg:w-[240px] lg:justify-self-end cursor-pointer" />
         </div>
 
         {/* Main video */}

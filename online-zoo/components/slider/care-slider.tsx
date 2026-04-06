@@ -24,12 +24,12 @@ export default function CareSlider({ cards, texts, feedLabel }: CareSliderProps)
   const isAnimatingRef = useRef(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animate, setAnimate] = useState(false);
-  const [isGrid, setIsGrid] = useState(false);
+  const [isGrid, setIsGrid] = useState(() =>
+    typeof window !== "undefined" ? window.innerWidth >= 920 : false
+  );
   const wheelAccum = useRef(0);
 
   useEffect(() => {
-    setIsGrid(window.innerWidth >= 920);
-
     const onResize = () => {
       setIsGrid(window.innerWidth >= 920);
       setCurrentIndex(0);

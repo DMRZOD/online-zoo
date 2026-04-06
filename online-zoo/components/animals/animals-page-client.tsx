@@ -147,6 +147,8 @@ export default function AnimalsPageClient({
             quickDonate: t.quickDonate,
             placeholder: t.donationPlaceholder,
           }}
+          petId={selectedPetId}
+          petName={animalName}
         />
 
         <AnimalInfoSection

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useDonationPopup } from "@/components/donation/donation-context";
 
 interface AnimalDonationSectionProps {
   translations: {
@@ -9,11 +10,16 @@ interface AnimalDonationSectionProps {
     quickDonate: string;
     placeholder: string;
   };
+  petId?: number;
+  petName?: string;
 }
 
 export default function AnimalDonationSection({
   translations: t,
+  petId,
+  petName,
 }: AnimalDonationSectionProps) {
+  const { openDonation } = useDonationPopup();
   return (
     <section className="bg-navy text-white">
       <div className="mx-auto flex max-w-[1480px] flex-col items-center gap-[30px] px-5 py-[30px] text-center sm:py-[50px] lg:px-10 xl:flex-row xl:items-start xl:justify-between xl:gap-10 xl:text-left">
@@ -30,7 +36,7 @@ export default function AnimalDonationSection({
           <span className="mb-4 text-[26px] font-medium xl:mb-5">
             {t.quickDonate}
           </span>
-          <button className="group flex h-[45px] w-[300px] cursor-pointer items-center overflow-hidden rounded-[5px] border border-white sm:h-[74px] sm:w-[320px]">
+          <button onClick={() => openDonation({ petId, petName })} className="group flex h-[45px] w-[300px] cursor-pointer items-center overflow-hidden rounded-[5px] border border-white sm:h-[74px] sm:w-[320px]">
             <span className="flex-1 text-center text-base font-semibold uppercase sm:text-lg">
               {t.placeholder}
             </span>

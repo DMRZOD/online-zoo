@@ -7,6 +7,8 @@ import { routing } from "@/i18n/routing";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { DonationPopupProvider } from "@/components/donation/donation-context";
+import DonationPopup from "@/components/donation/donation-popup";
 import "@/styles/globals.css";
 
 const montserrat = Montserrat({
@@ -46,10 +48,13 @@ export default async function LocaleLayout({
     >
       <body className={montserrat.className}>
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <ThemeToggle />
+          <DonationPopupProvider>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+            <ThemeToggle />
+            <DonationPopup />
+          </DonationPopupProvider>
         </NextIntlClientProvider>
       </body>
     </html>

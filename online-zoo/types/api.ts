@@ -71,7 +71,8 @@ export interface DonationPayload {
 
 export interface SavedCard {
   cardNumber: string;
-  expiryDate: string;
+  expiryMonth: string;
+  expiryYear: string;
   cvv: string;
 }
 

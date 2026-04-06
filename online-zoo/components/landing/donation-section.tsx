@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
+import DonateButton from "@/components/donation/donate-button";
 
 export default async function DonationSection() {
   const t = await getTranslations("common.donation");
@@ -20,7 +21,7 @@ export default async function DonationSection() {
           <span className="mb-4 text-[26px] font-medium xl:mb-5">
             {t("quickDonate")}
           </span>
-          <button className="group flex h-[45px] w-[300px] cursor-pointer items-center overflow-hidden rounded-[5px] border border-white sm:h-[74px] sm:w-[320px]">
+          <DonateButton className="group flex h-[45px] w-[300px] cursor-pointer items-center overflow-hidden rounded-[5px] border border-white sm:h-[74px] sm:w-[320px]">
             <span className="flex-1  text-center text-base font-semibold uppercase sm:text-lg">
               {t("placeholder")}
             </span>
@@ -32,7 +33,7 @@ export default async function DonationSection() {
                 height={22}
               />
             </span>
-          </button>
+          </DonateButton>
         </div>
       </div>
     </section>

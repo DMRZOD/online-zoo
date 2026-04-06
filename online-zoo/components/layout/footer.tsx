@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { useDonationPopup } from "@/components/donation/donation-context";
 
 const NAV_LINKS = [
   { key: "about", href: "/" },
@@ -49,6 +50,7 @@ const LOGOS = [
 export default function Footer() {
   const tNav = useTranslations("common.nav");
   const tFooter = useTranslations("common.footer");
+  const { openDonation } = useDonationPopup();
 
   return (
     <footer className="bg-navy text-white">
@@ -108,7 +110,7 @@ export default function Footer() {
           </nav>
 
           {/* Donate button */}
-          <button className="flex w-full cursor-pointer items-center justify-center gap-2.5 rounded-[5px] border border-white px-6 py-4 text-base font-semibold uppercase transition-all duration-300 hover:bg-turquoise sm:w-auto sm:px-10 sm:py-6 sm:text-lg xl:py-5">
+          <button onClick={() => openDonation()} className="flex w-full cursor-pointer items-center justify-center gap-2.5 rounded-[5px] border border-white px-6 py-4 text-base font-semibold uppercase transition-all duration-300 hover:bg-turquoise sm:w-auto sm:px-10 sm:py-6 sm:text-lg xl:py-5">
             <span>{tFooter("donate")}</span>
             <Image src="/icons/arrow-right.svg" alt="" width={25} height={22} />
           </button>
