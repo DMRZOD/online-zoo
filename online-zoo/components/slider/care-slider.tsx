@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useCallback, useEffect } from "react";
+import { useRef, useState, useCallback, useEffect, useSyncExternalStore } from "react";
 import Image from "next/image";
 import CareCard from "@/components/cards/care-card";
 
@@ -24,20 +24,20 @@ export default function CareSlider({ cards, texts, feedLabel }: CareSliderProps)
   const isAnimatingRef = useRef(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animate, setAnimate] = useState(false);
-  const [isGrid, setIsGrid] = useState(() =>
-    typeof window !== "undefined" ? window.innerWidth >= 920 : false
-  );
   const wheelAccum = useRef(0);
-
-  useEffect(() => {
-    const onResize = () => {
-      setIsGrid(window.innerWidth >= 920);
-      setCurrentIndex(0);
-      wheelAccum.current = 0;
-    };
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
+  const isGrid = useSyncExternalStore(
+    (cb) => {
+      const handler = () => {
+        setCurrentIndex(0);
+        wheelAccum.current = 0;
+        cb();
+      };
+      window.addEventListener("resize", handler);
+      return () => window.removeEventListener("resize", handler);
+    },
+    () => window.innerWidth >= 920,
+    () => false
+  );
 
   const moveNext = useCallback(() => {
     if (isAnimatingRef.current) return;

@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { siteConfig } from "@/siteConfig";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
@@ -18,10 +19,27 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Online Zoo",
-  description: "Virtual Zoo With Live Animal Cameras",
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  metadataBase: new URL(siteConfig.url),
   icons: {
     icon: "/icons/favicon.svg",
+  },
+  openGraph: {
+    type: "website",
+    siteName: siteConfig.name,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
   },
 };
 
