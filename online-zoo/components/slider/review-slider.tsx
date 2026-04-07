@@ -137,8 +137,8 @@ export default function ReviewSlider({
   if (errorMessage) {
     return (
       <div className="flex w-full items-center justify-center px-2.5">
-        <div className="grid h-[120px] w-[500px] place-items-center rounded-[5px] bg-[#fde4e1] p-5 sm:h-[220px] sm:p-10">
-          <p className="text-center text-lg font-normal leading-[1.5] text-[#c0392b] sm:text-[26px] sm:font-medium sm:leading-[1.3]">
+        <div className="grid h-[120px] w-[500px] place-items-center rounded-[5px] bg-[#fde4e1] dark:bg-[#3d1f1f] p-5 sm:h-[220px] sm:p-10">
+          <p className="text-center text-lg font-normal leading-[1.5] text-[#c0392b] dark:text-[#f5726a] sm:text-[26px] sm:font-medium sm:leading-[1.3]">
             {errorMessage}
           </p>
         </div>

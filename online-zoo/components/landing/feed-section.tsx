@@ -30,7 +30,7 @@ export default async function FeedSection() {
   const t = await getTranslations("landing.feed");
 
   return (
-    <section className="bg-navy text-white">
+    <section className="bg-navy dark:bg-dark-surface text-white">
       <div className="mx-auto max-w-[1480px] px-2.5 py-[30px] sm:px-5 sm:py-[50px] lg:px-10 xl:py-[100px]">
         <h3 className="mb-[30px] text-[26px] font-medium uppercase sm:text-[54px] sm:font-semibold xl:mb-[50px]">
           {t("title")}

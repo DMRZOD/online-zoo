@@ -25,6 +25,10 @@
   --color-turquoise-hover: #05786e;
   --color-orange-hover: #d26004;
 
+  /* Dark-mode surface colors (resolve to navy in light mode) */
+  --color-dark-surface: var(--dark-surface);
+  --color-dark-surface-alt: var(--dark-surface-alt);
+
   /* shadcn semantic colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -118,47 +122,53 @@
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: rgba(255, 255, 255, 0.1);
   --sidebar-ring: #00a092;
+
+  --dark-surface: #20113d;
+  --dark-surface-alt: #20113d;
 }
 
 .dark {
   color-scheme: dark;
 
-  --background: #13101c;
-  --foreground: #ebe6f5;
-  --card: #1c1628;
-  --card-foreground: #ebe6f5;
-  --popover: #1c1628;
-  --popover-foreground: #ebe6f5;
+  --background: #171717;
+  --foreground: #e8e4e0;
+  --card: #1f1f1f;
+  --card-foreground: #e8e4e0;
+  --popover: #252525;
+  --popover-foreground: #e8e4e0;
 
-  --primary: #00b5a5;
+  --primary: #1bc4b4;
   --primary-foreground: #ffffff;
-  --secondary: #2d1f52;
-  --secondary-foreground: #ebe6f5;
-  --accent: #f58021;
+  --secondary: #2a2a2a;
+  --secondary-foreground: #e8e4e0;
+  --accent: #f8922f;
   --accent-foreground: #ffffff;
 
-  --muted: #251e35;
-  --muted-foreground: #a09bb0;
+  --muted: #2a2a2a;
+  --muted-foreground: #9b9590;
   --destructive: oklch(0.704 0.191 22.216);
 
-  --border: rgba(255, 255, 255, 0.1);
-  --input: rgba(255, 255, 255, 0.15);
-  --ring: #00b5a5;
+  --border: rgba(255, 255, 255, 0.12);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #1bc4b4;
 
-  --chart-1: #00b5a5;
-  --chart-2: #f58021;
-  --chart-3: #3a2a66;
-  --chart-4: #05786e;
-  --chart-5: #d26004;
+  --chart-1: #1bc4b4;
+  --chart-2: #f8922f;
+  --chart-3: #3d3d3d;
+  --chart-4: #0d9e8f;
+  --chart-5: #e07010;
 
-  --sidebar: #13101c;
-  --sidebar-foreground: #ebe6f5;
-  --sidebar-primary: #00b5a5;
+  --sidebar: #141414;
+  --sidebar-foreground: #e8e4e0;
+  --sidebar-primary: #1bc4b4;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #251e35;
-  --sidebar-accent-foreground: #ebe6f5;
+  --sidebar-accent: #2a2a2a;
+  --sidebar-accent-foreground: #e8e4e0;
   --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #00b5a5;
+  --sidebar-ring: #1bc4b4;
+
+  --dark-surface: #1f1f1f;
+  --dark-surface-alt: #141414;
 }
 
 /* ===== Base styles ===== */
@@ -185,6 +195,10 @@
     color: #ffffff;
   }
 
+  .dark ::selection {
+    background-color: #1bc4b4;
+  }
+
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -196,6 +210,56 @@
   ::-webkit-scrollbar-thumb {
     background: #00a092;
     border-radius: 4px;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background: rgba(27, 196, 180, 0.1);
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: #1bc4b4;
+  }
+}
+
+/* ===== Dark-mode overlay for hero background image ===== */
+.dark .hero-bg {
+  position: relative;
+}
+
+.dark .hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dark .hero-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Dark-mode review background images ===== */
+.dark .review-bg {
+  background-image: url("/images/review/review-bg-dark.jpg");
+}
+
+@media (max-width: 1200px) {
+  .dark .review-bg {
+    background-image: url("/images/review/review-bg-laptop-dark.jpg");
+  }
+}
+
+@media (max-width: 920px) {
+  .dark .review-bg {
+    background-image: url("/images/review/review-bg-tablet-dark.jpg");
+  }
+}
+
+@media (max-width: 480px) {
+  .dark .review-bg {
+    background-image: url("/images/review/review-bg-mobile-dark.jpg");
   }
 }
 

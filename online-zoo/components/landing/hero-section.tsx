@@ -6,9 +6,9 @@ export default async function HeroSection() {
   const t = await getTranslations("landing.hero");
 
   return (
-    <section className="hero-bg py-5 sm:py-[50px] lg:py-[100px] xl:py-[150px]">
+    <section className="hero-bg bg-white py-5 sm:py-[50px] lg:py-[100px] xl:py-[150px]">
       <div className="mx-auto flex max-w-[1480px] flex-col gap-5 sm:gap-[30px] xl:gap-[50px] px-2.5 lg:px-5 xl:px-10">
-        <h2 className="max-w-[890px] text-[40px] font-extrabold uppercase leading-tight tracking-[0.01em] text-turquoise md:text-[72px] xl:text-[82px]">
+        <h2 className="max-w-[890px] text-[40px] font-extrabold uppercase leading-tight tracking-[0.01em] text-turquoise dark:text-foreground md:text-[72px] xl:text-[82px]">
           {t("title")}
         </h2>
         <p className="max-w-[340px] text-lg font-normal leading-[1.5] text-foreground md:max-w-[430px]">

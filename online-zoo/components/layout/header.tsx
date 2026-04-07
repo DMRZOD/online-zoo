@@ -63,7 +63,7 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-orange w-full">
+    <header className="bg-orange dark:bg-navy dark:border-b dark:border-border w-full">
       <div className="mx-auto flex max-w-[1480px] items-center justify-between px-5 py-7.5 lg:px-10">
         {/* Logo */}
         <Link href="/" className="relative shrink-0" onClick={closeMenu}>
@@ -72,7 +72,7 @@ export default function Header() {
             alt="Online Zoo"
             width={96}
             height={50}
-            className="h-8.5 w-auto sm:h-10 lg:h-12.5"
+            className="h-8.5 w-auto sm:h-10 lg:h-12.5 dark:invert"
             priority
           />
         </Link>
@@ -87,7 +87,7 @@ export default function Header() {
                   className={`text-lg font-semibold uppercase transition-colors duration-300 ${
                     isActive(href)
                       ? "text-turquoise"
-                      : "text-black hover:text-turquoise"
+                      : "text-black dark:text-foreground hover:text-turquoise dark:hover:text-turquoise"
                   }`}
                 >
                   {t(key)}
@@ -99,7 +99,7 @@ export default function Header() {
                 href={FIGMA_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lg font-semibold uppercase text-black transition-colors duration-300 hover:text-turquoise"
+                className="text-lg font-semibold uppercase text-black dark:text-foreground transition-colors duration-300 hover:text-turquoise dark:hover:text-turquoise"
               >
                 {t("design")}
               </a>
@@ -140,17 +140,21 @@ export default function Header() {
         >
           <span
             className={`block h-0.75 w-full rounded-sm transition-all duration-300 ${
-              menuOpen ? "translate-y-2.25 rotate-45 bg-white" : "bg-black"
+              menuOpen
+                ? "translate-y-2.25 rotate-45 bg-white"
+                : "bg-black dark:bg-foreground"
             }`}
           />
           <span
             className={`block h-0.75 w-full rounded-sm transition-all duration-300 ${
-              menuOpen ? "scale-0 bg-white" : "bg-black"
+              menuOpen ? "scale-0 bg-white" : "bg-black dark:bg-foreground"
             }`}
           />
           <span
             className={`block h-0.75 w-full rounded-sm transition-all duration-300 ${
-              menuOpen ? "-translate-y-2.25 -rotate-45 bg-white" : "bg-black"
+              menuOpen
+                ? "-translate-y-2.25 -rotate-45 bg-white"
+                : "bg-black dark:bg-foreground"
             }`}
           />
         </button>

@@ -79,7 +79,7 @@ export default function AnimalSidebar({
   return (
     <aside
       className={cn(
-        "sticky top-0 z-30 hidden self-start bg-navy text-white transition-[width] duration-300 ease-in-out lg:flex lg:flex-col dark:bg-[#13101c]",
+        "sticky top-0 z-30 hidden self-start bg-navy dark:bg-dark-surface text-white transition-[width] duration-300 ease-in-out lg:flex lg:flex-col",
         collapsed
           ? "lg:w-[140px] xl:w-[170px] 2xl:w-[220px]"
           : "lg:w-[220px] xl:w-[260px] 2xl:w-[300px]",

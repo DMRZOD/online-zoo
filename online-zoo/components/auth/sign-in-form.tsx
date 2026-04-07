@@ -26,7 +26,7 @@ interface SignInFormProps {
 
 const inputBase =
   "w-full rounded-[5px] border border-border bg-background px-5 py-[17px] text-lg text-foreground placeholder:text-muted-foreground transition-all duration-100 focus:border-turquoise focus:shadow-[0_4px_30px_0_rgba(0,160,146,0.3)] focus:outline-none";
-const inputError = "border-[#cc0000] bg-[rgba(204,0,0,0.05)]";
+const inputError = "border-[#cc0000] bg-[rgba(204,0,0,0.05)] dark:border-[#f56565] dark:bg-[rgba(245,101,101,0.08)]";
 
 export default function SignInForm({ labels, messages, links }: SignInFormProps) {
   const router = useRouter();
@@ -83,7 +83,7 @@ export default function SignInForm({ labels, messages, links }: SignInFormProps)
           className={`${inputBase} ${errors.login ? inputError : ""}`}
         />
         {errors.login && (
-          <p className="text-sm text-[#cc0000]" role="alert">{errors.login}</p>
+          <p className="text-sm text-[#cc0000] dark:text-[#f56565]" role="alert">{errors.login}</p>
         )}
       </div>
 
@@ -103,13 +103,13 @@ export default function SignInForm({ labels, messages, links }: SignInFormProps)
           className={`${inputBase} ${errors.password ? inputError : ""}`}
         />
         {errors.password && (
-          <p className="text-sm text-[#cc0000]" role="alert">{errors.password}</p>
+          <p className="text-sm text-[#cc0000] dark:text-[#f56565]" role="alert">{errors.password}</p>
         )}
       </div>
 
       {/* Form-level error */}
       {formError && (
-        <p className="text-center text-sm text-[#cc0000]" role="alert">{formError}</p>
+        <p className="text-center text-sm text-[#cc0000] dark:text-[#f56565]" role="alert">{formError}</p>
       )}
 
       {/* Submit button */}

@@ -21,7 +21,7 @@ export default function AnimalDonationSection({
 }: AnimalDonationSectionProps) {
   const { openDonation } = useDonationPopup();
   return (
-    <section className="bg-navy text-white">
+    <section className="bg-navy dark:bg-dark-surface text-white">
       <div className="mx-auto flex max-w-[1480px] flex-col items-center gap-[30px] px-5 py-[30px] text-center sm:py-[50px] lg:px-10 xl:flex-row xl:items-start xl:justify-between xl:gap-10 xl:text-left">
         {/* Content */}
         <div className="max-w-[660px] xl:max-w-[600px]">

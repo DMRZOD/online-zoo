@@ -43,7 +43,7 @@ export default function AnimalSidebarItem({
                   // 2xl: orange circle
                   "2xl:h-[104px] 2xl:w-[104px] 2xl:rounded-full",
                   isActive
-                    ? "2xl:bg-white 2xl:ring-[3px] 2xl:ring-white 2xl:ring-offset-[6px] 2xl:ring-offset-navy dark:2xl:ring-offset-[#13101c]"
+                    ? "2xl:bg-white 2xl:ring-[3px] 2xl:ring-white 2xl:ring-offset-[6px] 2xl:ring-offset-navy dark:2xl:ring-offset-dark-surface-alt"
                     : "2xl:bg-orange",
                 )
               : cn("h-[50px] w-[50px]"),

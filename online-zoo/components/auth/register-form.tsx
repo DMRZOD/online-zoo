@@ -35,7 +35,7 @@ interface RegisterFormProps {
 
 const inputBase =
   "w-full rounded-[5px] border border-border bg-background px-5 py-[17px] text-lg text-foreground placeholder:text-muted-foreground transition-all duration-100 focus:border-turquoise focus:shadow-[0_4px_30px_0_rgba(0,160,146,0.3)] focus:outline-none";
-const inputError = "border-[#cc0000] bg-[rgba(204,0,0,0.05)]";
+const inputError = "border-[#cc0000] bg-[rgba(204,0,0,0.05)] dark:border-[#f56565] dark:bg-[rgba(245,101,101,0.08)]";
 
 export default function RegisterForm({ labels, messages, links }: RegisterFormProps) {
   const router = useRouter();
@@ -131,7 +131,7 @@ export default function RegisterForm({ labels, messages, links }: RegisterFormPr
           className={`${inputBase} ${errors[name] ? inputError : ""}`}
         />
         {errors[name] && (
-          <p className="text-sm text-[#cc0000]" role="alert">{errors[name]}</p>
+          <p className="text-sm text-[#cc0000] dark:text-[#f56565]" role="alert">{errors[name]}</p>
         )}
       </div>
     );
@@ -147,7 +147,7 @@ export default function RegisterForm({ labels, messages, links }: RegisterFormPr
 
       {/* Form-level error */}
       {formError && (
-        <ul className="flex flex-col gap-1 text-center text-sm text-[#cc0000]" role="alert">
+        <ul className="flex flex-col gap-1 text-center text-sm text-[#cc0000] dark:text-[#f56565]" role="alert">
           {formError.split(", ").map((msg, i) => (
             <li key={i}>{msg.replace(/^\w+: /, "")}</li>
           ))}

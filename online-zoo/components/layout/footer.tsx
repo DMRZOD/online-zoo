@@ -53,7 +53,7 @@ export default function Footer() {
   const { openDonation } = useDonationPopup();
 
   return (
-    <footer className="bg-navy text-white">
+    <footer className="bg-navy dark:bg-dark-surface text-white">
       <div className="mx-auto max-w-[1480px] px-5 pb-10 pt-12 lg:px-10 lg:pt-17.5 lg:pb-10">
         {/* Top section */}
         <div className="flex flex-col items-center gap-8 xl:flex-row xl:justify-between xl:gap-5">

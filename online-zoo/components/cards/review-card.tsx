@@ -7,7 +7,7 @@ interface ReviewCardProps {
 
 export default function ReviewCard({ feedback }: ReviewCardProps) {
   return (
-    <div className="relative flex w-[300px] flex-col justify-between rounded-[5px] bg-white p-[115px_20px_50px] text-center dark:bg-card sm:h-[371px] sm:w-[523px] sm:p-[50px_30px] xl:h-[463px] xl:w-[515px] xl:p-[136px_50px_70px] xl:text-left">
+    <div className="relative flex w-[300px] flex-col justify-between rounded-[5px] bg-white p-[115px_20px_50px] text-center dark:bg-background sm:h-[371px] sm:w-[523px] sm:p-[50px_30px] xl:h-[463px] xl:w-[515px] xl:p-[136px_50px_70px] xl:text-left">
       <div>
         <Image
           src="/icons/quote.svg"

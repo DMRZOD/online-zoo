@@ -27,7 +27,7 @@ export default function CamCarousel({ videos }: CamCarouselProps) {
       <button
         type="button"
         onClick={goPrev}
-        className="hidden h-[60px] w-[60px] shrink-0 cursor-pointer items-center justify-center rounded-[5px] border border-white/30 transition-all duration-300 hover:bg-white/10 lg:grid xl:h-[84px] xl:w-[80px]"
+        className="hidden h-[60px] w-[60px] shrink-0 cursor-pointer items-center justify-center rounded-[5px] border border-white/30 dark:border-turquoise transition-all duration-300 hover:bg-white/10 lg:grid xl:h-[84px] xl:w-[80px]"
         aria-label="Previous camera"
       >
         <Image
@@ -35,6 +35,7 @@ export default function CamCarousel({ videos }: CamCarouselProps) {
           alt=""
           width={22}
           height={25}
+          className="dark:invert"
         />
       </button>
 
@@ -45,7 +46,7 @@ export default function CamCarousel({ videos }: CamCarouselProps) {
             key={video.id}
             className={cn(
               "relative overflow-hidden rounded-[10px]",
-              index === activeCam && "ring-[3px] ring-orange"
+              index === activeCam && "ring-[3px] ring-orange dark:ring-turquoise"
             )}
           >
             {/* Cam header overlay */}
@@ -71,7 +72,7 @@ export default function CamCarousel({ videos }: CamCarouselProps) {
       <button
         type="button"
         onClick={goNext}
-        className="hidden h-[60px] w-[60px] shrink-0 cursor-pointer items-center justify-center rounded-[5px] border border-white/30 transition-all duration-300 hover:bg-white/10 lg:grid xl:h-[84px] xl:w-[80px]"
+        className="hidden h-[60px] w-[60px] shrink-0 cursor-pointer items-center justify-center rounded-[5px] border border-white/30 dark:border-turquoise transition-all duration-300 hover:bg-white/10 lg:grid xl:h-[84px] xl:w-[80px]"
         aria-label="Next camera"
       >
         <Image
@@ -79,6 +80,7 @@ export default function CamCarousel({ videos }: CamCarouselProps) {
           alt=""
           width={22}
           height={25}
+          className="dark:invert"
         />
       </button>
     </div>

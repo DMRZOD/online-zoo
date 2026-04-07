@@ -136,25 +136,27 @@ export default function PetsSlider({
         <button
           type="button"
           onClick={movePrev}
-          className="flex h-[60px] w-[60px] cursor-pointer items-center justify-center rounded-[5px] border border-navy transition-all duration-300 hover:bg-navy dark:border-[#5fd9cc] dark:hover:bg-[#1a1528] [&:hover_img]:brightness-0 [&:hover_img]:invert"
+          className="flex h-[60px] w-[60px] cursor-pointer items-center justify-center rounded-[5px] border border-navy transition-all duration-300 hover:bg-navy dark:border-primary dark:hover:bg-primary [&:hover_img]:brightness-0 [&:hover_img]:invert"
         >
           <Image
             src="/icons/arrow-left-navy.svg"
             alt="Previous"
             width={25}
             height={22}
+            className="dark:brightness-0 dark:invert"
           />
         </button>
         <button
           type="button"
           onClick={moveNext}
-          className="flex h-[60px] w-[60px] cursor-pointer items-center justify-center rounded-[5px] border border-navy transition-all duration-300 hover:bg-navy dark:border-[#5fd9cc] dark:hover:bg-[#1a1528] [&:hover_img]:brightness-0 [&:hover_img]:invert"
+          className="flex h-[60px] w-[60px] cursor-pointer items-center justify-center rounded-[5px] border border-navy transition-all duration-300 hover:bg-navy dark:border-primary dark:hover:bg-primary [&:hover_img]:brightness-0 [&:hover_img]:invert"
         >
           <Image
             src="/icons/arrow-right-navy.svg"
             alt="Next"
             width={25}
             height={22}
+            className="dark:brightness-0 dark:invert"
           />
         </button>
       </div>
@@ -162,8 +164,8 @@ export default function PetsSlider({
       {/* Slider */}
       {errorMessage ? (
         <div className="flex w-full items-center justify-center px-2.5">
-          <div className="grid h-[120px] w-[500px] place-items-center rounded-[5px] bg-[#fde4e1] p-5 sm:h-[220px] sm:p-10">
-            <p className="text-center text-lg font-normal leading-[1.5] text-[#c0392b] sm:text-[26px] sm:font-medium sm:leading-[1.3]">
+          <div className="grid h-[120px] w-[500px] place-items-center rounded-[5px] bg-[#fde4e1] dark:bg-[#3d1f1f] p-5 sm:h-[220px] sm:p-10">
+            <p className="text-center text-lg font-normal leading-[1.5] text-[#c0392b] dark:text-[#f5726a] sm:text-[26px] sm:font-medium sm:leading-[1.3]">
               {errorMessage}
             </p>
           </div>

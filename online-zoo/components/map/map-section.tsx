@@ -7,7 +7,12 @@ interface MapTranslations {
 
 const markers = [
   { name: "eagle", alt: "Eagle", icon: "/icons/map/eagle.svg", petId: 5 },
-  { name: "alligator", alt: "Alligator", icon: "/icons/map/alligator.svg", petId: 4 },
+  {
+    name: "alligator",
+    alt: "Alligator",
+    icon: "/icons/map/alligator.svg",
+    petId: 4,
+  },
   { name: "lion", alt: "Lion", icon: "/icons/map/lion.svg", petId: 7 },
   { name: "gorilla", alt: "Gorilla", icon: "/icons/map/gorilla.svg", petId: 3 },
   { name: "lemur", alt: "Lemur", icon: "/icons/map/lemur.svg", petId: 2 },
@@ -33,7 +38,15 @@ export default function MapSection({
           alt="World map"
           width={1920}
           height={960}
-          className="w-full h-auto"
+          className="w-full h-auto dark:hidden"
+          priority
+        />
+        <Image
+          src="/images/map/map-dark.jpg"
+          alt="World map"
+          width={1920}
+          height={960}
+          className="w-full h-auto hidden dark:block"
           priority
         />
         {markers.map((m) => (

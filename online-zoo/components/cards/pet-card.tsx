@@ -13,10 +13,10 @@ export default function PetCard({ pet, asset, viewLiveCamLabel }: PetCardProps) 
   return (
     <Link
       href={`/animals?pet=${pet.id}`}
-      className="group relative flex w-[300px] flex-col overflow-hidden rounded-[5px] bg-navy transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_4px_30px_0_rgba(32,17,61,0.5)] dark:bg-[#1a1528] md:w-[440px] md:h-[747px]"
+      className="group relative flex w-[300px] flex-col overflow-hidden rounded-[5px] bg-navy dark:bg-dark-surface transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_4px_30px_0_rgba(32,17,61,0.5)] dark:hover:shadow-[0_4px_30px_0_rgba(0,0,0,0.4)] md:w-[440px] md:h-[747px]"
     >
       {/* Label */}
-      <div className="absolute top-0 left-0 z-10 rounded-br-[5px] bg-navy px-5 py-3 text-[26px] font-medium leading-[1.3] text-white dark:bg-[#1a1528] dark:text-[#ebe6f5]">
+      <div className="absolute top-0 left-0 z-10 rounded-br-[5px] bg-navy dark:bg-dark-surface px-5 py-3 text-[26px] font-medium leading-[1.3] text-white">
         {pet.name}
       </div>
 
@@ -34,10 +34,10 @@ export default function PetCard({ pet, asset, viewLiveCamLabel }: PetCardProps) 
       {/* Content */}
       <div className="flex flex-1 flex-col items-center justify-between p-[15px_15px_10px] md:h-[311px] md:p-[30px_30px_50px]">
         <div className="flex flex-col gap-[15px] md:gap-5">
-          <div className="text-center text-[26px] font-medium leading-[1.3] text-white dark:text-[#ebe6f5]">
+          <div className="text-center text-[26px] font-medium leading-[1.3] text-white">
             {pet.commonName}
           </div>
-          <div className="text-center text-lg font-normal leading-[1.5] text-white dark:text-[#ebe6f5]">
+          <div className="text-center text-lg font-normal leading-[1.5] text-white">
             {pet.description}
           </div>
         </div>

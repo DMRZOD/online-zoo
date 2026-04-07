@@ -40,7 +40,7 @@ export default async function CareSection() {
       <div className="mx-auto max-w-[1480px] px-2.5 sm:px-5 2xl:px-10">
         <Link
           href="/animals"
-          className="group mx-auto mt-[30px] flex w-full items-center justify-center gap-2.5 rounded-[5px] border border-navy p-[9px] text-lg font-semibold uppercase text-navy transition-all duration-300 hover:border-white hover:bg-navy hover:text-white dark:border-[#5fd9cc] dark:text-[#ebe6f5] dark:hover:border-white dark:hover:bg-[#5fd9cc] dark:hover:text-[#13101c] sm:mt-[50px] sm:w-[361px] sm:p-[26px] 2xl:mt-[100px]"
+          className="group mx-auto mt-[30px] flex w-full items-center justify-center gap-2.5 rounded-[5px] border border-navy p-[9px] text-lg font-semibold uppercase text-navy transition-all duration-300 hover:border-white hover:bg-navy hover:text-white dark:border-primary dark:text-foreground dark:hover:border-primary dark:hover:bg-primary dark:hover:text-primary-foreground sm:mt-[50px] sm:w-[361px] sm:p-[26px] 2xl:mt-[100px]"
         >
           <span>{t("chooseFavourite")}</span>
           <Image
@@ -48,7 +48,7 @@ export default async function CareSection() {
             alt=""
             width={25}
             height={22}
-            className="transition-all duration-300 group-hover:brightness-0 group-hover:invert dark:brightness-0 dark:invert dark:group-hover:brightness-100 dark:group-hover:invert-0"
+            className="transition-all duration-300 group-hover:brightness-0 group-hover:invert dark:brightness-0 dark:invert dark:group-hover:brightness-100"
           />
         </Link>
       </div>

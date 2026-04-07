@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 const inputBase =
   "w-full rounded-[5px] border border-border bg-background px-3 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-all duration-100 focus:border-turquoise focus:shadow-[0_4px_30px_0_rgba(0,160,146,0.3)] focus:outline-none sm:px-4 sm:py-4 sm:text-base lg:min-h-[60px] lg:px-5 lg:py-[17px] lg:text-lg";
 
-const inputError = "border-[#cc0000] bg-[rgba(204,0,0,0.05)]";
+const inputError = "border-[#cc0000] bg-[rgba(204,0,0,0.05)] dark:border-[#f56565] dark:bg-[rgba(245,101,101,0.08)]";
 
 const NAME_RE = /^[a-zA-Z\s]+$/;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -71,7 +71,7 @@ export default function DonationStep2({
           )}
         />
         {touched.name && !nameValid && (
-          <p className="mb-3 text-sm text-[#cc0000]" role="alert">
+          <p className="mb-3 text-sm text-[#cc0000] dark:text-[#f56565]" role="alert">
             {t("invalidName")}
           </p>
         )}
@@ -96,7 +96,7 @@ export default function DonationStep2({
           )}
         />
         {touched.email && !emailValid && (
-          <p className="mb-3 text-sm text-[#cc0000]" role="alert">
+          <p className="mb-3 text-sm text-[#cc0000] dark:text-[#f56565]" role="alert">
             {t("invalidEmail")}
           </p>
         )}

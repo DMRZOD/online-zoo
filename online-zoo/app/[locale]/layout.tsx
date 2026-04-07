@@ -64,6 +64,13 @@ export default async function LocaleLayout({
       suppressHydrationWarning
       className={montserrat.variable}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("online_zoo_theme");if(t==="dark"){document.documentElement.classList.add("dark");document.documentElement.setAttribute("data-theme","dark")}}catch(e){}})()`,
+          }}
+        />
+      </head>
       <body className={montserrat.className}>
         <NextIntlClientProvider messages={messages}>
           <DonationPopupProvider>

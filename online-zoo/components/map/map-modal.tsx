@@ -4,7 +4,7 @@ import { useEffect, useRef, useCallback } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
-const DEFAULT_ZOOM = 10;
+const DEFAULT_ZOOM = 5;
 
 const defaultIcon = L.icon({
   iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
@@ -76,12 +76,12 @@ export default function MapModal({ lat, lng, onClose }: MapModalProps) {
       />
 
       {/* Modal body */}
-      <div className="relative w-full max-w-[900px] max-h-[90vh] rounded-[5px] overflow-hidden bg-white shadow-[0_8px_32px_rgba(0,0,0,0.25)] dark:bg-[#1c1628] cursor-default">
+      <div className="relative w-full max-w-[900px] max-h-[90vh] rounded-[5px] overflow-hidden bg-white shadow-[0_8px_32px_rgba(0,0,0,0.25)] dark:bg-popover cursor-default">
         {/* Close button */}
         <button
           type="button"
           onClick={handleClose}
-          className="absolute top-3 right-3 z-[1000] flex h-11 w-11 items-center justify-center rounded-[5px] border-none bg-white shadow-[0_2px_8px_rgba(0,0,0,0.12)] transition-all duration-200 hover:bg-orange dark:bg-[#1c1628] [&:hover_svg_path]:stroke-white"
+          className="absolute top-3 right-3 z-[1000] flex h-11 w-11 items-center justify-center rounded-[5px] border-none bg-white shadow-[0_2px_8px_rgba(0,0,0,0.12)] transition-all duration-200 hover:bg-orange dark:bg-popover [&:hover_svg_path]:stroke-white"
         >
           <svg
             width="24"

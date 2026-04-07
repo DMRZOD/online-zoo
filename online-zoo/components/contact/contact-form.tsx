@@ -22,7 +22,7 @@ interface ContactFormProps {
 
 const inputBase =
   "w-full rounded-[5px] border border-border bg-background px-5 py-[17px] text-lg text-foreground placeholder:text-muted-foreground transition-all duration-100 focus:border-turquoise focus:shadow-[0_4px_30px_0_rgba(0,160,146,0.3)] focus:outline-none";
-const inputError = "border-[#cc0000] bg-[rgba(204,0,0,0.05)]";
+const inputError = "border-[#cc0000] bg-[rgba(204,0,0,0.05)] dark:border-[#f56565] dark:bg-[rgba(245,101,101,0.08)]";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -117,7 +117,7 @@ export default function ContactForm({
             className={`${inputBase} ${shouldShowError("name") ? inputError : ""}`}
           />
           {shouldShowError("name") && (
-            <p className="text-sm text-[#cc0000]" role="alert">{errors.name}</p>
+            <p className="text-sm text-[#cc0000] dark:text-[#f56565]" role="alert">{errors.name}</p>
           )}
         </div>
 
@@ -137,7 +137,7 @@ export default function ContactForm({
             className={`${inputBase} ${shouldShowError("email") ? inputError : ""}`}
           />
           {shouldShowError("email") && (
-            <p className="text-sm text-[#cc0000]" role="alert">{errors.email}</p>
+            <p className="text-sm text-[#cc0000] dark:text-[#f56565]" role="alert">{errors.email}</p>
           )}
         </div>
 
@@ -157,7 +157,7 @@ export default function ContactForm({
             className={`${inputBase} ${shouldShowError("subject") ? inputError : ""}`}
           />
           {shouldShowError("subject") && (
-            <p className="text-sm text-[#cc0000]" role="alert">{errors.subject}</p>
+            <p className="text-sm text-[#cc0000] dark:text-[#f56565]" role="alert">{errors.subject}</p>
           )}
         </div>
 
@@ -176,7 +176,7 @@ export default function ContactForm({
             className={`${inputBase} h-[200px] resize-y ${shouldShowError("message") ? inputError : ""}`}
           />
           {shouldShowError("message") && (
-            <p className="text-sm text-[#cc0000]" role="alert">{errors.message}</p>
+            <p className="text-sm text-[#cc0000] dark:text-[#f56565]" role="alert">{errors.message}</p>
           )}
         </div>
 

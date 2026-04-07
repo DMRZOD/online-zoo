@@ -98,11 +98,11 @@ export default function AccountButton({ variant = "default" }: AccountButtonProp
 
       {/* Dropdown */}
       {open && (
-        <div className="absolute right-0 top-full z-50 mt-2 min-w-[200px] rounded-[5px] bg-white py-2 shadow-[0_4px_30px_0_rgba(0,0,0,0.15)]">
+        <div className={`absolute top-full z-50 mt-2 min-w-[200px] rounded-[5px] bg-white dark:bg-popover py-2 shadow-[0_4px_30px_0_rgba(0,0,0,0.15)] dark:shadow-[0_4px_30px_0_rgba(0,0,0,0.4)] ${variant === "sidebar" ? "left-1/2 -translate-x-1/2" : "right-0"}`}>
           {isLoggedIn ? (
             <button
               onClick={handleSignOut}
-              className="block w-full cursor-pointer px-5 py-3 text-left text-lg font-semibold transition-colors duration-300 hover:text-turquoise"
+              className="block w-full cursor-pointer px-5 py-3 text-left text-lg font-semibold text-foreground transition-colors duration-300 hover:text-turquoise"
             >
               {t("signOut")}
             </button>
@@ -111,14 +111,14 @@ export default function AccountButton({ variant = "default" }: AccountButtonProp
               <Link
                 href="/sign-in"
                 onClick={() => setOpen(false)}
-                className="block w-full px-5 py-3 text-left text-lg font-semibold transition-colors duration-300 hover:text-turquoise"
+                className="block w-full px-5 py-3 text-left text-lg font-semibold text-foreground transition-colors duration-300 hover:text-turquoise"
               >
                 {t("signIn")}
               </Link>
               <Link
                 href="/register"
                 onClick={() => setOpen(false)}
-                className="block w-full px-5 py-3 text-left text-lg font-semibold transition-colors duration-300 hover:text-turquoise"
+                className="block w-full px-5 py-3 text-left text-lg font-semibold text-foreground transition-colors duration-300 hover:text-turquoise"
               >
                 {t("registration")}
               </Link>
