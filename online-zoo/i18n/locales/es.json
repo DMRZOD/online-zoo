@@ -150,7 +150,13 @@
     "nav": {
       "about": "Acerca de",
       "map": "Mapa",
-      "zoos": "Zoológicos",
+      "animals": "Animales",
+      "animalsMenu": {
+        "meetAnimals": "Conoce a los Animales",
+        "webcams": "Cámaras de Animales",
+        "adoption": "Adopción de Animales",
+        "featuredTitle": "Explora nuestra fauna"
+      },
       "contact": "Contacto",
       "design": "Diseño"
     },

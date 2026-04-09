@@ -12,7 +12,7 @@ interface PetCardProps {
 export default function PetCard({ pet, asset, viewLiveCamLabel }: PetCardProps) {
   return (
     <Link
-      href={`/animals?pet=${pet.id}`}
+      href={`/webcams?pet=${pet.id}`}
       className="group relative flex w-[300px] flex-col overflow-hidden rounded-[5px] bg-navy dark:bg-dark-surface transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_4px_30px_0_rgba(32,17,61,0.5)] dark:hover:shadow-[0_4px_30px_0_rgba(0,0,0,0.4)] md:w-[440px] md:h-[747px]"
     >
       {/* Label */}

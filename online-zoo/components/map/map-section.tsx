@@ -1,4 +1,4 @@
-import Image from "next/image";
+import BlurImage from "@/components/ui/blur-image";
 import { Link } from "@/i18n/navigation";
 import { FadeIn } from "@/components/ui/motion-wrapper";
 
@@ -36,30 +36,28 @@ export default function MapSection({
       </FadeIn>
 
       <FadeIn delay={0.1} className="relative w-full mx-auto max-w-[1400px]">
-        <Image
+        <BlurImage
           src="/images/map/map.jpg"
           alt="World map"
           width={1920}
           height={960}
           className="w-full h-auto dark:hidden"
-          priority
         />
-        <Image
+        <BlurImage
           src="/images/map/map-dark.jpg"
           alt="World map"
           width={1920}
           height={960}
           className="w-full h-auto hidden dark:block"
-          priority
         />
         {markers.map((m) => (
           <Link
             key={m.name}
-            href={`/animals?pet=${m.petId}`}
+            href={`/webcams?pet=${m.petId}`}
             className={`marker marker_${m.name}`}
           >
             <span className="marker__icon">
-              <Image
+              <BlurImage
                 src={m.icon}
                 alt={m.alt}
                 width={40}

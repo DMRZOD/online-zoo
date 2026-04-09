@@ -1,4 +1,4 @@
-import Image from "next/image";
+import BlurImage from "@/components/ui/blur-image";
 import ContactForm from "./contact-form";
 import { FadeIn } from "@/components/ui/motion-wrapper";
 
@@ -30,13 +30,12 @@ export default function ContactSection({ translations }: ContactSectionProps) {
     <section className="pb-[80px] sm:pb-[100px] xl:pb-[150px]">
       {/* Hero image */}
       <div className="w-full mx-auto max-w-[1400px]">
-        <Image
+        <BlurImage
           src="/images/contact/contact.jpg"
           alt="Get in Touch"
           width={1920}
           height={600}
           className="w-full object-cover"
-          priority
         />
       </div>
 

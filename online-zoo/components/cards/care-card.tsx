@@ -12,7 +12,7 @@ interface CareCardProps {
 export default function CareCard({ image, alt, text, feedLabel }: CareCardProps) {
   return (
     <Link
-      href="/animals"
+      href="/webcams"
       className="group flex flex-col overflow-hidden rounded-[5px] bg-navy dark:bg-dark-surface transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_4px_30px_0_rgba(32,17,61,0.3)] dark:hover:shadow-[0_4px_30px_0_rgba(0,0,0,0.4)] md:max-lg:grid md:max-lg:grid-cols-2"
     >
       <div className="relative h-[350px] md:max-lg:h-full lg:h-auto lg:max-h-[373px]">

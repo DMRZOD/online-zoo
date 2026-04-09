@@ -8,7 +8,7 @@ import { useDonationPopup } from "@/components/donation/donation-context";
 const NAV_LINKS = [
   { key: "about", href: "/" },
   { key: "map", href: "/map" },
-  { key: "zoos", href: "/animals" },
+  { key: "animals", href: "/webcams" },
   { key: "contact", href: "/contact" },
 ] as const;
 

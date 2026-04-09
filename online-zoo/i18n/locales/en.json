@@ -150,7 +150,13 @@
     "nav": {
       "about": "About",
       "map": "Map",
-      "zoos": "Zoos",
+      "animals": "Animals",
+      "animalsMenu": {
+        "meetAnimals": "Meet the Animals",
+        "webcams": "Animal Webcams",
+        "adoption": "Animal Adoption",
+        "featuredTitle": "Explore our wildlife"
+      },
       "contact": "Contact Us",
       "design": "Design"
     },

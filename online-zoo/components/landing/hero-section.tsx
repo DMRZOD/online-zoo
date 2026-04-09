@@ -21,7 +21,7 @@ export default async function HeroSection() {
         </FadeIn>
         <FadeIn delay={0.3}>
           <Link
-            href="/animals"
+            href="/webcams"
             className="flex w-full items-center justify-center gap-2.5 rounded-[5px] bg-orange p-[11.5px] text-lg font-semibold uppercase text-white transition-all duration-300 hover:bg-orange-hover hover:shadow-[0_4px_30px_0_rgba(245,128,33,0.3)] active:scale-[1.03] sm:w-[240px] sm:p-[26px]"
           >
             <span>{t("cta")}</span>

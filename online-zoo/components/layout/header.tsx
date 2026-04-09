@@ -1,21 +1,34 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { usePathname } from "@/i18n/navigation";
+import { motion, AnimatePresence } from "motion/react";
 import AccountButton from "@/components/layout/account-button";
+import MegaMenu from "@/components/layout/mega-menu";
+import type { MegaMenuItem } from "@/components/layout/mega-menu";
 
 const FIGMA_URL =
   "https://www.figma.com/file/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project";
 
-const NAV_LINKS = [
+const ANIMALS_MENU_ITEMS: MegaMenuItem[] = [
+  { key: "meetAnimals", href: "#" },
+  { key: "webcams", href: "/webcams" },
+  { key: "adoption", href: "#" },
+];
+
+type NavItem =
+  | { key: string; href: string; children?: undefined }
+  | { key: string; href?: undefined; children: MegaMenuItem[] };
+
+const NAV_LINKS: NavItem[] = [
   { key: "about", href: "/" },
   { key: "map", href: "/map" },
-  { key: "zoos", href: "/animals" },
+  { key: "animals", children: ANIMALS_MENU_ITEMS },
   { key: "contact", href: "/contact" },
-] as const;
+];
 
 const SOCIAL_LINKS = [
   { name: "YouTube", icon: "/icons/youtube.svg", href: "https://youtube.com" },
@@ -35,8 +48,15 @@ export default function Header() {
   const t = useTranslations("common.nav");
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [megaMenuOpen, setMegaMenuOpen] = useState(false);
+  const [mobileAnimalsOpen, setMobileAnimalsOpen] = useState(false);
+  const megaMenuRef = useRef<HTMLLIElement>(null);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const closeMenu = useCallback(() => setMenuOpen(false), []);
+  const closeMenu = useCallback(() => {
+    setMenuOpen(false);
+    setMobileAnimalsOpen(false);
+  }, []);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -46,20 +66,58 @@ export default function Header() {
     };
   }, [menuOpen]);
 
-  // Close menu on Escape key
+  // Close menus on Escape key
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape") closeMenu();
+      if (e.key === "Escape") {
+        closeMenu();
+        setMegaMenuOpen(false);
+      }
     }
-    if (menuOpen) {
+    if (menuOpen || megaMenuOpen) {
       document.addEventListener("keydown", handleKeyDown);
       return () => document.removeEventListener("keydown", handleKeyDown);
     }
-  }, [menuOpen, closeMenu]);
+  }, [menuOpen, megaMenuOpen, closeMenu]);
+
+  // Close mega menu on click outside
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (
+        megaMenuRef.current &&
+        !megaMenuRef.current.contains(e.target as Node)
+      ) {
+        setMegaMenuOpen(false);
+      }
+    }
+    if (megaMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () =>
+        document.removeEventListener("mousedown", handleClickOutside);
+    }
+  }, [megaMenuOpen]);
 
   function isActive(href: string) {
     if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
+  }
+
+  function isChildActive(children: MegaMenuItem[]) {
+    return children.some((child) => child.href !== "#" && isActive(child.href));
+  }
+
+  function handleMegaMenuEnter() {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    setMegaMenuOpen(true);
+  }
+
+  function handleMegaMenuLeave() {
+    closeTimerRef.current = setTimeout(() => {
+      setMegaMenuOpen(false);
+    }, 150);
   }
 
   return (
@@ -80,26 +138,61 @@ export default function Header() {
         {/* Desktop navigation */}
         <nav className="hidden items-center gap-5 lg:flex xl:gap-8.75 2xl:gap-12.5">
           <ul className="flex items-center gap-5 xl:gap-7.5 2xl:gap-12">
-            {NAV_LINKS.map(({ key, href }) => (
-              <li key={key}>
-                <Link
-                  href={href}
-                  className={`text-lg font-semibold uppercase transition-colors duration-300 ${
-                    isActive(href)
-                      ? "text-turquoise"
-                      : "text-black dark:text-foreground hover:text-turquoise dark:hover:text-turquoise"
-                  }`}
-                >
-                  {t(key)}
-                </Link>
-              </li>
-            ))}
+            {NAV_LINKS.map((item) => {
+              if (item.children) {
+                // Mega menu trigger
+                const active = isChildActive(item.children);
+                return (
+                  <li
+                    key={item.key}
+                    ref={megaMenuRef}
+                    className="relative"
+                    onMouseEnter={handleMegaMenuEnter}
+                    onMouseLeave={handleMegaMenuLeave}
+                  >
+                    <button
+                      onClick={() => setMegaMenuOpen(!megaMenuOpen)}
+                      className={`cursor-pointer text-lg font-semibold uppercase transition-colors duration-300 ${
+                        active || megaMenuOpen
+                          ? "text-turquoise"
+                          : "text-black dark:text-foreground hover:text-turquoise dark:hover:text-turquoise"
+                      }`}
+                      aria-expanded={megaMenuOpen}
+                      aria-haspopup="true"
+                    >
+                      {t(item.key)}
+                    </button>
+                    <MegaMenu
+                      items={item.children}
+                      isOpen={megaMenuOpen}
+                      onNavigate={() => setMegaMenuOpen(false)}
+                    />
+                  </li>
+                );
+              }
+
+              // Regular nav link
+              return (
+                <li key={item.key}>
+                  <Link
+                    href={item.href}
+                    className={`text-lg font-semibold uppercase transition-colors duration-300 ${
+                      isActive(item.href)
+                        ? "text-turquoise"
+                        : "text-black dark:text-foreground hover:text-turquoise dark:hover:text-turquoise"
+                    }`}
+                  >
+                    {t(item.key)}
+                  </Link>
+                </li>
+              );
+            })}
             <li>
               <a
                 href={FIGMA_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lg font-semibold uppercase text-black dark:text-foreground transition-colors duration-300 hover:text-turquoise dark:hover:text-turquoise"
+                className="text-lg font-semibold uppercase text-black dark:text-foreground transition-colors duration-300 hover:text-turquoise dark:hover:text-turquoise lg:hidden xl:block"
               >
                 {t("design")}
               </a>
@@ -171,26 +264,85 @@ export default function Header() {
 
         {/* Mobile sidebar nav */}
         <nav
-          className={`fixed right-0 top-0 z-40 flex h-full w-77.75 max-w-[80vw] flex-col bg-navy px-8 pt-30 transition-transform duration-300 lg:hidden ${
+          className={`fixed right-0 top-0 z-40 flex h-full w-77.75 max-w-[80vw] flex-col overflow-y-auto bg-navy px-8 pt-30 transition-transform duration-300 lg:hidden ${
             menuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <ul className="flex flex-col items-center gap-6">
-            {NAV_LINKS.map(({ key, href }) => (
-              <li key={key}>
-                <Link
-                  href={href}
-                  onClick={closeMenu}
-                  className={`text-lg font-semibold uppercase transition-colors duration-300 ${
-                    isActive(href)
-                      ? "text-turquoise"
-                      : "text-white hover:text-turquoise"
-                  }`}
-                >
-                  {t(key)}
-                </Link>
-              </li>
-            ))}
+            {NAV_LINKS.map((item) => {
+              if (item.children) {
+                return (
+                  <li
+                    key={item.key}
+                    className="flex w-full flex-col items-center"
+                  >
+                    <button
+                      onClick={() => setMobileAnimalsOpen(!mobileAnimalsOpen)}
+                      className={`flex cursor-pointer items-center gap-2 text-lg font-semibold uppercase transition-colors duration-300 ${
+                        isChildActive(item.children) || mobileAnimalsOpen
+                          ? "text-turquoise"
+                          : "text-white hover:text-turquoise"
+                      }`}
+                      aria-expanded={mobileAnimalsOpen}
+                    >
+                      {t(item.key)}
+                      <Image
+                        src="/icons/arrow-bottom.svg"
+                        alt=""
+                        width={12}
+                        height={8}
+                        className={`h-2 w-3 invert transition-transform duration-300 ${
+                          mobileAnimalsOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    <AnimatePresence>
+                      {mobileAnimalsOpen && (
+                        <motion.ul
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.25 }}
+                          className="mt-3 flex w-full flex-col items-center gap-3 overflow-hidden"
+                        >
+                          {item.children.map((child) => (
+                            <li key={child.key}>
+                              <Link
+                                href={child.href}
+                                onClick={closeMenu}
+                                className={`text-base transition-colors duration-300 ${
+                                  isActive(child.href)
+                                    ? "text-turquoise"
+                                    : "text-white hover:text-turquoise"
+                                }`}
+                              >
+                                {t(`animalsMenu.${child.key}`)}
+                              </Link>
+                            </li>
+                          ))}
+                        </motion.ul>
+                      )}
+                    </AnimatePresence>
+                  </li>
+                );
+              }
+
+              return (
+                <li key={item.key}>
+                  <Link
+                    href={item.href}
+                    onClick={closeMenu}
+                    className={`text-lg font-semibold uppercase transition-colors duration-300 ${
+                      isActive(item.href)
+                        ? "text-turquoise"
+                        : "text-white hover:text-turquoise"
+                    }`}
+                  >
+                    {t(item.key)}
+                  </Link>
+                </li>
+              );
+            })}
             <li>
               <a
                 href={FIGMA_URL}
