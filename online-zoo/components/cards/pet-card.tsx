@@ -1,4 +1,4 @@
-import Image from "next/image";
+import BlurImage from "@/components/ui/blur-image";
 import { Link } from "@/i18n/navigation";
 import type { Pet } from "@/types/api";
 import type { PetAsset } from "@/types/pet";
@@ -22,7 +22,7 @@ export default function PetCard({ pet, asset, viewLiveCamLabel }: PetCardProps) 
 
       {/* Image */}
       <div className="aspect-[300/280] w-full overflow-hidden md:aspect-[440/436]">
-        <Image
+        <BlurImage
           src={asset.cardImage}
           alt={pet.commonName}
           width={440}

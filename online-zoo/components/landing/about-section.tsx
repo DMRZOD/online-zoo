@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import Image from "next/image";
+import BlurImage from "@/components/ui/blur-image";
 import { FadeIn, SlideIn } from "@/components/ui/motion-wrapper";
 
 export default async function AboutSection() {
@@ -19,7 +19,7 @@ export default async function AboutSection() {
             </p>
           </FadeIn>
           <SlideIn direction="right" className="order-1 xl:order-none">
-            <Image
+            <BlurImage
               src="/images/about/welcome.jpg"
               alt="Welcome Photo"
               width={800}
@@ -34,7 +34,7 @@ export default async function AboutSection() {
       <div className="pt-[25px] pb-[50px] sm:pb-[100px] md:pt-[35px] xl:pt-[75px] xl:pb-[150px]">
         <div className="mx-auto grid max-w-[1480px] items-center gap-x-10 gap-y-[30px] px-0 md:px-5 min-[820px]:px-[100px] xl:px-10 grid-cols-[minmax(0,660px)] justify-end xl:grid-cols-[minmax(0,800px)_minmax(0,560px)] xl:justify-normal">
           <SlideIn direction="left">
-            <Image
+            <BlurImage
               src="/images/about/how-we-work.jpg"
               alt="Eagles Photo"
               width={800}

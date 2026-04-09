@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import dynamic from "next/dynamic";
-import Image from "next/image";
+import BlurImage from "@/components/ui/blur-image";
 import type { PetDetail } from "@/types/api";
 
 const MapModal = dynamic(() => import("@/components/map/map-modal"), {
@@ -170,7 +170,7 @@ export default function AnimalInfoSection({
 
           {/* Animal image */}
           <div className="shrink-0 order-1 xl:order-2">
-            <Image
+            <BlurImage
               src={zooImage}
               alt={petDetail.commonName}
               width={440}

@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
+import BlurImage from "@/components/ui/blur-image";
 import { Link } from "@/i18n/navigation";
 import { LazyCareSlider } from "@/components/slider/lazy";
 import { FadeIn } from "@/components/ui/motion-wrapper";
@@ -62,7 +63,7 @@ export default async function CareSection() {
 
       {/* Touch the Animal image */}
       <FadeIn className="mx-auto mt-[80px] sm:mt-[100px] 2xl:mt-[150px]">
-        <Image
+        <BlurImage
           src="/images/care/touch-the-animal.jpg"
           alt="Touch The Animal"
           width={1920}

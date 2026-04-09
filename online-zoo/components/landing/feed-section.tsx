@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
+import BlurImage from "@/components/ui/blur-image";
 import DonateButton from "@/components/donation/donate-button";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/motion-wrapper";
 
@@ -52,7 +53,7 @@ export default async function FeedSection() {
 
               {/* Step body */}
               <div className="flex flex-col items-center gap-[20px] text-center sm:gap-[30px] xl:flex-row xl:items-start xl:gap-[40px] xl:text-left">
-                <Image
+                <BlurImage
                   src={step.image}
                   alt={t(step.titleKey)}
                   width={560}
