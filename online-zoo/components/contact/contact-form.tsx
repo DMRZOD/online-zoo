@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { FadeIn } from "@/components/ui/motion-wrapper";
 
 interface ContactFormProps {
   nameLabel: string;
@@ -96,10 +97,11 @@ export default function ContactForm({
       </div>
 
       {/* Form */}
+      <FadeIn delay={0.15} className="w-full xl:max-w-[740px]">
       <form
         onSubmit={handleSubmit}
         noValidate
-        className="flex w-full flex-col gap-y-[30px] xl:max-w-[740px]"
+        className="flex w-full flex-col gap-y-[30px]"
       >
         {/* Name */}
         <div className="flex flex-col gap-y-2.5">
@@ -195,6 +197,7 @@ export default function ContactForm({
           />
         </button>
       </form>
+      </FadeIn>
     </>
   );
 }

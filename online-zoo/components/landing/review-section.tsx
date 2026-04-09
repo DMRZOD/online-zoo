@@ -3,7 +3,8 @@ import { connection } from "next/server";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { getFeedback } from "@/lib/api/endpoints";
-import ReviewSlider from "@/components/slider/review-slider";
+import { LazyReviewSlider } from "@/components/slider/lazy";
+import { FadeIn } from "@/components/ui/motion-wrapper";
 
 export default async function ReviewSection() {
   await connection();
@@ -16,22 +17,25 @@ export default async function ReviewSection() {
     <section className="review-bg overflow-hidden py-10 lg:py-20 xl:py-[100px] 2xl:py-[150px]">
       <div className="mx-auto max-w-[1480px] px-2.5 sm:px-5 lg:px-10 xl:grid xl:grid-cols-[440px_1fr] xl:grid-rows-[auto_auto] xl:gap-x-10 2xl:grid-cols-[560px_1fr]">
         {/* Header — left column on desktop */}
-        <div className="text-center sm:text-left xl:col-start-1 xl:row-start-1">
+        <FadeIn className="text-center sm:text-left xl:col-start-1 xl:row-start-1">
           <h3 className="max-w-[440px] text-[26px] font-medium uppercase text-white sm:text-[54px] sm:font-semibold">
             {t("title")}
           </h3>
           <p className="mt-[30px] text-lg font-normal leading-[1.5] text-white sm:text-[26px] sm:font-medium sm:leading-[1.3] xl:mt-[50px]">
             {t("text")}
           </p>
-        </div>
+        </FadeIn>
 
         {/* Slider — right column on desktop, spans both rows */}
-        <div className="mt-[30px] sm:mt-[50px] xl:col-start-2 xl:row-span-2 xl:row-start-1 xl:mt-0">
-          <ReviewSlider
+        <FadeIn
+          delay={0.1}
+          className="mt-[30px] sm:mt-[50px] xl:col-start-2 xl:row-span-2 xl:row-start-1 xl:mt-0"
+        >
+          <LazyReviewSlider
             feedback={feedback}
             errorMessage={hasError ? t("error") : undefined}
           />
-        </div>
+        </FadeIn>
       </div>
 
       {/* Leave Feedback button — left column bottom on desktop */}

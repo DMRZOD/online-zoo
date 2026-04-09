@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import DonateButton from "@/components/donation/donate-button";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/motion-wrapper";
 
 const steps = [
   {
@@ -32,13 +33,15 @@ export default async function FeedSection() {
   return (
     <section className="bg-navy dark:bg-dark-surface text-white">
       <div className="mx-auto max-w-[1480px] px-2.5 py-[30px] sm:px-5 sm:py-[50px] lg:px-10 xl:py-[100px]">
-        <h3 className="mb-[30px] text-[26px] font-medium uppercase sm:text-[54px] sm:font-semibold xl:mb-[50px]">
-          {t("title")}
-        </h3>
+        <FadeIn>
+          <h3 className="mb-[30px] text-[26px] font-medium uppercase sm:text-[54px] sm:font-semibold xl:mb-[50px]">
+            {t("title")}
+          </h3>
+        </FadeIn>
 
-        <div className="flex flex-col gap-[30px] xl:gap-[50px]">
+        <StaggerContainer className="flex flex-col gap-[30px] xl:gap-[50px]" staggerDelay={0.15}>
           {steps.map((step) => (
-            <div key={step.number}>
+            <StaggerItem key={step.number}>
               {/* Step header */}
               <div className="mb-[20px] flex items-center gap-[10px] md:gap-[90px] sm:mb-[30px] xl:mb-[40px]">
                 <span className="shrink-0 text-[26px] font-medium leading-none">
@@ -85,9 +88,9 @@ export default async function FeedSection() {
                   )}
                 </div>
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

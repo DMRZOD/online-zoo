@@ -3,8 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Link, useRouter } from "@/i18n/navigation";
+import { motion } from "motion/react";
 import { login as loginApi } from "@/lib/api/endpoints";
 import { useAuth } from "@/hooks/use-auth";
+import { FADE_UP } from "@/lib/motion";
 
 interface SignInFormProps {
   labels: {
@@ -66,7 +68,7 @@ export default function SignInForm({ labels, messages, links }: SignInFormProps)
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-[30px]">
+    <motion.form onSubmit={handleSubmit} noValidate className="flex flex-col gap-[30px]" {...FADE_UP}>
       {/* Login field */}
       <div className="flex flex-col gap-2.5">
         <label className="text-lg font-normal leading-[1.5]">
@@ -138,6 +140,6 @@ export default function SignInForm({ labels, messages, links }: SignInFormProps)
           {links.registration}
         </Link>
       </p>
-    </form>
+    </motion.form>
   );
 }

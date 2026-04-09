@@ -6,6 +6,7 @@ import { usePetSelection } from "@/hooks/use-pet-selection";
 import { getPetById } from "@/lib/api/endpoints";
 import type { Pet, PetDetail, Camera } from "@/types/api";
 import type { PetAssetMap } from "@/types/pet";
+import { AnimatePresence, motion } from "motion/react";
 import AnimalSidebar from "./animal-sidebar";
 import LiveCamsSection from "./live-cams-section";
 import AnimalDonationSection from "./animal-donation-section";
@@ -129,46 +130,56 @@ export default function AnimalsPageClient({
           </div>
         </div>
 
-        <LiveCamsSection
-          animalName={animalName}
-          videos={currentVideos}
-          translations={{
-            live: t.live,
-            cams: t.cams,
-            donateNow: t.donateNow,
-            moreLiveViews: t.moreLiveViews,
-          }}
-        />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={selectedPetId}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <LiveCamsSection
+              animalName={animalName}
+              videos={currentVideos}
+              translations={{
+                live: t.live,
+                cams: t.cams,
+                donateNow: t.donateNow,
+                moreLiveViews: t.moreLiveViews,
+              }}
+            />
 
-        <AnimalDonationSection
-          translations={{
-            title: t.donationTitle,
-            text: t.donationText,
-            quickDonate: t.quickDonate,
-            placeholder: t.donationPlaceholder,
-          }}
-          petId={selectedPetId}
-          petName={animalName}
-        />
+            <AnimalDonationSection
+              translations={{
+                title: t.donationTitle,
+                text: t.donationText,
+                quickDonate: t.quickDonate,
+                placeholder: t.donationPlaceholder,
+              }}
+              petId={selectedPetId}
+              petName={animalName}
+            />
 
-        <AnimalInfoSection
-          petDetail={petDetail}
-          zooImage={zooImage}
-          isLoading={isLoading}
-          translations={{
-            didYouKnow: t.didYouKnow,
-            commonName: t.commonName,
-            scientificName: t.scientificName,
-            type: t.type,
-            size: t.size,
-            diet: t.diet,
-            habitat: t.habitat,
-            range: t.range,
-            viewMap: t.viewMap,
-            loading: t.loading,
-            error: t.error,
-          }}
-        />
+            <AnimalInfoSection
+              petDetail={petDetail}
+              zooImage={zooImage}
+              isLoading={isLoading}
+              translations={{
+                didYouKnow: t.didYouKnow,
+                commonName: t.commonName,
+                scientificName: t.scientificName,
+                type: t.type,
+                size: t.size,
+                diet: t.diet,
+                habitat: t.habitat,
+                range: t.range,
+                viewMap: t.viewMap,
+                loading: t.loading,
+                error: t.error,
+              }}
+            />
+          </motion.div>
+        </AnimatePresence>
       </main>
     </div>
   );

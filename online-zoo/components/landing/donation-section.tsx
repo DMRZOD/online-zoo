@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import DonateButton from "@/components/donation/donate-button";
+import { FadeIn } from "@/components/ui/motion-wrapper";
 
 export default async function DonationSection() {
   const t = await getTranslations("common.donation");
@@ -9,15 +10,15 @@ export default async function DonationSection() {
     <section className="bg-navy dark:bg-dark-surface text-white">
       <div className="mx-auto flex max-w-[1480px] flex-col items-center gap-[30px] px-5 py-[30px] text-center sm:py-[50px] lg:px-10 xl:flex-row xl:items-start xl:justify-between xl:gap-10 xl:text-left">
         {/* Content */}
-        <div className="max-w-[660px] xl:max-w-[600px]">
+        <FadeIn className="max-w-[660px] xl:max-w-[600px]">
           <h4 className="mb-5 text-[26px] font-medium uppercase leading-tight sm:text-[42px] xl:mb-[30px]">
             {t("title")}
           </h4>
           <p className="text-lg font-normal leading-[1.5]">{t("text")}</p>
-        </div>
+        </FadeIn>
 
         {/* Action */}
-        <div className="flex shrink-0 flex-col items-center xl:items-start">
+        <FadeIn delay={0.15} className="flex shrink-0 flex-col items-center xl:items-start">
           <span className="mb-4 text-[26px] font-medium xl:mb-5">
             {t("quickDonate")}
           </span>
@@ -34,7 +35,7 @@ export default async function DonationSection() {
               />
             </span>
           </DonateButton>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

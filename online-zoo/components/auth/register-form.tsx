@@ -3,8 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Link, useRouter } from "@/i18n/navigation";
+import { motion } from "motion/react";
 import { register as registerApi } from "@/lib/api/endpoints";
 import { useAuth } from "@/hooks/use-auth";
+import { FADE_UP } from "@/lib/motion";
 
 interface RegisterFormProps {
   labels: {
@@ -138,7 +140,7 @@ export default function RegisterForm({ labels, messages, links }: RegisterFormPr
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-[30px]">
+    <motion.form onSubmit={handleSubmit} noValidate className="flex flex-col gap-[30px]" {...FADE_UP}>
       {field("login", labels.loginLabel, labels.loginPlaceholder, "text", "username")}
       {field("password", labels.passwordLabel, labels.passwordPlaceholder, "password", "new-password")}
       {field("confirmPassword", labels.confirmPasswordLabel, labels.confirmPasswordPlaceholder, "password", "new-password")}
@@ -180,6 +182,6 @@ export default function RegisterForm({ labels, messages, links }: RegisterFormPr
           {links.signIn}
         </Link>
       </p>
-    </form>
+    </motion.form>
   );
 }

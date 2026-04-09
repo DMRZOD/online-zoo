@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { FadeIn } from "@/components/ui/motion-wrapper";
 
 interface MapTranslations {
   title: string;
@@ -28,11 +29,13 @@ export default function MapSection({
 }) {
   return (
     <section className="flex flex-col items-center pt-5 pb-[50px] gap-y-[30px] lg:pt-[30px] lg:pb-[100px] lg:gap-y-[50px] 2xl:pt-10 2xl:pb-[150px] 2xl:gap-y-[70px]">
-      <h2 className="max-w-[300px] sm:max-w-[600px] text-center uppercase font-semibold text-[26px] lg:text-[42px] 2xl:text-[54px] text-foreground">
-        {translations.title}
-      </h2>
+      <FadeIn>
+        <h2 className="max-w-[300px] sm:max-w-[600px] mx-auto text-center uppercase font-semibold text-[26px] lg:text-[42px] 2xl:text-[54px] text-foreground">
+          {translations.title}
+        </h2>
+      </FadeIn>
 
-      <div className="relative w-full mx-auto max-w-[1400px]">
+      <FadeIn delay={0.1} className="relative w-full mx-auto max-w-[1400px]">
         <Image
           src="/images/map/map.jpg"
           alt="World map"
@@ -66,7 +69,7 @@ export default function MapSection({
             </span>
           </Link>
         ))}
-      </div>
+      </FadeIn>
     </section>
   );
 }
