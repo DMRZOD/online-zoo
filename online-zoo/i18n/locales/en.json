@@ -146,6 +146,15 @@
     "successToast": "Thank you for your donation of ${amount} to {petName}!",
     "errorToast": "Something went wrong. Please, try again later."
   },
+  "meetTheAnimals": {
+    "title": "Animal Inhabitants",
+    "description": "Embark on a journey into the heart of the animal kingdom at Online Zoo.",
+    "searchLabel": "Search for an animal",
+    "searchPlaceholder": "Search by name...",
+    "all": "All",
+    "showMore": "Show more",
+    "noResults": "No animals found matching your search."
+  },
   "common": {
     "nav": {
       "about": "About",

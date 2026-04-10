@@ -14,7 +14,7 @@ const FIGMA_URL =
   "https://www.figma.com/file/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project";
 
 const ANIMALS_MENU_ITEMS: MegaMenuItem[] = [
-  { key: "meetAnimals", href: "#" },
+  { key: "meetAnimals", href: "/meet-the-animals" },
   { key: "webcams", href: "/webcams" },
   { key: "adoption", href: "#" },
 ];
@@ -291,7 +291,7 @@ export default function Header() {
                         alt=""
                         width={12}
                         height={8}
-                        className={`h-2 w-3 invert transition-transform duration-300 ${
+                        className={`h-2 w-3 transition-transform duration-300 ${
                           mobileAnimalsOpen ? "rotate-180" : ""
                         }`}
                       />

@@ -43,7 +43,7 @@ export default async function PetsSection() {
       {/* Bottom CTA */}
       <FadeIn className="mx-auto hidden max-w-[1480px] px-10 sm:block">
         <Link
-          href="/webcams"
+          href="/meet-the-animals"
           className="group mx-auto mt-[50px] flex w-[361px] items-center justify-center gap-2.5 rounded-[5px] border border-navy p-[26px] text-lg font-semibold uppercase text-navy transition-all duration-300 hover:border-white hover:bg-navy hover:text-white dark:border-primary dark:text-foreground dark:hover:border-primary dark:hover:bg-primary dark:hover:text-primary-foreground xl:mt-[50px] 2xl:mt-[100px]"
         >
           <span>{t("chooseFavourite")}</span>

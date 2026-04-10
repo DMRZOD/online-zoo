@@ -146,6 +146,15 @@
     "successToast": "¡Gracias por tu donación de ${amount} para {petName}!",
     "errorToast": "Algo salió mal. Por favor, inténtalo más tarde."
   },
+  "meetTheAnimals": {
+    "title": "Habitantes del Zoológico",
+    "description": "Embárcate en un viaje al corazón del reino animal en Online Zoo.",
+    "searchLabel": "Buscar un animal",
+    "searchPlaceholder": "Buscar por nombre...",
+    "all": "Todos",
+    "showMore": "Mostrar más",
+    "noResults": "No se encontraron animales."
+  },
   "common": {
     "nav": {
       "about": "Acerca de",
