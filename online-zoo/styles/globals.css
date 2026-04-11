@@ -243,6 +243,18 @@
     box-shadow: none !important;
     margin: 0 !important;
     max-width: 100% !important;
+
+    /* Force light-mode CSS variables so children resolve correctly in dark mode */
+    --foreground: #000000;
+    --background: #ffffff;
+    --primary: #00a092;
+    --secondary: #20113d;
+    --accent: #f58021;
+  }
+
+  /* Remove dark:invert and any filters on images */
+  .print-only img {
+    filter: none !important;
   }
 
   header,

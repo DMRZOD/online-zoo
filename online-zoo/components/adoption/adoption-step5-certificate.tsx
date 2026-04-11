@@ -34,6 +34,21 @@ export default function AdoptionStep5Certificate({
   viewOnly,
 }: AdoptionStep5Props) {
   const handlePrint = () => {
+    const root = document.documentElement;
+    const wasDark = root.classList.contains("dark");
+
+    if (wasDark) {
+      root.classList.remove("dark");
+    }
+
+    const restore = () => {
+      if (wasDark) {
+        root.classList.add("dark");
+      }
+      window.removeEventListener("afterprint", restore);
+    };
+
+    window.addEventListener("afterprint", restore);
     window.print();
   };
 
