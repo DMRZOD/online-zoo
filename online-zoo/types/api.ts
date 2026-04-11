@@ -76,6 +76,22 @@ export interface SavedCard {
   cvv: string;
 }
 
+export interface AdoptionRecord {
+  id: string;
+  petId: number;
+  petName: string;
+  petImage: string;
+  tierId: string;
+  tierPrice: number;
+  adopterName: string;
+  adopterEmail: string;
+  address: string;
+  giftMessage: string;
+  isGift: boolean;
+  recipientName: string;
+  createdAt: string;
+}
+
 export type Result<T> = { ok: true; data: T } | { ok: false; error: ApiError };
 
 export interface ApiError {

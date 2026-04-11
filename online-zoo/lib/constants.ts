@@ -7,3 +7,4 @@ export const USER_KEY = "online_zoo_user";
 
 export const THEME_KEY = "online_zoo_theme";
 export const SAVED_CARDS_KEY = "online_zoo_saved_cards";
+export const ADOPTIONS_KEY = "online_zoo_adoptions";

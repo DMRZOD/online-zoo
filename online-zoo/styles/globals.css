@@ -221,6 +221,37 @@
   }
 }
 
+/* ===== Print styles for adoption certificate ===== */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .print-only,
+  .print-only * {
+    visibility: visible;
+  }
+
+  .print-only {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-color: #00a092 !important;
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  header,
+  footer,
+  nav {
+    display: none !important;
+  }
+}
+
 /* ===== Dark-mode overlay for hero background image ===== */
 .dark .hero-bg {
   position: relative;

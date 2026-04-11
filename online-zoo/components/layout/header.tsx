@@ -16,7 +16,7 @@ const FIGMA_URL =
 const ANIMALS_MENU_ITEMS: MegaMenuItem[] = [
   { key: "meetAnimals", href: "/meet-the-animals" },
   { key: "webcams", href: "/webcams" },
-  { key: "adoption", href: "#" },
+  { key: "adoption", href: "/adoption" },
 ];
 
 type NavItem =
